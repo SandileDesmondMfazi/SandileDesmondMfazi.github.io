@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandile Desmond Mfazi | Business Intelligence Consultant</title>
+    <title>Sandile Desmond Mfazi | Enterprise BI Architecture</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Import Corporate Editorial Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,47 +13,54 @@
         <div class="logo">S. Mfazi</div>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="projects.html">Case Studies</a></li>
-                <li><a href="https://www.linkedin.com/in/sandilemfazi/" target="_blank">LinkedIn</a></li>
-                <li><a href="mailto:your-email@example.com" class="btn-nav">Contact</a></li>
+                <li><a href="index.html">Architecture</a></li>
+                <li><a href="#case-studies">Insights & Deliverables</a></li>
+                <li><a href="mailto:your-email@example.com" class="btn-primary" style="padding: 0.6rem 1.5rem;">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
+        <div class="hero-text gsap-reveal">
             <span class="badge">Business Intelligence Consultant</span>
-            <h1>Architecting End-to-End Enterprise Analytics</h1>
-            <p>Bringing over 2 years and 4 months of active, project-based delivery to complex operational environments. Specializing exclusively in automating data pipelines, engineering centralized warehouses, and deploying certified Microsoft BI reporting infrastructure.</p>
-            <div class="hero-buttons">
-                <a href="projects.html" class="btn-primary">View Case Studies</a>
-                <a href="mailto:your-email@example.com" class="btn-secondary">Initiate Discovery</a>
+            <h1>Architecting End-to-End Enterprise Analytics.</h1>
+            <p>Bringing robust, project-based delivery to complex operational environments. I specialize in automating data pipelines and engineering centralized Microsoft BI infrastructure.</p>
+            <a href="#case-studies" class="btn-primary">Explore Case Studies</a>
+        </div>
+        <div class="hero-image-container gsap-reveal">
+            <!-- Ensure your LinkedIn photo is saved in your folder as profile.jpg -->
+            <img src="profile.jpg" alt="Sandile Desmond Mfazi" class="hero-profile-pic">
+        </div>
+    </section>
+
+    <section id="case-studies" class="section-container">
+        <h2 class="gsap-reveal">Featured Insights</h2>
+        
+        <div class="grid-2">
+            <!-- Separate Page Link for Case Study 1 -->
+            <div class="editorial-card gsap-reveal">
+                <span class="badge">Microsoft BI Ecosystem</span>
+                <h3>Enterprise Data Warehouse & Analytics Rollout</h3>
+                <p>An architectural breakdown of replacing disparate Excel processes with an automated SSIS and Power BI single source of truth.</p>
+                <a href="case-study-enterprise.html">Read Full Analysis →</a>
+            </div>
+
+            <!-- Separate Page Link for Case Study 2 -->
+            <div class="editorial-card gsap-reveal">
+                <span class="badge">Cloud Infrastructure</span>
+                <h3>Agricultural Data Ingestion & Tracking Portal</h3>
+                <p>Digitizing manual paper records into a secure, real-time BigQuery and Looker Studio operational tracking environment.</p>
+                <a href="case-study-agriculture.html">Read Full Analysis →</a>
             </div>
         </div>
     </section>
 
-    <section class="stack-section">
-        <h2>End-to-End Capability</h2>
-        <div class="stack-grid">
-            <div class="stack-card">
-                <h3>ETL & Data Engineering</h3>
-                <p>SQL Server Integration Services (SSIS), Google Apps Script, and automated pipeline orchestration to centralize disparate enterprise data.</p>
-            </div>
-            <div class="stack-card">
-                <h3>Data Warehousing</h3>
-                <p>SQL Server (SSMS), BigQuery, complex T-SQL Stored Procedures, and robust relational database design.</p>
-            </div>
-            <div class="stack-card">
-                <h3>Semantic Modeling</h3>
-                <p>SQL Server Analysis Services (SSAS), advanced DAX, and the deployment of scalable Tabular Models and Cubes.</p>
-            </div>
-            <div class="stack-card">
-                <h3>Visualization & BI</h3>
-                <p>Power BI (PL-300 Standards), SSRS Operational Reports, Looker Studio, and Microsoft Power Apps integration.</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- Physics and Animation Libraries -->
+    <!-- GSAP for Staggered Fade-Up Reveals[cite: 5] -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Lenis for Smooth Scrolling[cite: 5] -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

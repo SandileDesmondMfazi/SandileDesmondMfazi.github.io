@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Data Rollout | Sandile Desmond Mfazi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">S. Mfazi</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Architecture</a></li>
+                <li><a href="index.html#case-studies">Insights & Deliverables</a></li>
+                <li><a href="mailto:your-email@example.com" class="btn-primary" style="padding: 0.6rem 1.5rem;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-layout">
+        <div class="article-content gsap-reveal">
+            <span class="badge">Technical Breakdown</span>
+            <h1>Enterprise Data Warehouse & Analytics Rollout.</h1>
+            
+            <h2 style="margin-top: 3rem;">The Organizational Paradigm</h2>
+            <p>The client was severely constrained by disparate, siloed data sources. This fragmented architecture caused severe reporting bottlenecks, wildly inconsistent operational metrics, and a dangerous reliance on highly vulnerable, manual Excel entry processes.</p>
+            
+            <h2 style="margin-top: 3rem;">Structural Data Architecture</h2>
+            <p>To eliminate these bottlenecks, I architected and deployed a fully automated, end-to-end data pipeline establishing a singular, verifiable source of truth.</p>
+            
+            <ul>
+                <li><strong>Extraction & Transformation (ETL):</strong> Engineered automated nightly SSIS packages to ingest and sanitize unstructured data from multiple legacy systems into a structured staging environment.</li>
+                <li><strong>Storage Mechanics:</strong> Built structured relational tables and highly optimized views natively within SQL Server (SSMS).</li>
+                <li><strong>Semantic Layer:</strong> Constructed optimized SSAS tabular models, mathematically pre-calculating complex enterprise DAX measures to ensure rapid query retrieval for end-users.</li>
+                <li><strong>Visualization & Output:</strong> Deployed a dual-reporting architecture. This included high-concurrency SSRS paginated reports for daily operational staff, coupled with interactive, highly formatted Power BI executive dashboards for the leadership team.</li>
+            </ul>
+        </div>
+
+        <!-- Sticky Floating Utility Panel[cite: 5] -->
+        <div class="article-sidebar gsap-reveal">
+            <h4>Case Study Actions</h4>
+            <a href="mailto:your-email@example.com" class="btn-primary" style="display: block; text-align: center; font-size: 0.8rem; margin-bottom: 1rem;">Discuss Similar Project</a>
+            <p style="font-size: 0.85rem; color: var(--charcoal); margin-bottom: 2rem;">Discover how this architecture can be implemented within your current Microsoft licensing stack.</p>
+        </div>
+    </div>
+
+    <!-- Physics and Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

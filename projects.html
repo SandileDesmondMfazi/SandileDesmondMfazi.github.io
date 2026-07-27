@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Studies | Sandile Desmond Mfazi</title>
+    <title>Insights & Deliverables | Sandile Desmond Mfazi</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Import Corporate Editorial Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Header Navigation -->
     <header class="navbar">
         <div class="logo">S. Mfazi</div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html" class="active">Case Studies</a></li>
+                <li><a href="index.html">Architecture</a></li>
+                <li><a href="projects.html" class="active">Insights & Deliverables</a></li>
                 <li><a href="https://www.linkedin.com/in/sandilemfazi/" target="_blank">LinkedIn</a></li>
-                <li><a href="mailto:your-email@example.com" class="btn-nav">Contact</a></li>
+                <li><a href="mailto:your-email@example.com" class="btn-primary" style="padding: 0.6rem 1.5rem;">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Main Projects Section -->
     <section class="projects-section">
-        <h2>Architectural Deliverables</h2>
+        <!-- Added gsap-reveal for scroll animation -->
+        <h2 class="gsap-reveal">Architectural Deliverables</h2>
         
         <div class="projects-grid">
             
-            <div class="project-card">
+            <!-- Added gsap-reveal to the card -->
+            <div class="project-card gsap-reveal">
                 <span class="tag">Microsoft BI Ecosystem</span>
                 <h3>Enterprise Data Warehouse & Analytics Rollout</h3>
                 <p><strong>The Challenge:</strong> The client was struggling with disparate, siloed data sources that caused severe reporting bottlenecks, inconsistent operational metrics, and reliance on heavily manual Excel processes.</p>
@@ -41,9 +46,13 @@
                         <li><strong>Visualization:</strong> Deployed a dual-reporting solution featuring high-concurrency SSRS paginated reports for operational staff and interactive Power BI executive dashboards for leadership.</li>
                     </ul>
                 </div>
+                
+                <!-- Gateway button to the dedicated case study page -->
+                <a href="case-study-enterprise.html" class="btn-primary" style="margin-top: 2rem;">Read Deep Dive Analysis</a>
             </div>
 
-            <div class="project-card">
+            <!-- Added gsap-reveal to the card -->
+            <div class="project-card gsap-reveal">
                 <span class="tag">Cloud Data Infrastructure</span>
                 <h3>Agricultural Data Ingestion & Tracking Portal</h3>
                 <p><strong>The Challenge:</strong> An agricultural operation required an immediate transition from vulnerable, manual paper records to a secure, real-time tracking system for complex farm and livestock data.</p>
@@ -57,10 +66,22 @@
                         <li><strong>Live Reporting:</strong> Connected the BigQuery backend directly to Looker Studio to deliver real-time inventory and operational metrics, completely eliminating data loss and manual entry lag.</li>
                     </ul>
                 </div>
+
+                <!-- Gateway button to the dedicated case study page -->
+                <a href="case-study-agriculture.html" class="btn-primary" style="margin-top: 2rem;">Read Deep Dive Analysis</a>
             </div>
 
         </div>
     </section>
+
+    <!-- Physics and Animation Libraries -->
+    <!-- GSAP for Staggered Fade-Up Reveals -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Lenis for Smooth Scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <!-- Your custom physics initialization script -->
+    <script src="script.js"></script>
 
 </body>
 </html>
