@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | BI Consultant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">BI Architecture</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" style="color: var(--accent-blue);">Case Studies</a></li>
+                <li><a href="mailto:your-email@example.com" class="btn-nav">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Case Studies Section -->
+    <section class="projects-section">
+        <h2 class="section-title">Architectural Deliverables</h2>
+        
+        <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <span class="tag">Microsoft BI Ecosystem</span>
+                <h3>Enterprise Data Warehouse & Analytics Rollout</h3>
+                <p><strong>The Challenge:</strong> The client was struggling with disparate, siloed data sources that caused severe reporting bottlenecks, inconsistent operational metrics, and reliance on heavily manual Excel processes.</p>
+                <p><strong>The Solution:</strong> Architected and deployed a fully automated, end-to-end data pipeline establishing a single source of truth across the organization.</p>
+                
+                <div class="architecture-details">
+                    <strong>Technical Architecture:</strong>
+                    <ul>
+                        <li><strong>Extraction & Transformation (ETL):</strong> Engineered automated nightly SSIS packages to ingest and clean data from multiple legacy systems.</li>
+                        <li><strong>Storage:</strong> Structured relational tables and optimized views within SQL Server (SSMS).</li>
+                        <li><strong>Semantic Layer:</strong> Built highly optimized SSAS tabular models, pre-calculating complex enterprise DAX measures for rapid query retrieval.</li>
+                        <li><strong>Visualization:</strong> Deployed a dual-reporting solution featuring high-concurrency SSRS paginated reports for operational staff and interactive Power BI executive dashboards for leadership.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <span class="tag">Cloud Data Infrastructure</span>
+                <h3>Agricultural Data Ingestion & Tracking Portal</h3>
+                <p><strong>The Challenge:</strong> An agricultural operation required an immediate transition from vulnerable, manual paper records to a secure, real-time tracking system for complex farm and livestock data.</p>
+                <p><strong>The Solution:</strong> Engineered a custom, lightweight cloud database application that fully digitized data collection and provided immediate operational visibility.</p>
+                
+                <div class="architecture-details">
+                    <strong>Technical Architecture:</strong>
+                    <ul>
+                        <li><strong>Front-End Ingestion:</strong> Developed custom data entry interfaces utilizing Google Apps Script with direct API endpoints.</li>
+                        <li><strong>Backend Storage:</strong> Pushed sanitized form data into structured, relational backend tables in Google BigQuery.</li>
+                        <li><strong>Live Reporting:</strong> Connected the BigQuery backend directly to Looker Studio to deliver real-time inventory and operational metrics, completely eliminating data loss and manual entry lag.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
