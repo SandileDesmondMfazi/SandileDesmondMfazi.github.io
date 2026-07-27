@@ -228,3 +228,119 @@ nav a:hover {
 .article-content li {
     margin-bottom: 1rem;
 }
+
+/* Logo Image Styling */
+.navbar .logo img {
+    height: 45px; /* Adjust this to make the logo larger or smaller */
+    width: auto;
+    display: block;
+}
+
+/* Global Delivery Section */
+.delivery-section {
+    background-color: var(--bg-off-white);
+    padding: 6rem 5%;
+    border-top: 1px solid var(--border-color);
+}
+
+.delivery-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.delivery-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: none;
+}
+
+.delivery-text p {
+    font-size: 1.1rem;
+    color: var(--charcoal-light);
+    margin-bottom: 1.5rem;
+}
+
+.delivery-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--brand-green);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--charcoal-light);
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+/* Global Footer */
+.global-footer {
+    background-color: var(--bg-white);
+    padding: 4rem 5% 2rem;
+    border-top: 4px solid var(--brand-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 2rem;
+    filter: grayscale(100%) opacity(80%); /* Gives it a subtle, muted corporate look */
+    transition: filter 0.3s ease;
+}
+
+.footer-logo img:hover {
+    filter: grayscale(0%) opacity(100%);
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-links a {
+    color: var(--charcoal-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-links a:hover {
+    color: var(--brand-green);
+}
+
+.disclaimer-text {
+    max-width: 800px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+}
+

@@ -3,63 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandile Desmond Mfazi | Enterprise BI Architecture</title>
+    <title>Sandile Desmond Mfazi | Business Intelligence Consultant</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Header Navigation -->
     <header class="navbar">
-        <div class="logo">S. Mfazi</div>
+        <!-- Replaced Text with Logo Image -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="SDM Business Intelligence Logo">
+            </a>
+        </div>
         <nav>
             <ul>
-                <li><a href="index.html">Architecture</a></li>
-                <li><a href="#case-studies">Insights & Deliverables</a></li>
+                <li><a href="index.html" class="active">Architecture</a></li>
+                <li><a href="projects.html">Insights & Deliverables</a></li>
                 <li><a href="mailto:your-email@example.com" class="btn-primary" style="padding: 0.6rem 1.5rem;">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text gsap-reveal">
             <span class="badge">Business Intelligence Consultant</span>
             <h1>Architecting End-to-End Enterprise Analytics.</h1>
-            <p>Bringing robust, project-based delivery to complex operational environments. I specialize in automating data pipelines and engineering centralized Microsoft BI infrastructure.</p>
-            <a href="#case-studies" class="btn-primary">Explore Case Studies</a>
+            <p>Bringing over 2 years and 4 months of active, project-based delivery to complex operational environments. I specialize exclusively in automating data pipelines, engineering centralized warehouses, and deploying certified Microsoft BI reporting infrastructure.</p>
+            <div class="hero-buttons">
+                <a href="projects.html" class="btn-primary">View Case Studies</a>
+            </div>
         </div>
         <div class="hero-image-container gsap-reveal">
-            <!-- Ensure your LinkedIn photo is saved in your folder as profile.jpg -->
-            <img src="profile.png" alt="Sandile Desmond Mfazi" class="hero-profile-pic">
+            <img src="profile.jpg" alt="Sandile Desmond Mfazi" class="hero-profile-pic">
         </div>
     </section>
 
-    <section id="case-studies" class="section-container">
-        <h2 class="gsap-reveal">Featured Insights</h2>
-        
+    <!-- Expanded Offshore BI Delivery Section -->
+    <section class="delivery-section">
+        <div class="delivery-content gsap-reveal">
+            <div class="delivery-text">
+                <h2>The Global Delivery Advantage</h2>
+            </div>
+            <div class="delivery-text">
+                <p>Operating as an independent B2B consultant from Gaborone, Botswana (GMT+2), I provide a highly strategic timezone overlap for UK and European enterprise clients.</p>
+                <p>This geographic positioning ensures seamless, real-time collaboration during your core business hours, alongside the distinct advantage of asynchronous data pipeline execution—meaning complex SSIS integrations and Power BI semantic models are processed overnight, ready for your leadership teams by morning.</p>
+                <p>By engaging my services on a flexible, offshore contracting basis, organizations immediately bypass the overhead of full-time hires while instantly securing high-level architectural expertise specifically tailored to the Microsoft technical ecosystem.</p>
+                
+                <div class="delivery-stats">
+                    <div class="stat-box">
+                        <span class="stat-number">GMT+2</span>
+                        <span class="stat-label">Timezone Alignment</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Microsoft BI Stack Focus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="section-container">
+        <h2 class="gsap-reveal">End-to-End Capability</h2>
         <div class="grid-2">
-            <!-- Separate Page Link for Case Study 1 -->
             <div class="editorial-card gsap-reveal">
-                <span class="badge">Microsoft BI Ecosystem</span>
-                <h3>Enterprise Data Warehouse & Analytics Rollout</h3>
-                <p>An architectural breakdown of replacing disparate Excel processes with an automated SSIS and Power BI single source of truth.</p>
-                <a href="case-study-enterprise.html">Read Full Analysis →</a>
+                <h3>ETL & Data Engineering</h3>
+                <p>SQL Server Integration Services (SSIS), Google Apps Script, and automated pipeline orchestration to centralize disparate enterprise data.</p>
             </div>
-
-            <!-- Separate Page Link for Case Study 2 -->
             <div class="editorial-card gsap-reveal">
-                <span class="badge">Cloud Infrastructure</span>
-                <h3>Agricultural Data Ingestion & Tracking Portal</h3>
-                <p>Digitizing manual paper records into a secure, real-time BigQuery and Looker Studio operational tracking environment.</p>
-                <a href="case-study-agriculture.html">Read Full Analysis →</a>
+                <h3>Data Warehousing</h3>
+                <p>SQL Server (SSMS), BigQuery, complex T-SQL Stored Procedures, and robust relational database design.</p>
+            </div>
+            <div class="editorial-card gsap-reveal">
+                <h3>Semantic Modeling</h3>
+                <p>SQL Server Analysis Services (SSAS), advanced DAX, and the deployment of scalable Tabular Models and Cubes.</p>
+            </div>
+            <div class="editorial-card gsap-reveal">
+                <h3>Visualization & BI</h3>
+                <p>Power BI (PL-300 Standards), SSRS Operational Reports, Looker Studio, and Microsoft Power Apps integration.</p>
             </div>
         </div>
     </section>
+
+    <!-- Global Footer with Logo and Disclaimers -->
+    <footer class="global-footer">
+        <div class="footer-logo gsap-reveal">
+            <img src="logo.png" alt="SDM Business Intelligence Logo">
+        </div>
+        
+        <div class="footer-links gsap-reveal">
+            <a href="https://www.linkedin.com/in/sandilemfazi/" target="_blank">LinkedIn Profile</a>
+            <a href="mailto:your-email@example.com">Initiate Project Discovery</a>
+        </div>
+
+        <div class="disclaimer-text gsap-reveal">
+            <p><strong>B2B Offshore Contracting:</strong> Operating globally as an independent Business Intelligence Consultant and data architecture contractor. All client engagements are executed under strict non-disclosure agreements (NDAs) to ensure total data sovereignty and operational confidentiality.</p>
+            <p style="margin-top: 0.5rem;">Microsoft, SQL Server, Power BI, and Power Apps are registered trademarks of the Microsoft Corporation. This consultancy is an independent service provider and is not directly affiliated with or endorsed by Microsoft Corporation.</p>
+            <p style="margin-top: 1rem;">&copy; 2026 Sandile Desmond Mfazi. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- Physics and Animation Libraries -->
-    <!-- GSAP for Staggered Fade-Up Reveals[cite: 5] -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <!-- Lenis for Smooth Scrolling[cite: 5] -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="script.js"></script>
 </body>
