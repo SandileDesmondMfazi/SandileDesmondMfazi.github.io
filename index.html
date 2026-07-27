@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI Consultant & Data Architect | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">BI Architecture</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#stack">Tech Stack</a></li>
+                <li><a href="#projects">Case Studies</a></li>
+                <li><a href="#contact" class="btn-nav">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <span class="badge">Offshore BI & Data Solutions</span>
+            <h1>Architecting End-to-End Enterprise Analytics</h1>
+            <p>Automating complex data pipelines, engineering warehouses, and delivering dynamic reporting across the Microsoft BI Ecosystem.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View Case Studies</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="stack-section" id="stack">
+        <h2>End-to-End Capability</h2>
+        <div class="stack-grid">
+            <div class="stack-card">
+                <h3>ETL & Ingestion</h3>
+                <p>SSIS, Google Apps Script, Data Pipelines</p>
+            </div>
+            <div class="stack-card">
+                <h3>Data Warehousing</h3>
+                <p>SQL Server (SSMS), BigQuery, T-SQL</p>
+            </div>
+            <div class="stack-card">
+                <h3>Semantic Modeling</h3>
+                <p>SSAS (Tabular/Cubes), DAX, Data Vault</p>
+            </div>
+            <div class="stack-card">
+                <h3>Visualization & BI</h3>
+                <p>Power BI, SSRS, Looker Studio</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="projects-section" id="projects">
+        <h2>Featured Deliverables</h2>
+        
+        <!-- Filter Controls (Handled via JS) -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Solutions</button>
+            <button class="filter-btn" data-filter="enterprise">Enterprise Data Warehousing</button>
+            <button class="filter-btn" data-filter="powerapps">App & Portal Engineering</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card" data-category="enterprise">
+                <div class="card-header">
+                    <span class="tag">Microsoft Ecosystem</span>
+                    <h3>Full End-to-End Enterprise Analytics Rollout</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>Problem:</strong> Disparate data sources causing reporting bottlenecks and inconsistent operational metrics.</p>
+                    <p><strong>Solution:</strong> Built an end-to-end data pipeline leveraging SSIS for extraction, SSMS for warehousing, SSAS for semantic modeling, and SSRS/Power BI for multi-tier reporting.</p>
+                    <button class="btn-details" onclick="toggleDetails('proj1')">View Architecture Detail</button>
+                    <div id="proj1" class="details-content hidden">
+                        <ul>
+                            <li><strong>ETL:</strong> Automated nightly SSIS package orchestration.</li>
+                            <li><strong>Modeling:</strong> SSAS cubes pre-calculating complex enterprise DAX measures.</li>
+                            <li><strong>Output:</strong> High-concurrency SSRS operational reports & interactive Power BI dashboards.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card" data-category="powerapps">
+                <div class="card-header">
+                    <span class="tag">Database & Visualization</span>
+                    <h3>Operational Tracking & Data Ingestion Portal</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>Problem:</strong> Manual paper records causing severe operational visibility lag and data loss.</p>
+                    <p><strong>Solution:</strong> Custom data collection infrastructure feeding structured cloud warehouse tables with real-time Looker Studio dashboards.</p>
+                    <button class="btn-details" onclick="toggleDetails('proj2')">View Architecture Detail</button>
+                    <div id="proj2" class="details-content hidden">
+                        <ul>
+                            <li><strong>Ingestion:</strong> Google Apps Script forms with direct API endpoints.</li>
+                            <li><strong>Storage:</strong> Structured relational tables optimized for fast query retrieval.</li>
+                            <li><strong>Impact:</strong> 100% elimination of paper entry and real-time inventory tracking.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-section" id="contact">
+        <h2>Ready to optimize your reporting infrastructure?</h2>
+        <p>Available for project-based B2B contracting and offshore analytics delivery.</p>
+        <a href="mailto:your-email@example.com" class="btn-primary">Initiate Project Discovery</a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
