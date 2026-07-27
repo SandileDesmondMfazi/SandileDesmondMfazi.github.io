@@ -123,7 +123,7 @@
             <h2>Business Challenge</h2>
             <div class="architecture-details">
                 <ul>
-                    <li>The organization's legacy MariaDB transactional databases overwrote historical contract states rather than versioning them, actively destroying the lifecycle history of policies.</li>
+                    <li>The organization's legacy transactional databases overwrote historical contract states rather than versioning them, actively destroying the lifecycle history of policies.</li>
                     <li>The destruction of historical data prevented actuaries and executives from conducting accurate churn, vintage, and retention analyses.</li>
                     <li>Regional operations across Botswana, South Africa, and Zambia were constrained by disparate, siloed data sources.</li>
                     <li>Reporting required heavy, manual Excel compilation, causing severe bottlenecks and conflicting KPI values across national branches.</li>
@@ -135,7 +135,7 @@
             <div class="architecture-details">
                 <ul>
                     <li>Mathematically reconstruct the lost historical data to recover the full lifecycle of every policy.</li>
-                    <li>Centralize data from three countries into a single, verifiable Windows Server 2022 environment.</li>
+                    <li>Centralize data from three countries into a single, verifiable Windows Server environment.</li>
                     <li>Automate regional reporting to eliminate manual Excel processes entirely.</li>
                     <li>Deploy specialized, role-based analytical cubes to enable near real-time KPI monitoring for claims, sales, and collections.</li>
                 </ul>
@@ -146,7 +146,7 @@
             <div class="architecture-details">
                 <ul>
                     <li><strong>Discovery & Logic Mapping:</strong> Embedded directly with business representatives to map operational processes and define exact metric logic prior to development, ensuring high user adoption.</li>
-                    <li><strong>ETL & Storage Architecture:</strong> Engineered an orchestration layer of over 30 SSIS packages to extract data via ODBC. Designed a specialized relational snapshot database (`Contract_Snapshots`) specifically to rebuild historical contract states by parsing flattened audit trails.</li>
+                    <li><strong>ETL & Storage Architecture:</strong> Engineered an orchestration layer of over 30 SSIS packages to extract data via ODBC. Designed a specialized relational snapshot database specifically to rebuild historical contract states by parsing flattened audit trails.</li>
                     <li><strong>Semantic Modeling:</strong> Constructed highly optimized SSAS tabular models compartmentalized by business function. Implemented complex DAX measures to track dynamic currency conversions (Pula FX adjustments), time-intelligence (YTD, SPLY), and multi-tier arrears bucket migrations.</li>
                     <li><strong>Governance & Presentation:</strong> Deployed a centralized SSRS Native-Mode web portal. Enforced data sovereignty by implementing rigid Row-Level Security (RLS) across the semantic models, ensuring regional stakeholders only access data pertinent to their specific country.</li>
                 </ul>
@@ -166,8 +166,8 @@
             <!-- 7. Results -->
             <h2>Key Outcomes</h2>
             <table class="executive-table">
-                <tr><th>History Recovered</th><td>115,031,794 raw audit log records parsed and successfully rebuilt into structured historical snapshots.</td></tr>
-                <tr><th>Data Centralized</th><td>21.4 million contract records and 39.1 million transaction rows consolidated into a single truth.</td></tr>
+                <tr><th>History Recovered</th><td>115 million+ raw audit log records parsed and successfully rebuilt into structured historical snapshots.</td></tr>
+                <tr><th>Data Centralized</th><td>20 million+ contract records and 39 million+ transaction rows consolidated into a single truth.</td></tr>
                 <tr><th>Reporting Cadence</th><td>Manual processing replaced with scheduled, daily automated refreshes.</td></tr>
                 <tr><th>Data Governance</th><td>Enforced strict, role-based security across 3 countries, ensuring cross-border operational compliance.</td></tr>
             </table>
