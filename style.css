@@ -344,3 +344,71 @@ nav a:hover {
     padding-top: 2rem;
 }
 
+/* Projects Page Specific Layout */
+.projects-section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+.project-card {
+    background: var(--bg-white);
+    padding: 4rem;
+    border-top: 4px solid var(--brand-green);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--brand-green);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-green);
+    padding-bottom: 0.2rem;
+}
+
+.project-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--charcoal);
+}
+
+.architecture-details {
+    background: #fdfdfd;
+    padding: 2.5rem;
+    margin-top: 2.5rem;
+    border-left: 3px solid var(--brand-green);
+}
+
+.architecture-details strong {
+    font-size: 1.1rem;
+    color: var(--brand-green);
+}
+
+.architecture-details ul {
+    list-style-type: square;
+    list-style-position: inside;
+    margin-top: 1.5rem;
+    color: var(--charcoal);
+}
+
+.architecture-details li {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
