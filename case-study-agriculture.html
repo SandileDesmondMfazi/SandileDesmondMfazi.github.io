@@ -6,6 +6,57 @@
     <title>Agricultural Tracking Portal | Sandile Desmond Mfazi</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Specific styles for the Executive Case Study layout -->
+    <style>
+        .executive-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0 3rem 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .executive-table th, .executive-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+        .executive-table th {
+            color: var(--charcoal-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            width: 40%;
+        }
+        .executive-table td {
+            color: var(--charcoal);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        .tech-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--charcoal-light);
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .tech-footer span {
+            background: var(--bg-off-white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+        .client-quote {
+            font-style: italic;
+            color: var(--charcoal-light);
+            margin-top: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -27,23 +78,86 @@
 
     <div class="article-layout">
         <div class="article-content gsap-reveal">
+            
             <span class="badge">Cloud Data Infrastructure</span>
-            <h1>Agricultural Data Ingestion & Tracking Portal.</h1>
             
-            <h2 style="margin-top: 3rem;">The Operational Paradigm</h2>
-            <p>The client, a regional agricultural operation, relied entirely on vulnerable, manual paper records to manage complex farm logistics and livestock inventory. This analog approach introduced severe data latency, high risks of data loss, and fundamentally prevented leadership from making agile, data-driven decisions regarding operational health and resource allocation.</p>
+            <!-- 1. Title -->
+            <h1 style="margin-bottom: 3rem;">Eliminated 100% of manual paper tracking by engineering a real-time, cloud-native agricultural data portal.</h1>
             
-            <h2 style="margin-top: 3rem;">Cloud Architecture & Deployment</h2>
-            <p>To modernize their operations without the overhead of heavy enterprise software, I engineered a custom, lightweight cloud database application that fully digitized data collection from the field directly to the executive dashboard.</p>
+            <!-- 2. Client Snapshot -->
+            <h2>Client Snapshot</h2>
+            <table class="executive-table">
+                <tr><th>Industry</th><td>Agriculture & Livestock Management</td></tr>
+                <tr><th>Region</th><td>Southern Africa</td></tr>
+                <tr><th>Engagement</th><td>Cloud Data Architecture</td></tr>
+                <tr><th>Timeline</th><td>Strict deadline delivery finalized in June 2026</td></tr>
+            </table>
             
-            <div class="architecture-details">
+            <!-- 3. Business Challenge -->
+            <h2 style="margin-top: 3rem;">Business Challenge</h2>
+            <div class="architecture-details" style="border-left: none; padding-left: 0; margin-top: 1rem; background: transparent;">
                 <ul>
-                    <li><strong>Front-End Data Ingestion:</strong> Developed custom, mobile-responsive data entry interfaces utilizing Google Apps Script, providing field operators with direct, secure API endpoints for immediate data capture.</li>
-                    <li><strong>Backend Cloud Storage:</strong> Engineered automated pipelines to push sanitized, validated form data directly into structured, relational backend tables hosted in Google BigQuery, ensuring high availability and secure scalability.</li>
-                    <li><strong>Real-Time Visualization:</strong> Connected the BigQuery data warehouse directly to Looker Studio. Built an automated dashboard to deliver real-time inventory tracking and operational metrics to stakeholders.</li>
-                    <li><strong>Operational Impact:</strong> Achieved a 100% elimination of paper-based tracking and manual entry lag, transitioning the client to a fully automated, cloud-native operational portal.</li>
+                    <li>Field operations relied entirely on highly vulnerable, manual paper records to manage complex farm logistics and livestock inventory.</li>
+                    <li>Analog data collection caused severe reporting latency between the field and the executive office.</li>
+                    <li>Manual aggregation introduced high risks of data loss, corruption, and tracking inaccuracies.</li>
+                    <li>Leadership fundamentally lacked the immediate operational visibility required to make agile resource allocation decisions.</li>
                 </ul>
             </div>
+            
+            <!-- 4. Objectives -->
+            <h2 style="margin-top: 3rem;">Objectives</h2>
+            <div class="architecture-details" style="border-left: none; padding-left: 0; margin-top: 1rem; background: transparent;">
+                <ul>
+                    <li>Completely digitize field data collection without introducing heavy enterprise software overhead.</li>
+                    <li>Establish a secure, scalable cloud storage backend.</li>
+                    <li>Deliver real-time inventory tracking and operational metric dashboards to stakeholders.</li>
+                    <li>Eliminate the manual data entry bottleneck entirely.</li>
+                </ul>
+            </div>
+
+            <!-- 5. My Approach -->
+            <h2 style="margin-top: 3rem;">Approach</h2>
+            <div class="architecture-details" style="border-left: none; padding-left: 0; margin-top: 1rem; background: transparent;">
+                <ul>
+                    <li><strong>Discovery:</strong> Mapped field operator workflows to identify critical data collection touchpoints and constraints.</li>
+                    <li><strong>Architecture:</strong> Designed a lightweight, serverless cloud architecture to ensure high availability while minimizing infrastructure maintenance for the client.</li>
+                    <li><strong>Implementation:</strong> Engineered custom API endpoints bridging mobile-responsive input forms directly with structured cloud tables.</li>
+                    <li><strong>Adoption:</strong> Configured automated, self-refreshing dashboards for executive stakeholders to drive immediate operational pivots.</li>
+                </ul>
+            </div>
+
+            <!-- 6. Solution -->
+            <h2 style="margin-top: 3rem;">Solution Delivered</h2>
+            <div class="architecture-details" style="border-left: none; padding-left: 0; margin-top: 1rem; background: transparent;">
+                <ul>
+                    <li>Custom Mobile-Responsive Data Ingestion Forms (Google Apps Script).</li>
+                    <li>Relational Cloud Data Warehouse (Google BigQuery).</li>
+                    <li>Direct Data API Endpoints.</li>
+                    <li>Real-Time Executive Operational Dashboard (Looker Studio).</li>
+                </ul>
+            </div>
+
+            <!-- 7. Results -->
+            <h2 style="margin-top: 3rem;">Key Outcomes</h2>
+            <table class="executive-table">
+                <tr><th>Manual Work</th><td>Achieved a 100% elimination of paper-based tracking and manual data entry lag.</td></tr>
+                <tr><th>Data Latency</th><td>Reduced reporting time from days to instantaneous cloud synchronization.</td></tr>
+                <tr><th>Visibility</th><td>Provided leadership with an immediate, automated view of complex livestock and farm metrics.</td></tr>
+                <tr><th>Infrastructure</th><td>Transitioned the client to a zero-maintenance, fully automated cloud-native portal.</td></tr>
+            </table>
+
+            <!-- 8. Technologies -->
+            <div class="tech-footer">
+                <span>Google BigQuery</span>
+                <span>Google Apps Script</span>
+                <span>Looker Studio</span>
+                <span>Cloud API Endpoints</span>
+                <span>SQL</span>
+            </div>
+
+            <!-- 9. Client Quote -->
+            <p class="client-quote">"Client testimonial available upon request."</p>
+
         </div>
 
         <!-- Sticky Floating Utility Panel -->
@@ -54,7 +168,7 @@
         </div>
     </div>
 
-    <!-- Global Footer with Logo and Disclaimers -->
+    <!-- 10. Global Footer with Logo and Confidentiality Disclaimers -->
     <footer class="global-footer">
         <div class="footer-logo gsap-reveal">
             <img src="images/logo.png" alt="SDM Business Intelligence Logo">
@@ -66,7 +180,8 @@
         </div>
 
         <div class="disclaimer-text gsap-reveal">
-            <p><strong>B2B Offshore Contracting:</strong> Operating globally as an independent Business Intelligence Consultant and data architecture contractor. All client engagements are executed under strict non-disclosure agreements (NDAs) to ensure total data sovereignty and operational confidentiality.</p>
+            <!-- Updated Confidentiality Footer -->
+            <p><strong>Confidentiality Notice:</strong> Client information has been anonymized to respect contractual confidentiality obligations. Project details have been generalized while preserving the business outcomes and technical approach.</p>
             <p style="margin-top: 0.5rem;">Google Apps Script, BigQuery, and Looker Studio are registered trademarks of Google LLC. This consultancy is an independent service provider and is not directly affiliated with or endorsed by Google LLC.</p>
             <p style="margin-top: 1rem;">&copy; 2026 Sandile Desmond Mfazi. All rights reserved.</p>
         </div>

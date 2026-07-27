@@ -6,6 +6,57 @@
     <title>Enterprise Data Rollout | Sandile Desmond Mfazi</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Specific styles for the Executive Case Study layout -->
+    <style>
+        .executive-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0 3rem 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .executive-table th, .executive-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+        .executive-table th {
+            color: var(--charcoal-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            width: 40%;
+        }
+        .executive-table td {
+            color: var(--charcoal);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        .tech-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--charcoal-light);
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .tech-footer span {
+            background: var(--bg-off-white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+        .client-quote {
+            font-style: italic;
+            color: var(--charcoal-light);
+            margin-top: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -27,36 +78,98 @@
 
     <div class="article-layout">
         <div class="article-content gsap-reveal">
-            <span class="badge">Technical Breakdown</span>
-            <h1>Enterprise Data Warehouse & Analytics Rollout.</h1>
             
-            <h2 style="margin-top: 3rem;">The Organizational Paradigm</h2>
-            <p>The client, a multinational assurance and financial services organization operating across three countries, was severely constrained by disparate, siloed data sources[cite: 13]. This fragmented architecture caused severe reporting bottlenecks and highly vulnerable, manual Excel entry processes.</p>
-            <p>A critical operational flaw compounded these issues: the legacy transactional database overwrote historical contract states rather than versioning them, actively destroying the lifecycle history of policies and preventing accurate churn or vintage analyses[cite: 13].</p>
+            <span class="badge">Enterprise Data Architecture</span>
             
-            <h2 style="margin-top: 3rem;">Structural Data Architecture</h2>
-            <p>To eliminate these bottlenecks and recover lost operational history, I architected and deployed a fully automated, end-to-end Microsoft BI pipeline establishing a singular, verifiable source of truth managing over 200 million rows of data[cite: 13].</p>
+            <!-- 1. Title -->
+            <h1 style="margin-bottom: 3rem;">Recovered over 200 million records of lost operational history and automated enterprise reporting across three countries to establish a singular source of truth.</h1>
             
-            <div class="architecture-details">
+            <!-- 2. Client Snapshot -->
+            <h2>Client Snapshot</h2>
+            <table class="executive-table">
+                <tr><th>Industry</th><td>Multinational Assurance & Financial Services Provider</td></tr>
+                <tr><th>Region</th><td>Southern Africa (Botswana, South Africa, Zambia)</td></tr>
+                <tr><th>Engagement</th><td>End-to-End Business Intelligence Consulting</td></tr>
+                <tr><th>Data Volume</th><td>200+ Million Rows</td></tr>
+            </table>
+            
+            <!-- 3. Business Challenge -->
+            <h2 style="margin-top: 3rem;">Business Challenge</h2>
+            <div class="architecture-details" style="border-left: none; padding-left: 0; margin-top: 1rem; background: transparent;">
                 <ul>
-                    <li><strong>Extraction & Transformation (ETL):</strong> Engineered an orchestration layer of over 30 SSIS packages to securely extract data from the operational source databases via ODBC[cite: 13]. Applied in-stream data-quality rules and standardized the data into conformed staging schemas[cite: 13].</li>
-                    <li><strong>History Reconstruction & Warehousing:</strong> Designed a specialized relational snapshot database specifically to reconstruct lost policy lifecycles[cite: 13]. This required parsing over 115 million raw, flattened audit log records to mathematically rebuild the historical state and transition type of every contract over time[cite: 13].</li>
-                    <li><strong>Semantic Layer (SSAS Tabular Cubes):</strong> Constructed highly optimized SSAS tabular models compartmentalized by business function, including Claims & Premiums, Policy Acquisition, Sales, and Collections[cite: 13]. Implemented complex DAX measures to track dynamic currency conversions, time-intelligence (YTD, SPLY), loss ratios, and multi-tier arrears bucket migrations[cite: 13].</li>
-                    <li><strong>Visualization & Output (SSRS):</strong> Deployed a centralized, native-mode reporting architecture[cite: 13]. This delivered a mix of high-concurrency paginated reports, mobile-optimized KPI dashboards, and live cube-connected Excel workbooks for financial analysts[cite: 13].</li>
-                    <li><strong>Governance & Security:</strong> Enforced data sovereignty across the multi-national operation by implementing rigid row-level security (RLS), ensuring regional stakeholders could only access data pertinent to their specific country or branch[cite: 13]. Delivery was fully automated via role-based email subscription schedules aligned to finance timelines[cite: 13].</li>
+                    <li>The organization's legacy transactional database overwrote historical contract states rather than versioning them, actively destroying the lifecycle history of policies[cite: 13].</li>
+                    <li>The destruction of historical data prevented accurate churn, vintage, and retention analyses[cite: 13].</li>
+                    <li>Regional operations were constrained by disparate, siloed data sources[cite: 13].</li>
+                    <li>Reporting required heavy manual Excel compilation, causing severe bottlenecks and conflicting KPI values across national branches[cite: 13].</li>
                 </ul>
             </div>
+            
+            <!-- 4. Objectives -->
+            <h2 style="margin-top: 3rem;">Objectives</h2>
+            <div class="architecture-details" style="border-left: none; padding-left: 0; margin-top: 1rem; background: transparent;">
+                <ul>
+                    <li>Reconstruct the lost historical data to recover the full life of every policy[cite: 13].</li>
+                    <li>Create a single, verifiable source of truth across all three national territories[cite: 13].</li>
+                    <li>Automate regional reporting to eliminate manual Excel processes[cite: 13].</li>
+                    <li>Enable near real-time KPI monitoring for executives regarding claims, sales, and collections[cite: 13].</li>
+                </ul>
+            </div>
+
+            <!-- 5. My Approach -->
+            <h2 style="margin-top: 3rem;">Approach</h2>
+            <div class="architecture-details" style="border-left: none; padding-left: 0; margin-top: 1rem; background: transparent;">
+                <ul>
+                    <li><strong>Discovery:</strong> Embedded directly with business representatives to map operational processes and define exact metric logic prior to development[cite: 13].</li>
+                    <li><strong>Architecture:</strong> Designed a specialized relational snapshot database specifically to mathematically rebuild historical contract states from raw, flattened audit trails[cite: 13].</li>
+                    <li><strong>Implementation:</strong> Built highly automated ETL pipelines via SSIS, deployed compartmentalized SSAS tabular models for specific business units, and established a centralized SSRS reporting portal[cite: 13].</li>
+                    <li><strong>Adoption:</strong> Delivered side-by-side user training to designated internal product owners and established strict, role-based security governance[cite: 13].</li>
+                </ul>
+            </div>
+
+            <!-- 6. Solution -->
+            <h2 style="margin-top: 3rem;">Solution Delivered</h2>
+            <div class="architecture-details" style="border-left: none; padding-left: 0; margin-top: 1rem; background: transparent;">
+                <ul>
+                    <li>Automated SSIS ETL Pipelines (30+ Packages)[cite: 13].</li>
+                    <li>Reconstructed Historical Data Warehouse[cite: 13].</li>
+                    <li>SSAS Tabular Cubes (Claims, Collections, Sales, Policy Acquisition)[cite: 13].</li>
+                    <li>SSRS Native-Mode Web Portal (Mobile & Paginated Executive Reports)[cite: 13].</li>
+                </ul>
+            </div>
+
+            <!-- 7. Results -->
+            <h2 style="margin-top: 3rem;">Key Outcomes</h2>
+            <table class="executive-table">
+                <tr><th>History Recovered</th><td>115+ Million raw audit log records parsed and successfully rebuilt into historical snapshots[cite: 13].</td></tr>
+                <tr><th>Data Integrated</th><td>Over 200 Million rows consolidated into the new centralized warehouse[cite: 13].</td></tr>
+                <tr><th>Reporting Cadence</th><td>Manual processing replaced with automated, scheduled daily refreshes[cite: 13].</td></tr>
+                <tr><th>Data Governance</th><td>Enforced strict Row-Level Security (RLS) across 3 countries, ensuring regional compliance[cite: 13].</td></tr>
+            </table>
+
+            <!-- 8. Technologies -->
+            <div class="tech-footer">
+                <span>SQL Server</span>
+                <span>SSIS</span>
+                <span>SSAS</span>
+                <span>SSRS</span>
+                <span>DAX</span>
+                <span>ODBC</span>
+            </div>
+
+            <!-- 9. Client Quote -->
+            <p class="client-quote">"Client testimonial available upon request."</p>
+
         </div>
 
         <!-- Sticky Floating Utility Panel -->
         <div class="article-sidebar gsap-reveal">
             <h4>Case Study Actions</h4>
             <a href="mailto:sandilemfazi.12@gmail.com" class="btn-primary" style="display: block; text-align: center; font-size: 0.8rem; margin-bottom: 1rem;">Discuss Similar Project</a>
-            <p style="font-size: 0.85rem; color: var(--charcoal); margin-bottom: 2rem;">Discover how this architecture can be implemented within your current Microsoft licensing stack.</p>
+            <p style="font-size: 0.85rem; color: var(--charcoal); margin-bottom: 2rem;">Discover how this architecture can be implemented within your current enterprise licensing stack.</p>
         </div>
     </div>
 
-    <!-- Global Footer with Logo and Disclaimers -->
+    <!-- 10. Global Footer with Logo and Confidentiality Disclaimers -->
     <footer class="global-footer">
         <div class="footer-logo gsap-reveal">
             <img src="images/logo.png" alt="SDM Business Intelligence Logo">
@@ -68,7 +181,8 @@
         </div>
 
         <div class="disclaimer-text gsap-reveal">
-            <p><strong>B2B Offshore Contracting:</strong> Operating globally as an independent Business Intelligence Consultant and data architecture contractor. All client engagements are executed under strict non-disclosure agreements (NDAs) to ensure total data sovereignty and operational confidentiality.</p>
+            <!-- Updated Confidentiality Footer -->
+            <p><strong>Confidentiality Notice:</strong> Client information has been anonymized to respect contractual confidentiality obligations. Project details have been generalized while preserving the business outcomes and technical approach.</p>
             <p style="margin-top: 0.5rem;">Microsoft, SQL Server, Power BI, and Power Apps are registered trademarks of the Microsoft Corporation. This consultancy is an independent service provider and is not directly affiliated with or endorsed by Microsoft Corporation.</p>
             <p style="margin-top: 1rem;">&copy; 2026 Sandile Desmond Mfazi. All rights reserved.</p>
         </div>
