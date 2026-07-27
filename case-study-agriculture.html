@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Tracking Portal | Sandile Desmond Mfazi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="SDM Business Intelligence Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Architecture</a></li>
+                <li><a href="projects.html">Insights & Deliverables</a></li>
+                <li><a href="mailto:sandilemfazi.12@gmail.com" class="btn-primary" style="padding: 0.6rem 1.5rem;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-layout">
+        <div class="article-content gsap-reveal">
+            <span class="badge">Cloud Data Infrastructure</span>
+            <h1>Agricultural Data Ingestion & Tracking Portal.</h1>
+            
+            <h2 style="margin-top: 3rem;">The Operational Paradigm</h2>
+            <p>The client, a regional agricultural operation, relied entirely on vulnerable, manual paper records to manage complex farm logistics and livestock inventory. This analog approach introduced severe data latency, high risks of data loss, and fundamentally prevented leadership from making agile, data-driven decisions regarding operational health and resource allocation.</p>
+            
+            <h2 style="margin-top: 3rem;">Cloud Architecture & Deployment</h2>
+            <p>To modernize their operations without the overhead of heavy enterprise software, I engineered a custom, lightweight cloud database application that fully digitized data collection from the field directly to the executive dashboard.</p>
+            
+            <div class="architecture-details">
+                <ul>
+                    <li><strong>Front-End Data Ingestion:</strong> Developed custom, mobile-responsive data entry interfaces utilizing Google Apps Script, providing field operators with direct, secure API endpoints for immediate data capture.</li>
+                    <li><strong>Backend Cloud Storage:</strong> Engineered automated pipelines to push sanitized, validated form data directly into structured, relational backend tables hosted in Google BigQuery, ensuring high availability and secure scalability.</li>
+                    <li><strong>Real-Time Visualization:</strong> Connected the BigQuery data warehouse directly to Looker Studio. Built an automated dashboard to deliver real-time inventory tracking and operational metrics to stakeholders.</li>
+                    <li><strong>Operational Impact:</strong> Achieved a 100% elimination of paper-based tracking and manual entry lag, transitioning the client to a fully automated, cloud-native operational portal.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sticky Floating Utility Panel -->
+        <div class="article-sidebar gsap-reveal">
+            <h4>Case Study Actions</h4>
+            <a href="mailto:sandilemfazi.12@gmail.com" class="btn-primary" style="display: block; text-align: center; font-size: 0.8rem; margin-bottom: 1rem;">Discuss Similar Project</a>
+            <p style="font-size: 0.85rem; color: var(--charcoal); margin-bottom: 2rem;">Discover how a lightweight cloud architecture can eliminate manual data entry in your operations.</p>
+        </div>
+    </div>
+
+    <!-- Global Footer with Logo and Disclaimers -->
+    <footer class="global-footer">
+        <div class="footer-logo gsap-reveal">
+            <img src="images/logo.png" alt="SDM Business Intelligence Logo">
+        </div>
+        
+        <div class="footer-links gsap-reveal">
+            <a href="https://www.linkedin.com/in/sandilemfazi/" target="_blank">LinkedIn Profile</a>
+            <a href="mailto:sandilemfazi.12@gmail.com">Initiate Project Discovery</a>
+        </div>
+
+        <div class="disclaimer-text gsap-reveal">
+            <p><strong>B2B Offshore Contracting:</strong> Operating globally as an independent Business Intelligence Consultant and data architecture contractor. All client engagements are executed under strict non-disclosure agreements (NDAs) to ensure total data sovereignty and operational confidentiality.</p>
+            <p style="margin-top: 0.5rem;">Google Apps Script, BigQuery, and Looker Studio are registered trademarks of Google LLC. This consultancy is an independent service provider and is not directly affiliated with or endorsed by Google LLC.</p>
+            <p style="margin-top: 1rem;">&copy; 2026 Sandile Desmond Mfazi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Physics and Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -31,17 +31,21 @@
             <h1>Enterprise Data Warehouse & Analytics Rollout.</h1>
             
             <h2 style="margin-top: 3rem;">The Organizational Paradigm</h2>
-            <p>The client was severely constrained by disparate, siloed data sources. This fragmented architecture caused severe reporting bottlenecks, wildly inconsistent operational metrics, and a dangerous reliance on highly vulnerable, manual Excel entry processes.</p>
+            <p>The client, a multinational assurance and financial services organization operating across three countries, was severely constrained by disparate, siloed data sources[cite: 13]. This fragmented architecture caused severe reporting bottlenecks and highly vulnerable, manual Excel entry processes.</p>
+            <p>A critical operational flaw compounded these issues: the legacy transactional database overwrote historical contract states rather than versioning them, actively destroying the lifecycle history of policies and preventing accurate churn or vintage analyses[cite: 13].</p>
             
             <h2 style="margin-top: 3rem;">Structural Data Architecture</h2>
-            <p>To eliminate these bottlenecks, I architected and deployed a fully automated, end-to-end data pipeline establishing a singular, verifiable source of truth.</p>
+            <p>To eliminate these bottlenecks and recover lost operational history, I architected and deployed a fully automated, end-to-end Microsoft BI pipeline establishing a singular, verifiable source of truth managing over 200 million rows of data[cite: 13].</p>
             
-            <ul>
-                <li><strong>Extraction & Transformation (ETL):</strong> Engineered automated nightly SSIS packages to ingest and sanitize unstructured data from multiple legacy systems into a structured staging environment.</li>
-                <li><strong>Storage Mechanics:</strong> Built structured relational tables and highly optimized views natively within SQL Server (SSMS).</li>
-                <li><strong>Semantic Layer:</strong> Constructed optimized SSAS tabular models, mathematically pre-calculating complex enterprise DAX measures to ensure rapid query retrieval for end-users.</li>
-                <li><strong>Visualization & Output:</strong> Deployed a dual-reporting architecture. This included high-concurrency SSRS paginated reports for daily operational staff, coupled with interactive, highly formatted Power BI executive dashboards for the leadership team.</li>
-            </ul>
+            <div class="architecture-details">
+                <ul>
+                    <li><strong>Extraction & Transformation (ETL):</strong> Engineered an orchestration layer of over 30 SSIS packages to securely extract data from the operational source databases via ODBC[cite: 13]. Applied in-stream data-quality rules and standardized the data into conformed staging schemas[cite: 13].</li>
+                    <li><strong>History Reconstruction & Warehousing:</strong> Designed a specialized relational snapshot database specifically to reconstruct lost policy lifecycles[cite: 13]. This required parsing over 115 million raw, flattened audit log records to mathematically rebuild the historical state and transition type of every contract over time[cite: 13].</li>
+                    <li><strong>Semantic Layer (SSAS Tabular Cubes):</strong> Constructed highly optimized SSAS tabular models compartmentalized by business function, including Claims & Premiums, Policy Acquisition, Sales, and Collections[cite: 13]. Implemented complex DAX measures to track dynamic currency conversions, time-intelligence (YTD, SPLY), loss ratios, and multi-tier arrears bucket migrations[cite: 13].</li>
+                    <li><strong>Visualization & Output (SSRS):</strong> Deployed a centralized, native-mode reporting architecture[cite: 13]. This delivered a mix of high-concurrency paginated reports, mobile-optimized KPI dashboards, and live cube-connected Excel workbooks for financial analysts[cite: 13].</li>
+                    <li><strong>Governance & Security:</strong> Enforced data sovereignty across the multi-national operation by implementing rigid row-level security (RLS), ensuring regional stakeholders could only access data pertinent to their specific country or branch[cite: 13]. Delivery was fully automated via role-based email subscription schedules aligned to finance timelines[cite: 13].</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Sticky Floating Utility Panel -->
