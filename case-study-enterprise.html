@@ -9,14 +9,29 @@
     
     <!-- Specific styles for the Executive Case Study layout -->
     <style>
+        /* Typography overrides for tighter, more proportional headers */
+        h1 {
+            font-size: 2.4rem !important; 
+            line-height: 1.25 !important;
+            margin-bottom: 1.5rem !important;
+        }
+        h2 {
+            font-size: 1.75rem !important;
+            margin-top: 2rem !important;
+            margin-bottom: 0.75rem !important;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: block !important;
+        }
+        /* Tighter section spacing */
         .executive-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1.5rem 0 3rem 0;
+            margin: 1rem 0 2rem 0;
             font-family: 'Inter', sans-serif;
         }
         .executive-table th, .executive-table td {
-            padding: 1rem;
+            padding: 0.85rem 1rem;
             border-bottom: 1px solid var(--border-color);
             text-align: left;
         }
@@ -26,21 +41,33 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             font-size: 0.85rem;
-            width: 40%;
+            width: 30%;
         }
         .executive-table td {
             color: var(--charcoal);
             font-weight: 600;
             font-size: 1.05rem;
         }
+        .architecture-details {
+            border-left: none !important; 
+            padding-left: 0 !important; 
+            margin-top: 0.5rem !important; 
+            background: transparent !important;
+        }
+        .architecture-details ul {
+            margin-bottom: 1.5rem;
+        }
+        .architecture-details li {
+            margin-bottom: 0.75rem !important;
+        }
         .tech-footer {
-            margin-top: 3rem;
-            padding-top: 2rem;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
             border-top: 1px solid var(--border-color);
             font-size: 0.85rem;
             color: var(--charcoal-light);
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
         .tech-footer span {
@@ -52,7 +79,7 @@
         .client-quote {
             font-style: italic;
             color: var(--charcoal-light);
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
         }
@@ -60,7 +87,6 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header class="navbar">
         <div class="logo">
             <a href="index.html">
@@ -82,7 +108,7 @@
             <span class="badge">Enterprise Data Architecture</span>
             
             <!-- 1. Title -->
-            <h1 style="margin-bottom: 3rem;">Recovered over 200 million records of lost operational history and automated enterprise reporting across three countries to establish a singular source of truth.</h1>
+            <h1>Recovered 115 million records of lost operational history and automated enterprise reporting across three countries to establish a singular source of truth.</h1>
             
             <!-- 2. Client Snapshot -->
             <h2>Client Snapshot</h2>
@@ -94,65 +120,66 @@
             </table>
             
             <!-- 3. Business Challenge -->
-            <h2 style="margin-top: 3rem;">Business Challenge</h2>
-            <div class="architecture-details" style="border-left: none; padding-left: 0; margin-top: 1rem; background: transparent;">
+            <h2>Business Challenge</h2>
+            <div class="architecture-details">
                 <ul>
-                    <li>The organization's legacy transactional database overwrote historical contract states rather than versioning them, actively destroying the lifecycle history of policies.</li>
-                    <li>The destruction of historical data prevented accurate churn, vintage, and retention analyses.</li>
-                    <li>Regional operations were constrained by disparate, siloed data sources.</li>
-                    <li>Reporting required heavy manual Excel compilation, causing severe bottlenecks and conflicting KPI values across national branches.</li>
+                    <li>The organization's legacy MariaDB transactional databases overwrote historical contract states rather than versioning them, actively destroying the lifecycle history of policies.</li>
+                    <li>The destruction of historical data prevented actuaries and executives from conducting accurate churn, vintage, and retention analyses.</li>
+                    <li>Regional operations across Botswana, South Africa, and Zambia were constrained by disparate, siloed data sources.</li>
+                    <li>Reporting required heavy, manual Excel compilation, causing severe bottlenecks and conflicting KPI values across national branches.</li>
                 </ul>
             </div>
             
             <!-- 4. Objectives -->
-            <h2 style="margin-top: 3rem;">Objectives</h2>
-            <div class="architecture-details" style="border-left: none; padding-left: 0; margin-top: 1rem; background: transparent;">
+            <h2>Objectives</h2>
+            <div class="architecture-details">
                 <ul>
-                    <li>Reconstruct the lost historical data to recover the full life of every policy.</li>
-                    <li>Create a single, verifiable source of truth across all three national territories.</li>
-                    <li>Automate regional reporting to eliminate manual Excel processes.</li>
-                    <li>Enable near real-time KPI monitoring for executives regarding claims, sales, and collections.</li>
+                    <li>Mathematically reconstruct the lost historical data to recover the full lifecycle of every policy.</li>
+                    <li>Centralize data from three countries into a single, verifiable Windows Server 2022 environment.</li>
+                    <li>Automate regional reporting to eliminate manual Excel processes entirely.</li>
+                    <li>Deploy specialized, role-based analytical cubes to enable near real-time KPI monitoring for claims, sales, and collections.</li>
                 </ul>
             </div>
 
             <!-- 5. My Approach -->
-            <h2 style="margin-top: 3rem;">Approach</h2>
-            <div class="architecture-details" style="border-left: none; padding-left: 0; margin-top: 1rem; background: transparent;">
+            <h2>Approach</h2>
+            <div class="architecture-details">
                 <ul>
-                    <li><strong>Discovery:</strong> Embedded directly with business representatives to map operational processes and define exact metric logic prior to development.</li>
-                    <li><strong>Architecture:</strong> Designed a specialized relational snapshot database specifically to mathematically rebuild historical contract states from raw, flattened audit trails.</li>
-                    <li><strong>Implementation:</strong> Built highly automated ETL pipelines via SSIS, deployed compartmentalized SSAS tabular models for specific business units, and established a centralized SSRS reporting portal.</li>
-                    <li><strong>Adoption:</strong> Delivered side-by-side user training to designated internal product owners and established strict, role-based security governance.</li>
+                    <li><strong>Discovery & Logic Mapping:</strong> Embedded directly with business representatives to map operational processes and define exact metric logic prior to development, ensuring high user adoption.</li>
+                    <li><strong>ETL & Storage Architecture:</strong> Engineered an orchestration layer of over 30 SSIS packages to extract data via ODBC. Designed a specialized relational snapshot database (`Contract_Snapshots`) specifically to rebuild historical contract states by parsing flattened audit trails.</li>
+                    <li><strong>Semantic Modeling:</strong> Constructed highly optimized SSAS tabular models compartmentalized by business function. Implemented complex DAX measures to track dynamic currency conversions (Pula FX adjustments), time-intelligence (YTD, SPLY), and multi-tier arrears bucket migrations.</li>
+                    <li><strong>Governance & Presentation:</strong> Deployed a centralized SSRS Native-Mode web portal. Enforced data sovereignty by implementing rigid Row-Level Security (RLS) across the semantic models, ensuring regional stakeholders only access data pertinent to their specific country.</li>
                 </ul>
             </div>
 
             <!-- 6. Solution -->
-            <h2 style="margin-top: 3rem;">Solution Delivered</h2>
-            <div class="architecture-details" style="border-left: none; padding-left: 0; margin-top: 1rem; background: transparent;">
+            <h2>Solution Delivered</h2>
+            <div class="architecture-details">
                 <ul>
-                    <li>Automated SSIS ETL Pipelines (30+ Packages).</li>
-                    <li>Reconstructed Historical Data Warehouse.</li>
-                    <li>SSAS Tabular Cubes (Claims, Collections, Sales, Policy Acquisition).</li>
-                    <li>SSRS Native-Mode Web Portal (Mobile & Paginated Executive Reports).</li>
+                    <li><strong>ETL Pipeline:</strong> Automated SSIS packages managed via SQL Server Agent.</li>
+                    <li><strong>Data Warehouse:</strong> Centralized SQL Server 2019 Enterprise instance.</li>
+                    <li><strong>Analytical Cubes:</strong> SSAS Tabular Models deployed for Claims & Premiums, Collections, Sales, and Policy Acquisition.</li>
+                    <li><strong>Delivery Portal:</strong> SSRS automated subscriptions delivering paginated and mobile-optimized executive reports.</li>
                 </ul>
             </div>
 
             <!-- 7. Results -->
-            <h2 style="margin-top: 3rem;">Key Outcomes</h2>
+            <h2>Key Outcomes</h2>
             <table class="executive-table">
-                <tr><th>History Recovered</th><td>115+ Million raw audit log records parsed and successfully rebuilt into historical snapshots.</td></tr>
-                <tr><th>Data Integrated</th><td>Over 200 Million rows consolidated into the new centralized warehouse.</td></tr>
-                <tr><th>Reporting Cadence</th><td>Manual processing replaced with automated, scheduled daily refreshes.</td></tr>
-                <tr><th>Data Governance</th><td>Enforced strict Row-Level Security (RLS) across 3 countries, ensuring regional compliance.</td></tr>
+                <tr><th>History Recovered</th><td>115,031,794 raw audit log records parsed and successfully rebuilt into structured historical snapshots.</td></tr>
+                <tr><th>Data Centralized</th><td>21.4 million contract records and 39.1 million transaction rows consolidated into a single truth.</td></tr>
+                <tr><th>Reporting Cadence</th><td>Manual processing replaced with scheduled, daily automated refreshes.</td></tr>
+                <tr><th>Data Governance</th><td>Enforced strict, role-based security across 3 countries, ensuring cross-border operational compliance.</td></tr>
             </table>
 
             <!-- 8. Technologies -->
             <div class="tech-footer">
-                <span>SQL Server</span>
+                <span>Microsoft SQL Server</span>
                 <span>SSIS</span>
                 <span>SSAS</span>
                 <span>SSRS</span>
                 <span>DAX</span>
+                <span>T-SQL</span>
                 <span>ODBC</span>
             </div>
 
@@ -161,7 +188,6 @@
 
         </div>
 
-        <!-- Sticky Floating Utility Panel -->
         <div class="article-sidebar gsap-reveal">
             <h4>Case Study Actions</h4>
             <a href="mailto:sandilemfazi.12@gmail.com" class="btn-primary" style="display: block; text-align: center; font-size: 0.8rem; margin-bottom: 1rem;">Discuss Similar Project</a>
@@ -169,7 +195,7 @@
         </div>
     </div>
 
-    <!-- 10. Global Footer with Logo and Confidentiality Disclaimers -->
+    <!-- 10. Global Footer -->
     <footer class="global-footer">
         <div class="footer-logo gsap-reveal">
             <img src="images/logo.png" alt="SDM Business Intelligence Logo">
@@ -181,14 +207,12 @@
         </div>
 
         <div class="disclaimer-text gsap-reveal">
-            <!-- Updated Confidentiality Footer -->
             <p><strong>Confidentiality Notice:</strong> Client information has been anonymized to respect contractual confidentiality obligations. Project details have been generalized while preserving the business outcomes and technical approach.</p>
             <p style="margin-top: 0.5rem;">Microsoft, SQL Server, Power BI, and Power Apps are registered trademarks of the Microsoft Corporation. This consultancy is an independent service provider and is not directly affiliated with or endorsed by Microsoft Corporation.</p>
             <p style="margin-top: 1rem;">&copy; 2026 Sandile Desmond Mfazi. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Physics and Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
