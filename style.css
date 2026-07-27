@@ -412,3 +412,79 @@ nav a:hover {
     font-size: 1.05rem;
 }
 
+/* Professional Background Section */
+.profile-section {
+    padding: 6rem 5%;
+    background-color: var(--bg-white);
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.profile-header h2 {
+    font-size: 2.2rem;
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+    border-bottom: none;
+}
+
+.profile-header .badge {
+    margin-bottom: 1rem;
+}
+
+.profile-content p {
+    font-size: 1.15rem;
+    color: var(--charcoal-light);
+    margin-bottom: 1.5rem;
+}
+
+.profile-content strong {
+    color: var(--brand-green);
+}
+
+/* Tools Wall Section */
+.tools-wall {
+    padding: 5rem 5%;
+    background-color: var(--bg-off-white);
+    border-top: 1px solid var(--border-color);
+}
+
+.tools-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tools-title {
+    font-size: 1rem;
+    color: var(--charcoal-light);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 3rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.tool-logo {
+    height: 45px; 
+    width: auto;
+    filter: grayscale(100%) opacity(40%); /* Starts completely grey and muted */
+    transition: all 0.4s ease;
+    mix-blend-mode: multiply; /* Blends cleanly into the off-white background */
+}
+
+.tool-logo:hover {
+    filter: grayscale(0%) opacity(100%); /* Full color on hover */
+    transform: translateY(-3px);
+}
