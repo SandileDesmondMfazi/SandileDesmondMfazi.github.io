@@ -489,3 +489,249 @@ nav a:hover {
     filter: grayscale(0%) contrast(100%) opacity(100%); 
     transform: translateY(-3px);
 }
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Tablet & Smaller Desktop (Max Width: 1024px) */
+@media (max-width: 1024px) {
+    /* Adjust Hero Section */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 5rem 5%;
+        gap: 3rem;
+    }
+    
+    .hero-text {
+        order: 2; /* Move text below the image on smaller screens */
+    }
+    
+    .hero-image-container {
+        order: 1;
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 3rem; /* Slightly smaller h1 */
+    }
+
+    /* Adjust Profile Section */
+    .profile-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .profile-content p {
+        text-align: left; /* Keep body text readable */
+    }
+
+    /* Adjust Delivery Section */
+    .delivery-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .delivery-text h2 {
+        text-align: center;
+        margin-bottom: 0;
+    }
+    
+    .delivery-stats {
+        justify-content: center;
+    }
+
+    /* Adjust Article/Case Study Layout */
+    .article-layout {
+        flex-direction: column;
+    }
+
+    .article-sidebar {
+        width: 100%;
+        position: relative;
+        top: 0;
+        border-left: none;
+        border-top: 2px solid var(--brand-green);
+        padding-left: 0;
+        padding-top: 2rem;
+        margin-top: 3rem;
+    }
+}
+
+/* Mobile Devices (Max Width: 768px) */
+@media (max-width: 768px) {
+    /* Navbar Adjustments */
+    .navbar {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem 5%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .navbar .logo img {
+        height: 35px; /* Shrink logo slightly */
+    }
+
+    /* General Typography Scaling */
+    h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Grid Adjustments */
+    .grid-2 {
+        grid-template-columns: 1fr; /* Stack the 2-column grids */
+        gap: 2rem;
+    }
+
+    .projects-grid {
+        gap: 2rem;
+    }
+
+    /* Adjust Padding for smaller screens */
+    .section-container, 
+    .projects-section, 
+    .delivery-section, 
+    .profile-section, 
+    .tools-wall, 
+    .global-footer,
+    .article-layout {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Adjust Project Cards */
+    .project-card {
+        padding: 2rem;
+    }
+
+    .architecture-details {
+        padding: 1.5rem;
+    }
+
+    /* Adjust Tools Wall */
+    .tools-grid {
+        gap: 2rem;
+    }
+
+    .tool-logo {
+        height: 35px; /* Shrink tool logos */
+    }
+
+    /* Footer Adjustments */
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Small Mobile Devices (Max Width: 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .hero-profile-pic {
+        max-width: 100%; /* Ensure image doesn't overflow */
+    }
+
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   HAMBURGER MENU & MOBILE NAVIGATION
+   ========================================================================== */
+
+/* Hamburger Button Base (Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 999; /* Ensure it stays above the sliding menu */
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--brand-green);
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Override previous mobile navbar settings to keep items in a row */
+    .navbar {
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 5% !important;
+    }
+
+    /* Hide the navigation list off-screen by default */
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-white);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+        padding: 2rem 5% !important;
+        gap: 2rem !important;
+        transform: translateY(-150%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+        z-index: 100;
+        border-top: 1px solid var(--border-color);
+    }
+
+    /* The class applied by JavaScript to slide the menu down */
+    nav ul.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Hamburger Animation to 'X' */
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}

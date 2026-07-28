@@ -37,3 +37,16 @@ revealElements.forEach((elem) => {
         }
     );
 });
+
+// 3. Hamburger Menu Toggle Logic
+const mobileMenu = document.getElementById('mobile-menu');
+const navMenu = document.querySelector('nav ul');
+
+if (mobileMenu) {
+    mobileMenu.addEventListener('click', () => {
+        // Toggles the 'X' animation on the bars
+        mobileMenu.classList.toggle('is-active');
+        // Slides the navigation menu down
+        navMenu.classList.toggle('active');
+    });
+};
