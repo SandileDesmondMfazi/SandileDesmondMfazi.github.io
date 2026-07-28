@@ -686,6 +686,13 @@ nav a:hover {
     /* Show the hamburger button */
     .menu-toggle {
         display: flex;
+        order: 3; /* NEW: Forces the hamburger to the very end of the row */
+        margin-left: auto; /* NEW: Pushes it flush against the right padding */
+    }
+
+    /* NEW: Keeps the invisible nav container out of the way */
+    nav {
+        order: 2; 
     }
 
     /* Override previous mobile navbar settings to keep items in a row */
