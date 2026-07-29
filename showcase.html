@@ -42,7 +42,7 @@
         .hood-card p { color: var(--charcoal-light); font-size: 0.95rem; margin-bottom: 1rem;}
         
         /* =========================================
-           NEW: Interactive Diagram Containers 
+           Interactive Diagram Containers 
            ========================================= */
         .diagram-container {
             position: relative;
@@ -93,7 +93,7 @@
         }
 
         /* =========================================
-           NEW: Blur Lightbox Modal
+           Blur Lightbox Modal
            ========================================= */
         .lightbox {
             position: fixed;
@@ -146,23 +146,6 @@
         .lightbox-close:hover {
             transform: scale(1.1);
         }
-
-        /* Syntax Highlighting for Code Blocks */
-        .code-block {
-            background: #1e1e1e;
-            color: #d4d4d4;
-            padding: 1.5rem;
-            border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.85rem;
-            overflow-x: auto;
-            line-height: 1.5;
-            border-left: 4px solid var(--brand-green);
-        }
-        .code-keyword { color: #569cd6; font-weight: bold; }
-        .code-function { color: #dcdcaa; }
-        .code-string { color: #ce9178; }
-        .code-comment { color: #6a9955; font-style: italic; }
     </style>
 </head>
 <body>
@@ -215,7 +198,6 @@
                 
                 <!-- Pillar 1: Data Engineering -->
                 <div class="hood-card">
-                    <!-- NEW: Clickable Diagram Container -->
                     <div class="diagram-container" onclick="openLightbox('images/etl-diagram.png')">
                         <!-- Replace src with your actual image path -->
                         <img src="images/etl-diagram.png" alt="ETL Pipeline Architecture" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+ETL+Diagram'">
@@ -227,7 +209,6 @@
 
                 <!-- Pillar 2: Data Warehousing -->
                 <div class="hood-card">
-                    <!-- NEW: Clickable Diagram Container -->
                     <div class="diagram-container" onclick="openLightbox('images/star-schema.png')">
                         <!-- Replace src with your actual image path -->
                         <img src="images/star-schema.png" alt="Star Schema Entity Relationship Diagram" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+Star+Schema'">
@@ -239,20 +220,10 @@
 
                 <!-- Pillar 3: Semantic Modeling & DAX -->
                 <div class="hood-card">
-                    <div class="code-block" style="margin-bottom: 1.5rem;">
-<span class="code-comment">// Dynamic YoY Revenue Growth</span>
-<span class="code-keyword">VAR</span> CurrentRevenue = [<span class="code-function">Total Revenue</span>]
-<span class="code-keyword">VAR</span> LastYearRevenue = 
-    <span class="code-function">CALCULATE</span>(
-        [<span class="code-function">Total Revenue</span>],
-        <span class="code-function">SAMEPERIODLASTYEAR</span>('Dim_Date'[Date])
-    )
-<span class="code-keyword">RETURN</span>
-    <span class="code-function">DIVIDE</span>(
-        CurrentRevenue - LastYearRevenue,
-        LastYearRevenue,
-        <span class="code-string">0</span>
-    )
+                    <div class="diagram-container" onclick="openLightbox('images/dax-model.png')">
+                        <!-- Replace src with your actual image path -->
+                        <img src="images/dax-model.png" alt="Semantic Layer DAX" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+DAX+Snippet'">
+                        <div class="diagram-overlay">Semantic Layer DAX</div>
                     </div>
                     <h4 style="color: var(--brand-green); margin-bottom: 0.5rem;">3. Semantic Layer (DAX)</h4>
                     <p>The SSAS Tabular model mathematically pre-calculates time-intelligence metrics and enforces Row-Level Security (RLS) so regional managers only view data strictly tied to their operational territory.</p>
@@ -264,7 +235,7 @@
         </div>
     </div>
 
-    <!-- NEW: The Lightbox Modal Container -->
+    <!-- The Lightbox Modal Container -->
     <div id="diagram-lightbox" class="lightbox" onclick="closeLightbox(event)">
         <span class="lightbox-close">&times;</span>
         <img id="lightbox-img" src="" alt="Expanded Architectural Diagram">
@@ -291,7 +262,7 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="script.js"></script>
 
-    <!-- NEW: Lightbox JavaScript Logic -->
+    <!-- Lightbox JavaScript Logic -->
     <script>
         const lightbox = document.getElementById('diagram-lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
