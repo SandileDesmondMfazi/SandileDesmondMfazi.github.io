@@ -41,23 +41,111 @@
         
         .hood-card p { color: var(--charcoal-light); font-size: 0.95rem; margin-bottom: 1rem;}
         
-        /* Image Placeholders for Diagrams */
+        /* =========================================
+           NEW: Interactive Diagram Containers 
+           ========================================= */
         .diagram-container {
+            position: relative;
             width: 100%;
             aspect-ratio: 4/3;
             background: var(--bg-off-white);
-            border: 1px dashed var(--border-color);
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .diagram-container img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.4s ease;
+        }
+
+        /* The Solid Color Hover Overlay */
+        .diagram-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--brand-green);
+            color: var(--bg-white);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--charcoal-light);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            text-align: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
         }
-        .diagram-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Trigger overlay and slightly scale image on hover */
+        .diagram-container:hover .diagram-overlay {
+            opacity: 1;
+        }
+        .diagram-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* =========================================
+           NEW: Blur Lightbox Modal
+           ========================================= */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(26, 26, 26, 0.6); /* Semi-transparent charcoal */
+            backdrop-filter: blur(12px); /* Creates the blurred background effect */
+            -webkit-backdrop-filter: blur(12px); /* Safari support */
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox.active img {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+            color: var(--bg-white);
+            font-size: 3rem;
+            cursor: pointer;
+            line-height: 1;
+            font-family: sans-serif;
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
 
         /* Syntax Highlighting for Code Blocks */
         .code-block {
@@ -95,7 +183,6 @@
             <ul class="nav-menu">
                 <li><a href="/">Architecture</a></li>
                 <li><a href="projects">Insights & Deliverables</a></li>
-                <!-- NEW: Technical Showcase Link -->
                 <li><a href="showcase" class="active">Technical Showcase</a></li>
                 <li><a href="onboarding">Engagement Model</a></li>
                 <li><a href="contact" class="btn-primary" style="padding: 0.6rem 1.5rem;">Contact</a></li>
@@ -128,10 +215,11 @@
                 
                 <!-- Pillar 1: Data Engineering -->
                 <div class="hood-card">
-                    <div class="diagram-container">
-                        <!-- Insert a diagram of your ETL process here -->
-                        [ ETL Architecture Diagram ]
-                        <!-- <img src="images/etl-diagram.png" alt="ETL Pipeline Architecture"> -->
+                    <!-- NEW: Clickable Diagram Container -->
+                    <div class="diagram-container" onclick="openLightbox('images/etl-diagram.png')">
+                        <!-- Replace src with your actual image path -->
+                        <img src="images/etl-diagram.png" alt="ETL Pipeline Architecture" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+ETL+Diagram'">
+                        <div class="diagram-overlay">ETL Architecture Diagram</div>
                     </div>
                     <h4 style="color: var(--brand-green); margin-bottom: 0.5rem;">1. Data Engineering (SSIS)</h4>
                     <p>Simulated transactional data is extracted from legacy SQL tables via ODBC. SSIS packages perform in-stream data quality checks, handle missing values, and execute UPSERT commands into the staging warehouse.</p>
@@ -139,10 +227,11 @@
 
                 <!-- Pillar 2: Data Warehousing -->
                 <div class="hood-card">
-                    <div class="diagram-container">
-                        <!-- Insert an image of your Star Schema here -->
-                        [ Star Schema ERD ]
-                        <!-- <img src="images/star-schema.png" alt="Star Schema Entity Relationship Diagram"> -->
+                    <!-- NEW: Clickable Diagram Container -->
+                    <div class="diagram-container" onclick="openLightbox('images/star-schema.png')">
+                        <!-- Replace src with your actual image path -->
+                        <img src="images/star-schema.png" alt="Star Schema Entity Relationship Diagram" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+Star+Schema'">
+                        <div class="diagram-overlay">Star Schema ERD</div>
                     </div>
                     <h4 style="color: var(--brand-green); margin-bottom: 0.5rem;">2. Dimensional Modeling</h4>
                     <p>Designed following Kimball methodology. The central `Fact_Sales` table is surrounded by heavily conformed dimensions (`Dim_Date`, `Dim_Product`, `Dim_Store`), ensuring instantaneous slice-and-dice query performance.</p>
@@ -150,7 +239,6 @@
 
                 <!-- Pillar 3: Semantic Modeling & DAX -->
                 <div class="hood-card">
-                    <!-- High-end Code Block -->
                     <div class="code-block" style="margin-bottom: 1.5rem;">
 <span class="code-comment">// Dynamic YoY Revenue Growth</span>
 <span class="code-keyword">VAR</span> CurrentRevenue = [<span class="code-function">Total Revenue</span>]
@@ -176,6 +264,12 @@
         </div>
     </div>
 
+    <!-- NEW: The Lightbox Modal Container -->
+    <div id="diagram-lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded Architectural Diagram">
+    </div>
+
     <!-- Global Footer -->
     <footer class="global-footer">
         <div class="footer-logo gsap-reveal">
@@ -196,5 +290,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="script.js"></script>
+
+    <!-- NEW: Lightbox JavaScript Logic -->
+    <script>
+        const lightbox = document.getElementById('diagram-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        // Opens the lightbox and injects the clicked image src
+        function openLightbox(imageSrc) {
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+            
+            // Disable background scrolling while modal is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Closes the lightbox when clicking the 'X' or the blurred background
+        function closeLightbox(event) {
+            // Only close if they clicked the background or the close button (not the image itself)
+            if (event.target === lightbox || event.target.classList.contains('lightbox-close')) {
+                lightbox.classList.remove('active');
+                
+                // Re-enable background scrolling
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
 </body>
 </html>
