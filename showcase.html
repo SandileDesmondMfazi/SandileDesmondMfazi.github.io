@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Showcase | Sandile Desmond Mfazi</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Showcase Specific Typography */
+        h1 { font-size: 2.8rem !important; line-height: 1.2 !important; margin-bottom: 1.5rem !important; }
+        h2 { font-size: 2rem !important; margin-top: 3rem !important; margin-bottom: 1rem !important; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: block !important; }
+        h3 { font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--charcoal); font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        /* Dashboard Embed Container (16:9 Aspect Ratio) */
+        .dashboard-container { 
+            position: relative; 
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0; 
+            overflow: hidden; 
+            background: var(--bg-off-white); 
+            border: 1px solid var(--border-color); 
+            margin: 2rem 0 4rem 0; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
+        }
+        .dashboard-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        
+        /* Under the Hood Grid */
+        .under-the-hood {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+        
+        .hood-card {
+            background: var(--bg-white);
+        }
+        
+        .hood-card p { color: var(--charcoal-light); font-size: 0.95rem; margin-bottom: 1rem;}
+        
+        /* Image Placeholders for Diagrams */
+        .diagram-container {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: var(--bg-off-white);
+            border: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--charcoal-light);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .diagram-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Syntax Highlighting for Code Blocks */
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            line-height: 1.5;
+            border-left: 4px solid var(--brand-green);
+        }
+        .code-keyword { color: #569cd6; font-weight: bold; }
+        .code-function { color: #dcdcaa; }
+        .code-string { color: #ce9178; }
+        .code-comment { color: #6a9955; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="/">
+                <img src="images/logo.png" alt="SDM Business Intelligence Logo">
+            </a>
+        </div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="/">Architecture</a></li>
+                <li><a href="projects">Insights & Deliverables</a></li>
+                <!-- NEW: Technical Showcase Link -->
+                <li><a href="showcase" class="active">Technical Showcase</a></li>
+                <li><a href="onboarding">Engagement Model</a></li>
+                <li><a href="contact" class="btn-primary" style="padding: 0.6rem 1.5rem;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-layout">
+        <div class="article-content gsap-reveal" style="flex: 1; max-width: 100%;">
+            
+            <span class="badge">Interactive Data Lab</span>
+            <h1>Technical Showcase & Backend Architecture</h1>
+            <p style="font-size: 1.2rem; color: var(--charcoal-light); margin-bottom: 4rem; max-width: 900px;">
+                While client deliverables are strictly protected under NDA, this environment serves to demonstrate my end-to-end technical capabilities. The prototypes below utilize synthesized, highly anonymized datasets to showcase advanced semantic modeling, data engineering, and executive visualization.
+            </p>
+            
+            <!-- SHOWCASE ITEM 1 -->
+            <h2>UK Retail & E-Commerce Financials</h2>
+            <p>An executive-level financial performance model engineered to track Year-over-Year (YoY) revenue growth, gross margins, and regional product performance. The visualization layer is backed by a robust dimensional model handling dynamic currency formatting.</p>
+            
+            <!-- Power BI Embed Container -->
+            <div class="dashboard-container gsap-reveal">
+                <!-- Replace src with your Power BI Publish-to-Web URL -->
+                <iframe src="https://app.powerbi.com/view?r=YOUR_UNIQUE_EMBED_CODE_HERE" allowFullScreen="true"></iframe>
+            </div>
+
+            <!-- Under the Hood Backend Breakdown -->
+            <h3 class="gsap-reveal">Under The Hood: End-to-End Pipeline</h3>
+            <div class="under-the-hood gsap-reveal">
+                
+                <!-- Pillar 1: Data Engineering -->
+                <div class="hood-card">
+                    <div class="diagram-container">
+                        <!-- Insert a diagram of your ETL process here -->
+                        [ ETL Architecture Diagram ]
+                        <!-- <img src="images/etl-diagram.png" alt="ETL Pipeline Architecture"> -->
+                    </div>
+                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem;">1. Data Engineering (SSIS)</h4>
+                    <p>Simulated transactional data is extracted from legacy SQL tables via ODBC. SSIS packages perform in-stream data quality checks, handle missing values, and execute UPSERT commands into the staging warehouse.</p>
+                </div>
+
+                <!-- Pillar 2: Data Warehousing -->
+                <div class="hood-card">
+                    <div class="diagram-container">
+                        <!-- Insert an image of your Star Schema here -->
+                        [ Star Schema ERD ]
+                        <!-- <img src="images/star-schema.png" alt="Star Schema Entity Relationship Diagram"> -->
+                    </div>
+                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem;">2. Dimensional Modeling</h4>
+                    <p>Designed following Kimball methodology. The central `Fact_Sales` table is surrounded by heavily conformed dimensions (`Dim_Date`, `Dim_Product`, `Dim_Store`), ensuring instantaneous slice-and-dice query performance.</p>
+                </div>
+
+                <!-- Pillar 3: Semantic Modeling & DAX -->
+                <div class="hood-card">
+                    <!-- High-end Code Block -->
+                    <div class="code-block" style="margin-bottom: 1.5rem;">
+<span class="code-comment">// Dynamic YoY Revenue Growth</span>
+<span class="code-keyword">VAR</span> CurrentRevenue = [<span class="code-function">Total Revenue</span>]
+<span class="code-keyword">VAR</span> LastYearRevenue = 
+    <span class="code-function">CALCULATE</span>(
+        [<span class="code-function">Total Revenue</span>],
+        <span class="code-function">SAMEPERIODLASTYEAR</span>('Dim_Date'[Date])
+    )
+<span class="code-keyword">RETURN</span>
+    <span class="code-function">DIVIDE</span>(
+        CurrentRevenue - LastYearRevenue,
+        LastYearRevenue,
+        <span class="code-string">0</span>
+    )
+                    </div>
+                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem;">3. Semantic Layer (DAX)</h4>
+                    <p>The SSAS Tabular model mathematically pre-calculates time-intelligence metrics and enforces Row-Level Security (RLS) so regional managers only view data strictly tied to their operational territory.</p>
+                </div>
+
+            </div>
+            <!-- END SHOWCASE ITEM 1 -->
+
+        </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="global-footer">
+        <div class="footer-logo gsap-reveal">
+            <img src="images/logo.png" alt="SDM Business Intelligence Logo">
+        </div>
+        <div class="footer-links gsap-reveal">
+            <a href="https://www.linkedin.com/in/sandilemfazi/" target="_blank">LinkedIn Profile</a>
+            <a href="contact">Initiate Project Discovery</a>
+        </div>
+        <div class="disclaimer-text gsap-reveal">
+            <p><strong>Confidentiality Notice:</strong> Client information has been anonymized to respect contractual confidentiality obligations. Project details have been generalized while preserving the business outcomes and technical approach.</p>
+            <p style="margin-top: 1rem;">&copy; 2026 Sandile Desmond Mfazi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Physics and Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
