@@ -22,10 +22,33 @@
             overflow: hidden; 
             background: var(--bg-off-white); 
             border: 1px solid var(--border-color); 
-            margin: 2rem 0 4rem 0; 
+            margin: 2rem 0 3rem 0; 
             box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
         }
         .dashboard-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+        /* NEW: Consultant Report Styling */
+        .consultant-report {
+            background: var(--bg-white);
+            border-left: 4px solid var(--brand-green);
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+        .consultant-report h4 {
+            color: var(--charcoal);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .consultant-report p {
+            color: var(--charcoal-light);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .consultant-report p:last-child {
+            margin-bottom: 0;
+        }
         
         /* Under the Hood Grid */
         .under-the-hood {
@@ -41,9 +64,7 @@
         
         .hood-card p { color: var(--charcoal-light); font-size: 0.95rem; margin-bottom: 1rem;}
         
-        /* =========================================
-           Interactive Diagram Containers 
-           ========================================= */
+        /* Interactive Diagram Containers */
         .diagram-container {
             position: relative;
             width: 100%;
@@ -63,7 +84,6 @@
             transition: transform 0.4s ease;
         }
 
-        /* The Solid Color Hover Overlay */
         .diagram-overlay {
             position: absolute;
             top: 0;
@@ -84,7 +104,6 @@
             z-index: 2;
         }
 
-        /* Trigger overlay and slightly scale image on hover */
         .diagram-container:hover .diagram-overlay {
             opacity: 1;
         }
@@ -92,18 +111,16 @@
             transform: scale(1.05);
         }
 
-        /* =========================================
-           Blur Lightbox Modal
-           ========================================= */
+        /* Blur Lightbox Modal */
         .lightbox {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(26, 26, 26, 0.6); /* Semi-transparent charcoal */
-            backdrop-filter: blur(12px); /* Creates the blurred background effect */
-            -webkit-backdrop-filter: blur(12px); /* Safari support */
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             z-index: 9999;
             display: flex;
             align-items: center;
@@ -179,17 +196,36 @@
             <span class="badge">Interactive Data Lab</span>
             <h1>Technical Showcase & Backend Architecture</h1>
             <p style="font-size: 1.2rem; color: var(--charcoal-light); margin-bottom: 4rem; max-width: 900px;">
-                While client deliverables are strictly protected under NDA, this environment serves to demonstrate my end-to-end technical capabilities. The prototypes below utilize synthesized, highly anonymized datasets to showcase advanced semantic modeling, data engineering, and executive visualization.
+                While client deliverables are strictly protected under NDA, this environment serves to demonstrate my end-to-end technical capabilities. The prototypes below utilize synthesized datasets to showcase advanced semantic modeling, data engineering, and executive visualization.
             </p>
             
             <!-- SHOWCASE ITEM 1 -->
             <h2>UK Retail & E-Commerce Financials</h2>
-            <p>An executive-level financial performance model engineered to track Year-over-Year (YoY) revenue growth, gross margins, and regional product performance. The visualization layer is backed by a robust dimensional model handling dynamic currency formatting.</p>
             
             <!-- Power BI Embed Container -->
             <div class="dashboard-container gsap-reveal">
-                <!-- Replace src with your Power BI Publish-to-Web URL -->
-                <iframe src="https://app.powerbi.com/view?r=YOUR_UNIQUE_EMBED_CODE_HERE" allowFullScreen="true"></iframe>
+                <!-- Replace 'about:blank' with your actual Power BI publish-to-web link later -->
+                <iframe src="about:blank" allowFullScreen="true"></iframe>
+            </div>
+
+            <!-- NEW: Executive Consultant Report -->
+            <h3 class="gsap-reveal">Executive Analytical Report</h3>
+            <div class="consultant-report gsap-reveal">
+                <h4>1. The Business Problem</h4>
+                <p>The executive board lacked visibility into regional margin degradation and could not accurately track Year-over-Year (YoY) product performance due to fragmented, legacy systems.</p>
+
+                <h4>2. Available Data</h4>
+                <p>Three years of raw transactional history comprising 1.5 million rows spanning PostgreSQL (e-commerce backend), legacy MariaDB (in-store POS), and flat CSV files (marketing spend drops).</p>
+
+                <h4>3. Analytical Approach</h4>
+                <p>Engineered an SSIS pipeline to centralize the disparate systems into a Kimball star-schema data warehouse. Developed a robust DAX semantic layer to mathematically normalize currency formatting and pre-calculate complex time-intelligence metrics prior to dashboard visualization.</p>
+
+                <h4>4. The Most Important Finding</h4>
+                <p>While overall gross revenue grew by 14% YoY, actual net margins in the Northern UK territories contracted by 3.5% due to aggressive, untracked promotional discounting on flagship product lines.</p>
+
+                <h4>5. Recommendations & Next Steps</h4>
+                <p><strong>Recommendation:</strong> Standardize regional discounting guardrails immediately to protect margins.<br>
+                <strong>Next Steps:</strong> Implement automated, daily Power BI margin alert triggers for regional directors and integrate live warehouse inventory data to optimize stock replenishment for high-margin items.</p>
             </div>
 
             <!-- Under the Hood Backend Breakdown -->
@@ -199,18 +235,16 @@
                 <!-- Pillar 1: Data Engineering -->
                 <div class="hood-card">
                     <div class="diagram-container" onclick="openLightbox('images/etl-diagram.png')">
-                        <!-- Replace src with your actual image path -->
                         <img src="images/etl-diagram.png" alt="ETL Pipeline Architecture" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+ETL+Diagram'">
                         <div class="diagram-overlay">ETL Architecture Diagram</div>
                     </div>
                     <h4 style="color: var(--brand-green); margin-bottom: 0.5rem;">1. Data Engineering (SSIS)</h4>
-                    <p>Simulated transactional data is extracted from legacy SQL tables via ODBC. SSIS packages perform in-stream data quality checks, handle missing values, and execute UPSERT commands into the staging warehouse.</p>
+                    <p>Transactional data is extracted from heterogeneous databases via ODBC. SSIS packages perform in-stream data quality checks, handle missing values, and execute UPSERT commands into the staging warehouse.</p>
                 </div>
 
                 <!-- Pillar 2: Data Warehousing -->
                 <div class="hood-card">
                     <div class="diagram-container" onclick="openLightbox('images/star-schema.png')">
-                        <!-- Replace src with your actual image path -->
                         <img src="images/star-schema.png" alt="Star Schema Entity Relationship Diagram" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+Star+Schema'">
                         <div class="diagram-overlay">Star Schema ERD</div>
                     </div>
@@ -221,7 +255,6 @@
                 <!-- Pillar 3: Semantic Modeling & DAX -->
                 <div class="hood-card">
                     <div class="diagram-container" onclick="openLightbox('images/dax-model.png')">
-                        <!-- Replace src with your actual image path -->
                         <img src="images/dax-model.png" alt="Semantic Layer DAX" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+DAX+Snippet'">
                         <div class="diagram-overlay">Semantic Layer DAX</div>
                     </div>
@@ -267,22 +300,15 @@
         const lightbox = document.getElementById('diagram-lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
-        // Opens the lightbox and injects the clicked image src
         function openLightbox(imageSrc) {
             lightboxImg.src = imageSrc;
             lightbox.classList.add('active');
-            
-            // Disable background scrolling while modal is open
             document.body.style.overflow = 'hidden';
         }
 
-        // Closes the lightbox when clicking the 'X' or the blurred background
         function closeLightbox(event) {
-            // Only close if they clicked the background or the close button (not the image itself)
             if (event.target === lightbox || event.target.classList.contains('lightbox-close')) {
                 lightbox.classList.remove('active');
-                
-                // Re-enable background scrolling
                 document.body.style.overflow = 'auto';
             }
         }
