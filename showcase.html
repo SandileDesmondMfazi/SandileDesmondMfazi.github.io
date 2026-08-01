@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Showcase | Sandile Desmond Mfazi</title>
+    <title>Technical Demonstrations | Sandile Desmond Mfazi</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         /* Showcase Specific Typography */
@@ -14,155 +14,64 @@
         h2 { font-size: 2rem !important; margin-top: 3rem !important; margin-bottom: 1rem !important; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: block !important; }
         h3 { font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--charcoal); font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
         
+        /* Consulting Methodology Intro Flow */
+        .methodology-intro { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; margin-bottom: 4rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.05em; }
+        .methodology-intro .arrow { color: var(--brand-green); margin: 0 0.5rem; }
+
+        /* KPI Grid */
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 3rem 0; }
+        .kpi-card { border: 1px solid var(--border-color); padding: 1.5rem; border-top: 4px solid var(--brand-green); text-align: center; background: var(--bg-white); box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .kpi-value { font-size: 2.2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--brand-green); line-height: 1.2; }
+        .kpi-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal-light); font-weight: 600; margin-top: 0.5rem; }
+
         /* Dashboard Embed Container (16:9 Aspect Ratio) */
-        .dashboard-container { 
-            position: relative; 
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0; 
-            overflow: hidden; 
-            background: var(--bg-off-white); 
-            border: 1px solid var(--border-color); 
-            margin: 2rem 0 3rem 0; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
-        }
+        .dashboard-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: var(--bg-off-white); border: 1px solid var(--border-color); margin: 2rem 0 3rem 0; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
         .dashboard-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* NEW: Consultant Report Styling */
-        .consultant-report {
-            background: var(--bg-white);
-            border-left: 4px solid var(--brand-green);
-            padding: 2.5rem;
-            margin-bottom: 4rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-        }
-        .consultant-report h4 {
-            color: var(--charcoal);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Inter', sans-serif;
-        }
-        .consultant-report p {
-            color: var(--charcoal-light);
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .consultant-report p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* Under the Hood Grid */
-        .under-the-hood {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
-            margin-bottom: 5rem;
-        }
-        
-        .hood-card {
-            background: var(--bg-white);
-        }
-        
+        /* Business Impact Badges */
+        .impact-badges { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+        .impact-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--bg-off-white); border: 1px solid var(--border-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: var(--charcoal); }
+        .impact-badge span { color: var(--brand-green); }
+
+        /* Consulting Executive Summary Cards */
+        .consulting-grid { display: grid; grid-template-columns: 1fr; gap: 0; margin-bottom: 4rem; }
+        .consulting-card { border-top: 1px solid var(--border-color); padding: 2rem 0; }
+        .consulting-card h4 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-green); margin-bottom: 1rem; font-family: 'Inter', sans-serif; }
+        .consulting-card p { font-size: 1.05rem; color: var(--charcoal); margin-bottom: 1rem; max-width: 900px; }
+        .consulting-card ul { list-style: none; padding: 0; margin: 0; }
+        .consulting-card li { font-size: 1.05rem; color: var(--charcoal); padding-left: 1.5em; position: relative; margin-bottom: 0.75rem; }
+        .consulting-card li::before { content: "•"; color: var(--brand-green); font-weight: bold; position: absolute; left: 0; font-size: 1.2rem; }
+
+        /* Visual Architecture Flow */
+        .architecture-flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.5rem; margin: 3rem 0; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: var(--charcoal); }
+        .flow-step { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; }
+        .flow-step span { font-size: 1.5rem; }
+        .flow-arrow { color: var(--border-color); font-size: 1.5rem; }
+
+        /* Architecture Grid */
+        .under-the-hood { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 2rem; }
+        .hood-card { background: var(--bg-white); }
         .hood-card p { color: var(--charcoal-light); font-size: 0.95rem; margin-bottom: 1rem;}
         
-        /* Interactive Diagram Containers */
-        .diagram-container {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 4/3;
-            background: var(--bg-off-white);
-            border: 1px solid var(--border-color);
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        
-        .diagram-container img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            transition: transform 0.4s ease;
-        }
+        /* Diagrams */
+        .diagram-container { position: relative; width: 100%; aspect-ratio: 4/3; background: var(--bg-off-white); border: 1px solid var(--border-color); margin-bottom: 1.5rem; overflow: hidden; cursor: pointer; border-radius: 4px; }
+        .diagram-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .diagram-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--brand-green); color: var(--bg-white); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; text-align: center; padding: 2rem; opacity: 0; transition: opacity 0.3s ease; z-index: 2; }
+        .diagram-container:hover .diagram-overlay { opacity: 1; }
+        .diagram-container:hover img { transform: scale(1.05); }
 
-        .diagram-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--brand-green);
-            color: var(--bg-white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            text-align: center;
-            padding: 2rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 2;
-        }
+        /* Lightbox */
+        .lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(26, 26, 26, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .lightbox.active { opacity: 1; visibility: visible; }
+        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 25px 50px rgba(0,0,0,0.25); transform: scale(0.95); transition: transform 0.3s ease; }
+        .lightbox.active img { transform: scale(1); }
+        .lightbox-close { position: absolute; top: 2rem; right: 3rem; color: var(--bg-white); font-size: 3rem; cursor: pointer; line-height: 1; font-family: sans-serif; transition: transform 0.3s ease; }
+        .lightbox-close:hover { transform: scale(1.1); }
 
-        .diagram-container:hover .diagram-overlay {
-            opacity: 1;
-        }
-        .diagram-container:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Blur Lightbox Modal */
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(26, 26, 26, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .lightbox.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
-            transform: scale(0.95);
-            transition: transform 0.3s ease;
-        }
-
-        .lightbox.active img {
-            transform: scale(1);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 2rem;
-            right: 3rem;
-            color: var(--bg-white);
-            font-size: 3rem;
-            cursor: pointer;
-            line-height: 1;
-            font-family: sans-serif;
-            transition: transform 0.3s ease;
-        }
-
-        .lightbox-close:hover {
-            transform: scale(1.1);
-        }
+        /* Inline CTA Block */
+        .inline-cta { background: var(--bg-off-white); border-left: 4px solid var(--brand-green); padding: 3rem; margin-top: 5rem; text-align: left; }
+        .inline-cta h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--charcoal); text-transform: none; font-family: 'Playfair Display', serif; }
+        .inline-cta p { font-size: 1.1rem; color: var(--charcoal-light); margin-bottom: 2rem; max-width: 700px; }
     </style>
 </head>
 <body>
@@ -194,43 +103,117 @@
         <div class="article-content gsap-reveal" style="flex: 1; max-width: 100%;">
             
             <span class="badge">Interactive Data Lab</span>
-            <h1>Technical Showcase & Backend Architecture</h1>
-            <p style="font-size: 1.2rem; color: var(--charcoal-light); margin-bottom: 4rem; max-width: 900px;">
-                While client deliverables are strictly protected under NDA, this environment serves to demonstrate my end-to-end technical capabilities. The prototypes below utilize synthesized datasets to showcase advanced semantic modeling, data engineering, and executive visualization.
+            <h1>Technical Demonstrations: How I Turn Business Data into Executive Decisions</h1>
+            <p style="font-size: 1.15rem; color: var(--charcoal-light); max-width: 900px;">
+                Rather than showing confidential client work, the demonstrations below use realistic business scenarios and synthetic datasets. Each example follows the strict consulting methodology I use when helping organizations restructure their reporting.
             </p>
+
+            <!-- Global Methodology Flow -->
+            <div class="methodology-intro gsap-reveal">
+                <span>Discover</span><span class="arrow">→</span>
+                <span>Design</span><span class="arrow">→</span>
+                <span>Build</span><span class="arrow">→</span>
+                <span>Validate</span><span class="arrow">→</span>
+                <span>Deploy</span><span class="arrow">→</span>
+                <span>Support</span>
+            </div>
             
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 4rem 0;">
+
             <!-- SHOWCASE ITEM 1 -->
-            <h2>UK Retail & E-Commerce Financials</h2>
+            <h2 class="gsap-reveal">UK Retail & E-Commerce Profitability Assessment</h2>
             
+            <!-- Business Impact Badges -->
+            <div class="impact-badges gsap-reveal">
+                <div class="impact-badge"><span>✔</span> Executive Reporting</div>
+                <div class="impact-badge"><span>✔</span> Automated KPI Tracking</div>
+                <div class="impact-badge"><span>✔</span> Data Integration</div>
+                <div class="impact-badge"><span>✔</span> Self-Service Analytics</div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid gsap-reveal">
+                <div class="kpi-card">
+                    <div class="kpi-value">+14%</div>
+                    <div class="kpi-label">Revenue Growth</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">-3.5%</div>
+                    <div class="kpi-label">Margin Change</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">3</div>
+                    <div class="kpi-label">Data Sources</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">1.5M</div>
+                    <div class="kpi-label">Transactions</div>
+                </div>
+            </div>
+
             <!-- Power BI Embed Container -->
             <div class="dashboard-container gsap-reveal">
                 <!-- Replace 'about:blank' with your actual Power BI publish-to-web link later -->
                 <iframe src="about:blank" allowFullScreen="true"></iframe>
             </div>
 
-            <!-- NEW: Executive Consultant Report -->
-            <h3 class="gsap-reveal">Executive Analytical Report</h3>
-            <div class="consultant-report gsap-reveal">
-                <h4>1. The Business Problem</h4>
-                <p>The executive board lacked visibility into regional margin degradation and could not accurately track Year-over-Year (YoY) product performance due to fragmented, legacy systems.</p>
+            <!-- Consulting Executive Summary -->
+            <h3 class="gsap-reveal" style="margin-top: 4rem;">Executive Summary</h3>
+            <div class="consulting-grid gsap-reveal">
+                
+                <div class="consulting-card">
+                    <h4>Client Challenge</h4>
+                    <p>The finance team lacked visibility into regional profitability because sales, marketing, and inventory data were siloed in entirely separate legacy systems.</p>
+                </div>
 
-                <h4>2. Available Data</h4>
-                <p>Three years of raw transactional history comprising 1.5 million rows spanning PostgreSQL (e-commerce backend), legacy MariaDB (in-store POS), and flat CSV files (marketing spend drops).</p>
+                <div class="consulting-card">
+                    <h4>Business Objective</h4>
+                    <p>Create a single source of truth allowing executives to monitor profitability, revenue growth, and regional performance automatically without manual Excel intervention.</p>
+                </div>
 
-                <h4>3. Analytical Approach</h4>
-                <p>Engineered an SSIS pipeline to centralize the disparate systems into a Kimball star-schema data warehouse. Developed a robust DAX semantic layer to mathematically normalize currency formatting and pre-calculate complex time-intelligence metrics prior to dashboard visualization.</p>
+                <div class="consulting-card">
+                    <h4>Solution Delivered</h4>
+                    <ul>
+                        <li>Integrated PostgreSQL, MariaDB, and CSV marketing data into a central hub.</li>
+                        <li>Designed a dimensional data warehouse.</li>
+                        <li>Built a reusable Power BI semantic model.</li>
+                        <li>Deployed automated executive KPI dashboards.</li>
+                    </ul>
+                </div>
 
-                <h4>4. The Most Important Finding</h4>
-                <p>While overall gross revenue grew by 14% YoY, actual net margins in the Northern UK territories contracted by 3.5% due to aggressive, untracked promotional discounting on flagship product lines.</p>
+                <div class="consulting-card">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li>Overall revenue increased 14% Year-over-Year.</li>
+                        <li>Northern region net margins declined 3.5%.</li>
+                        <li>Aggressive, untracked promotional discounting reduced overall profitability.</li>
+                    </ul>
+                </div>
 
-                <h4>5. Recommendations & Next Steps</h4>
-                <p><strong>Recommendation:</strong> Standardize regional discounting guardrails immediately to protect margins.<br>
-                <strong>Next Steps:</strong> Implement automated, daily Power BI margin alert triggers for regional directors and integrate live warehouse inventory data to optimize stock replenishment for high-margin items.</p>
+                <div class="consulting-card" style="border-bottom: 1px solid var(--border-color); padding-bottom: 2rem;">
+                    <h4>Business Recommendation</h4>
+                    <p>Introduce strict regional pricing controls and automate daily margin monitoring to protect profitability while maintaining the current trajectory of revenue growth.</p>
+                </div>
+
             </div>
 
-            <!-- Under the Hood Backend Breakdown -->
-            <h3 class="gsap-reveal">Under The Hood: End-to-End Pipeline</h3>
-            <div class="under-the-hood gsap-reveal">
+            <!-- Solution Architecture -->
+            <h3 class="gsap-reveal">Solution Architecture</h3>
+            
+            <!-- Visual Flow Diagram -->
+            <div class="architecture-flow gsap-reveal">
+                <div class="flow-step"><span>📥</span> Data Sources</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step"><span>⚙</span> Data Integration</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step"><span>🗄</span> Data Warehouse</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step"><span>📊</span> Executive Dashboard</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step"><span>💡</span> Business Insights</div>
+            </div>
+
+            <div class="under-the-hood gsap-reveal" style="margin-top: 3rem;">
                 
                 <!-- Pillar 1: Data Engineering -->
                 <div class="hood-card">
@@ -238,8 +221,8 @@
                         <img src="images/etl-diagram.png" alt="ETL Pipeline Architecture" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+ETL+Diagram'">
                         <div class="diagram-overlay">ETL Architecture Diagram</div>
                     </div>
-                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem;">1. Data Engineering (SSIS)</h4>
-                    <p>Transactional data is extracted from heterogeneous databases via ODBC. SSIS packages perform in-stream data quality checks, handle missing values, and execute UPSERT commands into the staging warehouse.</p>
+                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.95rem;">1. Data Integration</h4>
+                    <p>Data from multiple disconnected business systems is extracted, cleaned, and standardized to ensure reporting accuracy.</p>
                 </div>
 
                 <!-- Pillar 2: Data Warehousing -->
@@ -248,8 +231,8 @@
                         <img src="images/star-schema.png" alt="Star Schema Entity Relationship Diagram" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+Star+Schema'">
                         <div class="diagram-overlay">Star Schema ERD</div>
                     </div>
-                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem;">2. Dimensional Modeling</h4>
-                    <p>Designed following Kimball methodology. The central `Fact_Sales` table is surrounded by heavily conformed dimensions (`Dim_Date`, `Dim_Product`, `Dim_Store`), ensuring instantaneous slice-and-dice query performance.</p>
+                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.95rem;">2. Central Warehouse</h4>
+                    <p>The unified data is structured into a high-performance analytical format designed specifically for rapid executive querying.</p>
                 </div>
 
                 <!-- Pillar 3: Semantic Modeling & DAX -->
@@ -258,11 +241,19 @@
                         <img src="images/dax-model.png" alt="Semantic Layer DAX" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+DAX+Snippet'">
                         <div class="diagram-overlay">Semantic Layer DAX</div>
                     </div>
-                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem;">3. Semantic Layer (DAX)</h4>
-                    <p>The SSAS Tabular model mathematically pre-calculates time-intelligence metrics and enforces Row-Level Security (RLS) so regional managers only view data strictly tied to their operational territory.</p>
+                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.95rem;">3. Reporting Model</h4>
+                    <p>Built a reusable Power BI model that automatically calculates business KPIs, historical trends, and year-over-year performance.</p>
                 </div>
 
             </div>
+
+            <!-- Inline Call to Action -->
+            <div class="inline-cta gsap-reveal">
+                <h3>Interested in a similar transformation?</h3>
+                <p>Whether you are struggling with disconnected spreadsheets, manual reporting bottlenecks, or siloed business systems, I can help design a centralized reporting solution tailored specifically to your organization's operational goals.</p>
+                <a href="contact" class="btn-primary">Schedule a Discovery Call</a>
+            </div>
+
             <!-- END SHOWCASE ITEM 1 -->
 
         </div>
