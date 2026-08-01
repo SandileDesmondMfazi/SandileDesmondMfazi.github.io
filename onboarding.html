@@ -10,6 +10,13 @@
     <style>
         .compliance-block { background: var(--bg-off-white); padding: 2rem; border-left: 4px solid var(--brand-green); margin-bottom: 2rem; }
         .compliance-block h3 { margin-bottom: 1rem; font-family: 'Inter', sans-serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        /* Checklist Table Styles */
+        .executive-table { width: 100%; border-collapse: collapse; margin: 1rem 0 3rem 0; font-family: 'Inter', sans-serif; }
+        .executive-table th, .executive-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); text-align: left; }
+        .executive-table th { color: var(--charcoal-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; background-color: var(--bg-off-white); }
+        .executive-table td { color: var(--charcoal); font-size: 1rem; }
+        .executive-table td strong { color: var(--brand-green); }
     </style>
 </head>
 <body>
@@ -22,7 +29,6 @@
             </a>
         </div>
         
-        <!-- NEW: Hamburger Menu Button -->
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -34,7 +40,7 @@
                 <li><a href="/">Architecture</a></li>
                 <li><a href="projects">Insights & Deliverables</a></li>
                 <li><a href="showcase">Technical Showcase</a></li>
-                <li><a href="onboarding">Engagement Model</a></li>
+                <li><a href="onboarding" class="active">Engagement Model</a></li>
                 <li><a href="contact" class="btn-primary" style="padding: 0.6rem 1.5rem;">Contact</a></li>
             </ul>
         </nav>
@@ -46,25 +52,74 @@
             <span class="badge">B2B Contracting Framework</span>
             <h1 style="margin-bottom: 3rem;">A frictionless, globally compliant engagement model.</h1>
             
-            <p style="font-size: 1.2rem; color: var(--charcoal-light); margin-bottom: 4rem;">Engaging offshore data architecture expertise should not introduce legal or administrative overhead. My consultancy operates on a strict Business-to-Business (B2B) framework engineered for rapid onboarding with UK, European, and global enterprise clients.</p>
-            
+            <p style="font-size: 1.2rem; color: var(--charcoal-light); margin-bottom: 2rem;">Engaging offshore data architecture expertise should not introduce legal or administrative overhead. My consultancy operates on a strict Business-to-Business (B2B) framework engineered for rapid onboarding with UK, European, and global enterprise clients.</p>
+
+            <!-- NEW: Service Tiers Section -->
+            <section style="margin: 4rem 0;">
+                <span class="badge">Contracting Tiers</span>
+                <h2 style="font-size: 2rem; margin-bottom: 2rem; border: none;">Flexible B2B Engagement Models</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    
+                    <!-- Model 1: Fixed-Scope Sprint -->
+                    <div style="background: var(--bg-off-white); padding: 2.5rem; border-top: 4px solid var(--brand-green);">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Architecture Audit & Recovery Sprint</h3>
+                        <p style="font-size: 0.85rem; color: var(--brand-green); font-weight: 700; text-transform: uppercase;">2 to 4-Week Fixed Project</p>
+                        <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Deep-dive diagnostic of legacy database performance, SSIS pipeline failures, and DAX optimization. Delivers a refactored pipeline and performance audit report.</p>
+                    </div>
+
+                    <!-- Model 2: Dedicated Retainer -->
+                    <div style="background: var(--bg-off-white); padding: 2.5rem; border-top: 4px solid var(--brand-green);">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Fractional BI Lead & Data Engineering</h3>
+                        <p style="font-size: 0.85rem; color: var(--brand-green); font-weight: 700; text-transform: uppercase;">Monthly Retainer (Outside IR35)</p>
+                        <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Dedicated B2B capacity for ongoing SQL Server, Azure Data Factory, and Power BI semantic model development, team enablement, and daily maintenance.</p>
+                    </div>
+
+                    <!-- Model 3: End-to-End Build -->
+                    <div style="background: var(--bg-off-white); padding: 2.5rem; border-top: 4px solid var(--brand-green);">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Enterprise Data Warehouse Rollout</h3>
+                        <p style="font-size: 0.85rem; color: var(--brand-green); font-weight: 700; text-transform: uppercase;">Milestone-Based Project</p>
+                        <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Full-scale architecture execution: extract source data via SSIS/ADF, construct star-schema relational warehouses, build DAX models, and deploy RLS-secured Power BI reports.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NEW: UK Client Checklist -->
+            <h2 style="font-size: 1.8rem; margin-top: 3rem; border: none;">UK Client Compliance & Logistics Checklist</h2>
+            <table class="executive-table">
+                <tr>
+                    <th>Requirement</th>
+                    <th>Offshore B2B Solution</th>
+                </tr>
+                <tr>
+                    <td><strong>UK IR35 Status</strong></td>
+                    <td>Confirmed Outside IR35 (B2B Consultancy SOW / Deliverable-based).</td>
+                </tr>
+                <tr>
+                    <td><strong>Data Protection</strong></td>
+                    <td>100% GDPR Compliant. Development performed via client VDI / secure VPN.</td>
+                </tr>
+                <tr>
+                    <td><strong>Working Hours</strong></td>
+                    <td>100% Alignment with London (GMT/BST) for daily standups, Teams/Slack, and sprints.</td>
+                </tr>
+                <tr>
+                    <td><strong>Invoicing & Currency</strong></td>
+                    <td>Direct B2B invoicing in GBP (£) via Deel, Wise for Business, or international wire.</td>
+                </tr>
+                <tr>
+                    <td><strong>Contracting</strong></td>
+                    <td>Standard UK-compliant MSA & SOW with strict mutual NDAs.</td>
+                </tr>
+            </table>
+
             <div class="compliance-block">
-                <h3>1. Legal Framework & Data Sovereignty</h3>
+                <h3>Legal Framework & Data Sovereignty</h3>
                 <p>Before any internal infrastructure is assessed, a mutual <strong>Non-Disclosure Agreement (NDA)</strong> is executed to ensure absolute operational confidentiality. Project scopes, deliverables, and timelines are then legally codified through a standard <strong>Master Services Agreement (MSA)</strong> and a project-specific <strong>Statement of Work (SOW)</strong>. Data sovereignty is strictly maintained; client data is never hosted on unauthorized external servers.</p>
             </div>
 
             <div class="compliance-block">
-                <h3>2. UK IR35 Compliance (Outside IR35)</h3>
-                <p>For UK-based organizations, my services strictly fall <strong>Outside IR35</strong>. I operate as an independent, offshore commercial entity providing specialized, project-based architectural deliverables—not as a disguised employee. This mitigates all localized payroll tax liabilities and compliance risks for your organization.</p>
-            </div>
-
-            <div class="compliance-block">
-                <h3>3. Cross-Border Billing & Invoicing</h3>
-                <p>Financial logistics are highly streamlined. Invoicing is conducted on a monthly or milestone basis, rendered natively in GBP (£), EUR (€), or USD ($). To eliminate international wire friction and compliance hurdles, payments can be seamlessly routed through global Contractor Management platforms such as <strong>Deel</strong>, <strong>Oyster HR</strong>, or via direct B2B transfer utilizing <strong>Wise for Business</strong>.</p>
-            </div>
-
-            <div class="compliance-block">
-                <h3>4. Asynchronous Global Delivery</h3>
+                <h3>Asynchronous Global Delivery</h3>
                 <p>Operating from Gaborone, Botswana (GMT+2), my timezone aligns perfectly with the UK and Europe for real-time daily stand-ups and collaborative architecture reviews. Furthermore, this alignment allows for highly efficient asynchronous delivery: heavy data pipeline processing, ETL orchestration, and semantic model deployments are executed during off-peak hours, ensuring dashboards are fully updated and stabilized prior to your executive team's morning review.</p>
             </div>
 
