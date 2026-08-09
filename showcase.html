@@ -68,6 +68,12 @@
         .lightbox-close { position: absolute; top: 2rem; right: 3rem; color: var(--bg-white); font-size: 3rem; cursor: pointer; line-height: 1; font-family: sans-serif; transition: transform 0.3s ease; }
         .lightbox-close:hover { transform: scale(1.1); }
 
+        /* Report Blocks */
+        .consultant-report { background: var(--bg-white); border-left: 4px solid var(--brand-green); padding: 2.5rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); }
+        .consultant-report h4 { color: var(--charcoal); font-size: 1.1rem; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
+        .consultant-report p { color: var(--charcoal-light); font-size: 1rem; margin-bottom: 1.5rem; }
+        .consultant-report p:last-child { margin-bottom: 0; }
+
         /* Inline CTA Block */
         .inline-cta { background: var(--bg-off-white); border-left: 4px solid var(--brand-green); padding: 3rem; margin-top: 5rem; text-align: left; }
         .inline-cta h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--charcoal); text-transform: none; font-family: 'Playfair Display', serif; }
@@ -245,6 +251,22 @@
                     <p>Built a reusable Power BI model that automatically calculates business KPIs, historical trends, and year-over-year performance.</p>
                 </div>
 
+            </div>
+
+            <!-- NEW: Architectural Decision Record (ADR) -->
+            <h3 class="gsap-reveal" style="margin-top: 2rem;">Architectural Decision Record (ADR)</h3>
+            <div class="consultant-report gsap-reveal" style="border-left-color: var(--charcoal); background: #fdfdfd; padding: 2.5rem;">
+                <h4 style="color: var(--charcoal); font-size: 1.25rem; font-family: 'Playfair Display', serif; margin-bottom: 1.5rem; text-transform: none; letter-spacing: normal;">Strategic Rationale: Power BI Semantic Models vs. SSAS Tabular</h4>
+                <p style="color: var(--charcoal); margin-bottom: 2rem;">When designing the semantic layer for this rollout, I actively chose to bypass traditional SQL Server Analysis Services (SSAS) in favor of a cloud-native <strong>Power BI Semantic Model</strong>. Here is the consulting rationale behind that decision:</p>
+                
+                <h4 style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--brand-green);">1. Equivalent Performance, Superior Innovation</h4>
+                <p>Under the hood, both architectures rely on the exact same in-memory VertiPaq engine and follow identical tabular modeling principles. However, Microsoft's strategic focus has shifted heavily toward Power BI and Microsoft Fabric. Because of this, Power BI receives optimization updates, automatic aggregations, and performance patches long before legacy SSAS instances.</p>
+
+                <h4 style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--brand-green);">2. Full Enterprise Feature Parity</h4>
+                <p>Power BI fully supports the advanced enterprise features required for this build. This includes <strong>Calculation Groups</strong> (allowing us to group dynamic calculations like YoY, QTD, and Currency Conversions into a single reusable structure) and rigid <strong>Row-Level Security (RLS)</strong> integrated natively with Microsoft Entra ID to securely restrict regional managers to their specific territories.</p>
+
+                <h4 style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--brand-green);">3. Future-Proof Scalability</h4>
+                <p>By bypassing on-premises SSAS, this architecture is immediately ready for Microsoft Fabric adoption. It allows future integration with Delta tables directly in OneLake via DirectLake mode—delivering in-memory querying speeds without needing to duplicate or import data, a feature unavailable in traditional SSAS.</p>
             </div>
 
             <!-- Inline Call to Action -->
