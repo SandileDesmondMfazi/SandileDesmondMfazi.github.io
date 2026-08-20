@@ -18,55 +18,27 @@
         .methodology-intro { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; margin-bottom: 4rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.05em; }
         .methodology-intro .arrow { color: var(--brand-green); margin: 0 0.5rem; }
 
-        /* KPI Grid */
-        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 3rem 0; }
-        .kpi-card { border: 1px solid var(--border-color); padding: 1.5rem; border-top: 4px solid var(--brand-green); text-align: center; background: var(--bg-white); box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        .kpi-value { font-size: 2.2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--brand-green); line-height: 1.2; }
-        .kpi-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal-light); font-weight: 600; margin-top: 0.5rem; }
-
         /* Dashboard Embed Container (16:9 Aspect Ratio) */
         .dashboard-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: var(--bg-off-white); border: 1px solid var(--border-color); margin: 2rem 0 3rem 0; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
         .dashboard-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-
-        /* Business Impact Badges */
-        .impact-badges { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
-        .impact-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--bg-off-white); border: 1px solid var(--border-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: var(--charcoal); }
-        .impact-badge span { color: var(--brand-green); }
-
-        /* Consulting Executive Summary Cards */
-        .consulting-grid { display: grid; grid-template-columns: 1fr; gap: 0; margin-bottom: 4rem; }
-        .consulting-card { border-top: 1px solid var(--border-color); padding: 2rem 0; }
-        .consulting-card h4 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-green); margin-bottom: 1rem; font-family: 'Inter', sans-serif; }
-        .consulting-card p { font-size: 1.05rem; color: var(--charcoal); margin-bottom: 1rem; max-width: 900px; }
-        .consulting-card ul { list-style: none; padding: 0; margin: 0; }
-        .consulting-card li { font-size: 1.05rem; color: var(--charcoal); padding-left: 1.5em; position: relative; margin-bottom: 0.75rem; }
-        .consulting-card li::before { content: "•"; color: var(--brand-green); font-weight: bold; position: absolute; left: 0; font-size: 1.2rem; }
-
-        /* Visual Architecture Flow */
-        .architecture-flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.5rem; margin: 3rem 0; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: var(--charcoal); }
-        .flow-step { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; }
-        .flow-step span { font-size: 1.5rem; }
-        .flow-arrow { color: var(--border-color); font-size: 1.5rem; }
 
         /* Architecture Grid */
         .under-the-hood { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 2rem; }
         .hood-card { background: var(--bg-white); }
         .hood-card p { color: var(--charcoal-light); font-size: 0.95rem; margin-bottom: 1rem;}
         
-        /* Diagrams */
-        .diagram-container { position: relative; width: 100%; aspect-ratio: 4/3; background: var(--bg-off-white); border: 1px solid var(--border-color); margin-bottom: 1.5rem; overflow: hidden; cursor: pointer; border-radius: 4px; }
-        .diagram-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-        .diagram-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--brand-green); color: var(--bg-white); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; text-align: center; padding: 2rem; opacity: 0; transition: opacity 0.3s ease; z-index: 2; }
-        .diagram-container:hover .diagram-overlay { opacity: 1; }
-        .diagram-container:hover img { transform: scale(1.05); }
-
-        /* Lightbox */
-        .lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(26, 26, 26, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
-        .lightbox.active { opacity: 1; visibility: visible; }
-        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 25px 50px rgba(0,0,0,0.25); transform: scale(0.95); transition: transform 0.3s ease; }
-        .lightbox.active img { transform: scale(1); }
-        .lightbox-close { position: absolute; top: 2rem; right: 3rem; color: var(--bg-white); font-size: 3rem; cursor: pointer; line-height: 1; font-family: sans-serif; transition: transform 0.3s ease; }
-        .lightbox-close:hover { transform: scale(1.1); }
+        /* Executive Table (Trust Matrix) */
+        .executive-table { width: 100%; border-collapse: collapse; margin: 1rem 0 2rem 0; font-family: 'Inter', sans-serif; }
+        .executive-table th, .executive-table td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border-color); text-align: left; }
+        .executive-table th { color: var(--charcoal-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; width: 33%; }
+        .executive-table td { color: var(--charcoal); font-weight: 600; font-size: 1.05rem; }
+        
+        /* Architecture Details Formatting */
+        .architecture-details { margin-top: 0.5rem; }
+        .architecture-details p { margin-bottom: 1rem; line-height: 1.6; color: var(--charcoal); font-size: 1.05rem; }
+        .architecture-details ul { margin-bottom: 1.5rem; list-style: none; padding: 0; }
+        .architecture-details li { margin-bottom: 0.75rem; color: var(--charcoal); padding-left: 1.5em; position: relative; font-size: 1.05rem;}
+        .architecture-details li::before { content: "•"; color: var(--brand-green); font-weight: bold; position: absolute; left: 0; font-size: 1.2rem; }
 
         /* Report Blocks */
         .consultant-report { background: var(--bg-white); border-left: 4px solid var(--brand-green); padding: 2.5rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); }
@@ -109,182 +81,113 @@
         <div class="article-content gsap-reveal" style="flex: 1; max-width: 100%;">
             
             <span class="badge">Interactive Data Lab</span>
-            <h1>Technical Demonstrations: How I Turn Business Data into Executive Decisions</h1>
-            <p style="font-size: 1.15rem; color: var(--charcoal-light); max-width: 900px;">
-                Rather than showing confidential client work, the demonstrations below use realistic business scenarios and synthetic datasets. Each example follows the strict consulting methodology I use when helping organizations restructure their reporting.
+            <h1>Analytics Engineering & Governance: From Fragmented Spreadsheets to a Governed Semantic Layer</h1>
+            <p style="font-size: 1.15rem; color: var(--charcoal-light); max-width: 900px; margin-bottom: 3rem;">
+                <strong>The Demonstration:</strong> I audited and rebuilt a fragmented data environment, standardizing metric definitions across Finance, Sales, and Marketing, and delivered a fully documented executive reporting suite with a structured handoff. <em>(Note: This lab uses synthetic retail data designed to mirror real-world enterprise engagements.)</em>
             </p>
 
-            <!-- Global Methodology Flow -->
-            <div class="methodology-intro gsap-reveal">
-                <span>Discover</span><span class="arrow">→</span>
-                <span>Design</span><span class="arrow">→</span>
-                <span>Build</span><span class="arrow">→</span>
-                <span>Validate</span><span class="arrow">→</span>
-                <span>Deploy</span><span class="arrow">→</span>
-                <span>Support</span>
-            </div>
-            
-            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 4rem 0;">
-
-            <!-- SHOWCASE ITEM 1 -->
-            <h2 class="gsap-reveal">UK Retail & E-Commerce Profitability Assessment</h2>
-            
-            <!-- Business Impact Badges -->
-            <div class="impact-badges gsap-reveal">
-                <div class="impact-badge"><span>✔</span> Executive Reporting</div>
-                <div class="impact-badge"><span>✔</span> Automated KPI Tracking</div>
-                <div class="impact-badge"><span>✔</span> Data Integration</div>
-                <div class="impact-badge"><span>✔</span> Self-Service Analytics</div>
+            <!-- 1. The Situation -->
+            <h2 class="gsap-reveal">The Situation</h2>
+            <div class="architecture-details gsap-reveal">
+                <p>The business was experiencing rapid YoY revenue growth, but leadership lacked visibility into regional profitability. The issue was not a lack of tooling—they had SQL Server, modern CRMs, and ad platforms. The issue was that company-wide metrics were being manually built by operations managers in isolated Excel spreadsheets instead of a centralized data warehouse.</p>
+                <p>Because the analytics environment lacked a governed definition layer, the Finance and Marketing teams were consistently arriving at completely different numbers for the exact same metrics. They needed a seasoned Analytics Engineer to intervene, migrate the manual reports, create interoperable tables, and establish a single source of truth.</p>
             </div>
 
-            <!-- KPI Cards -->
-            <div class="kpi-grid gsap-reveal">
-                <div class="kpi-card">
-                    <div class="kpi-value">+14%</div>
-                    <div class="kpi-label">Revenue Growth</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-value">-3.5%</div>
-                    <div class="kpi-label">Margin Change</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-value">3</div>
-                    <div class="kpi-label">Data Sources</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-value">1.5M</div>
-                    <div class="kpi-label">Transactions</div>
-                </div>
+            <!-- 2. Why this engagement mattered -->
+            <h2 class="gsap-reveal" style="margin-top: 3rem;">Why this engagement mattered</h2>
+            <div class="architecture-details gsap-reveal">
+                <p>Inflexible reporting is a common byproduct of databases and dashboards that grow without centralized ownership. When calculations accumulate across ad-hoc queries without a unifying standard, the problem is rarely the data itself—it is the absence of a canonical definition layer.</p>
+                <p>Resolving this requires more than just writing SQL. It requires stakeholder alignment on what metrics actually mean, disciplined upstream implementation in the ETL pipeline, and creating a concrete artifact that teams can align around. <strong>My approach prioritizes definition alignment before model development, ensuring that what gets built reflects what the business actually agreed on.</strong></p>
             </div>
 
-            <!-- Power BI Embed Container -->
-            <div class="dashboard-container gsap-reveal">
-                <!-- Replace 'about:blank' with your actual Power BI publish-to-web link later -->
+            <!-- 3. Our Approach -->
+            <h2 class="gsap-reveal" style="margin-top: 3rem;">My Approach</h2>
+            <div class="architecture-details gsap-reveal">
+                <p>I worked across three distinct workstreams to stabilize and automate the environment:</p>
+                <ul>
+                    <li><strong>Metric Standardization & Governance:</strong> Rebuilt the transformation logic. Calculations previously distributed across individual analysts’ spreadsheets were moved upstream into SQL Server views, versioned, and documented.</li>
+                    <li><strong>Semantic Layer Deployment:</strong> Engineered a governed Power BI Semantic Model using DAX. This handled the complex time-intelligence and currency formatting centrally, ensuring metric definitions were not replicated at the dashboard layer.</li>
+                    <li><strong>Executive Dashboard Buildout:</strong> Developed a highly interactive, 3-page reporting suite covering macro trends, root-cause anomaly detection (Decomposition Trees), and What-If scenario modeling.</li>
+                </ul>
+            </div>
+
+            <!-- 4. The Interactive Dashboard Embed -->
+            <h2 class="gsap-reveal" style="margin-top: 3rem;">The Deployed Asset</h2>
+            <div class="dashboard-container gsap-reveal" style="margin-top: 1.5rem;">
+                <!-- Replace 'about:blank' with your generated Power BI Pro Publish-to-Web link -->
                 <iframe src="about:blank" allowFullScreen="true"></iframe>
             </div>
 
-            <!-- Consulting Executive Summary -->
-            <h3 class="gsap-reveal" style="margin-top: 4rem;">Executive Summary</h3>
-            <div class="consulting-grid gsap-reveal">
+            <!-- 5. The Outcome & Trust Matrix -->
+            <h2 class="gsap-reveal" style="margin-top: 3rem;">The Outcome</h2>
+            <div class="architecture-details gsap-reveal">
+                <p>After this rollout, metric definitions were unified in a single governed Power BI Semantic Model, with Finance, Sales, and Marketing pulling from the exact same source. At handoff, the internal team took full ownership of a maintainable, automated codebase.</p>
                 
-                <div class="consulting-card">
-                    <h4>Client Challenge</h4>
-                    <p>The finance team lacked visibility into regional profitability because sales, marketing, and inventory data were siloed in entirely separate legacy systems.</p>
-                </div>
-
-                <div class="consulting-card">
-                    <h4>Business Objective</h4>
-                    <p>Create a single source of truth allowing executives to monitor profitability, revenue growth, and regional performance automatically without manual Excel intervention.</p>
-                </div>
-
-                <div class="consulting-card">
-                    <h4>Solution Delivered</h4>
-                    <ul>
-                        <li>Integrated PostgreSQL, MariaDB, and CSV marketing data into a central hub.</li>
-                        <li>Designed a dimensional data warehouse.</li>
-                        <li>Built a reusable Power BI semantic model.</li>
-                        <li>Deployed automated executive KPI dashboards.</li>
-                    </ul>
-                </div>
-
-                <div class="consulting-card">
-                    <h4>Key Insights</h4>
-                    <ul>
-                        <li>Overall revenue increased 14% Year-over-Year.</li>
-                        <li>Northern region net margins declined 3.5%.</li>
-                        <li>Aggressive, untracked promotional discounting reduced overall profitability.</li>
-                    </ul>
-                </div>
-
-                <div class="consulting-card" style="border-bottom: 1px solid var(--border-color); padding-bottom: 2rem;">
-                    <h4>Business Recommendation</h4>
-                    <p>Introduce strict regional pricing controls and automate daily margin monitoring to protect profitability while maintaining the current trajectory of revenue growth.</p>
-                </div>
-
+                <table class="executive-table" style="margin-top: 2rem;">
+                    <thead>
+                        <tr>
+                            <th>Metric Trust & Ownership</th>
+                            <th>Before Intervention</th>
+                            <th>After Rollout</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Metric Definitions</strong></td>
+                            <td>Distributed across messy dashboards and offline spreadsheets.</td>
+                            <td style="color: var(--brand-green);">Unified centrally in a governed DAX semantic model.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cross-Team Consistency</strong></td>
+                            <td>Finance and Sales often produced wildly different numbers for the same metric.</td>
+                            <td style="color: var(--brand-green);">A singular, verifiable source of truth across all reporting surfaces.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Documentation</strong></td>
+                            <td>Sparse, relying on the institutional knowledge of a single employee.</td>
+                            <td style="color: var(--brand-green);">Inline SQL comments and a standalone, hand-off metrics catalog.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reporting Cadence</strong></td>
+                            <td>Highly manual, taking 72+ hours to compile weekly reports.</td>
+                            <td style="color: var(--brand-green);">Automated daily refreshes requiring zero human intervention.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <!-- Solution Architecture -->
-            <h3 class="gsap-reveal">Solution Architecture</h3>
-            
-            <!-- Visual Flow Diagram -->
-            <div class="architecture-flow gsap-reveal">
-                <div class="flow-step"><span>📥</span> Data Sources</div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step"><span>⚙</span> Data Integration</div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step"><span>🗄</span> Data Warehouse</div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step"><span>📊</span> Executive Dashboard</div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step"><span>💡</span> Business Insights</div>
+            <!-- 6. Why Engage Me (Values) -->
+            <h2 class="gsap-reveal" style="margin-top: 3rem;">Three Values in Action</h2>
+            <div class="under-the-hood gsap-reveal" style="margin-top: 2rem; grid-template-columns: repeat(3, 1fr);">
+                <div class="hood-card">
+                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.95rem;">Curiosity</h4>
+                    <p>I audit the existing architecture before proposing changes, taking the time to understand the original intent behind the legacy models before deciding what to modify.</p>
+                </div>
+                <div class="hood-card">
+                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.95rem;">Integrity</h4>
+                    <p>Where metric definitions are ambiguous, I surface the friction. I work with business stakeholders to reach a documented resolution rather than making unilateral technical decisions.</p>
+                </div>
+                <div class="hood-card">
+                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.95rem;">Sustainability</h4>
+                    <p>Every architectural decision accounts for long-term maintainability. The goal is to build an ecosystem that the internal team can operate independently after the handover.</p>
+                </div>
             </div>
 
-            <div class="under-the-hood gsap-reveal" style="margin-top: 3rem;">
-                
-                <!-- Pillar 1: Data Engineering -->
-                <div class="hood-card">
-                    <div class="diagram-container" onclick="openLightbox('images/etl-diagram.png')">
-                        <img src="images/etl-diagram.png" alt="ETL Pipeline Architecture" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+ETL+Diagram'">
-                        <div class="diagram-overlay">ETL Architecture Diagram</div>
-                    </div>
-                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.95rem;">1. Data Integration</h4>
-                    <p>Data from multiple disconnected business systems is extracted, cleaned, and standardized to ensure reporting accuracy.</p>
-                </div>
-
-                <!-- Pillar 2: Data Warehousing -->
-                <div class="hood-card">
-                    <div class="diagram-container" onclick="openLightbox('images/star-schema.png')">
-                        <img src="images/star-schema.png" alt="Star Schema Entity Relationship Diagram" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+Star+Schema'">
-                        <div class="diagram-overlay">Star Schema ERD</div>
-                    </div>
-                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.95rem;">2. Central Warehouse</h4>
-                    <p>The unified data is structured into a high-performance analytical format designed specifically for rapid executive querying.</p>
-                </div>
-
-                <!-- Pillar 3: Semantic Modeling & DAX -->
-                <div class="hood-card">
-                    <div class="diagram-container" onclick="openLightbox('images/dax-model.png')">
-                        <img src="images/dax-model.png" alt="Semantic Layer DAX" onerror="this.src='https://via.placeholder.com/800x600?text=Upload+DAX+Snippet'">
-                        <div class="diagram-overlay">Semantic Layer DAX</div>
-                    </div>
-                    <h4 style="color: var(--brand-green); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.95rem;">3. Reporting Model</h4>
-                    <p>Built a reusable Power BI model that automatically calculates business KPIs, historical trends, and year-over-year performance.</p>
-                </div>
-
-            </div>
-
-            <!-- NEW: Architectural Decision Record (ADR) -->
-            <h3 class="gsap-reveal" style="margin-top: 2rem;">Architectural Decision Record (ADR)</h3>
+            <!-- 7. ADR & CTA -->
+            <h3 class="gsap-reveal" style="margin-top: 3rem;">Architectural Decision Record (ADR)</h3>
             <div class="consultant-report gsap-reveal" style="border-left-color: var(--charcoal); background: #fdfdfd; padding: 2.5rem;">
                 <h4 style="color: var(--charcoal); font-size: 1.25rem; font-family: 'Playfair Display', serif; margin-bottom: 1.5rem; text-transform: none; letter-spacing: normal;">Strategic Rationale: Power BI Semantic Models vs. SSAS Tabular</h4>
-                <p style="color: var(--charcoal); margin-bottom: 2rem;">When designing the semantic layer for this rollout, I actively chose to bypass traditional SQL Server Analysis Services (SSAS) in favor of a cloud-native <strong>Power BI Semantic Model</strong>. Here is the consulting rationale behind that decision:</p>
-                
-                <h4 style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--brand-green);">1. Equivalent Performance, Superior Innovation</h4>
-                <p>Under the hood, both architectures rely on the exact same in-memory VertiPaq engine and follow identical tabular modeling principles. However, Microsoft's strategic focus has shifted heavily toward Power BI and Microsoft Fabric. Because of this, Power BI receives optimization updates, automatic aggregations, and performance patches long before legacy SSAS instances.</p>
-
-                <h4 style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--brand-green);">2. Full Enterprise Feature Parity</h4>
-                <p>Power BI fully supports the advanced enterprise features required for this build. This includes <strong>Calculation Groups</strong> (allowing us to group dynamic calculations like YoY, QTD, and Currency Conversions into a single reusable structure) and rigid <strong>Row-Level Security (RLS)</strong> integrated natively with Microsoft Entra ID to securely restrict regional managers to their specific territories.</p>
-
-                <h4 style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--brand-green);">3. Future-Proof Scalability</h4>
-                <p>By bypassing on-premises SSAS, this architecture is immediately ready for Microsoft Fabric adoption. It allows future integration with Delta tables directly in OneLake via DirectLake mode—delivering in-memory querying speeds without needing to duplicate or import data, a feature unavailable in traditional SSAS.</p>
+                <p style="color: var(--charcoal); margin-bottom: 1rem;">When designing the semantic layer for this rollout, I actively chose to bypass traditional SQL Server Analysis Services (SSAS) in favor of a cloud-native <strong>Power BI Semantic Model</strong>.</p>
+                <p style="color: var(--charcoal); margin-bottom: 1rem;">Under the hood, both architectures rely on the exact same VertiPaq engine. However, Microsoft's strategic focus has shifted heavily toward Power BI and Microsoft Fabric. By bypassing on-premises SSAS, this architecture supports immediate Git integration, dynamic Calculation Groups, Entra ID Row-Level Security, and is immediately scalable for future DirectLake adoptions.</p>
             </div>
 
-            <!-- Inline Call to Action -->
             <div class="inline-cta gsap-reveal">
-                <h3>Interested in a similar transformation?</h3>
-                <p>Whether you are struggling with disconnected spreadsheets, manual reporting bottlenecks, or siloed business systems, I can help design a centralized reporting solution tailored specifically to your organization's operational goals.</p>
-                <a href="contact" class="btn-primary">Schedule a Discovery Call</a>
+                <h3>Ready for a metrics layer your team actually trusts?</h3>
+                <p>If your metric definitions are scattered across spreadsheets, or your data architecture has outgrown its governance, we should talk.</p>
+                <a href="contact" class="btn-primary">Request a Consultation</a>
             </div>
-
-            <!-- END SHOWCASE ITEM 1 -->
 
         </div>
-    </div>
-
-    <!-- The Lightbox Modal Container -->
-    <div id="diagram-lightbox" class="lightbox" onclick="closeLightbox(event)">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="Expanded Architectural Diagram">
     </div>
 
     <!-- Global Footer -->
@@ -308,23 +211,5 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="script.js"></script>
 
-    <!-- Lightbox JavaScript Logic -->
-    <script>
-        const lightbox = document.getElementById('diagram-lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-
-        function openLightbox(imageSrc) {
-            lightboxImg.src = imageSrc;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox(event) {
-            if (event.target === lightbox || event.target.classList.contains('lightbox-close')) {
-                lightbox.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-    </script>
 </body>
 </html>

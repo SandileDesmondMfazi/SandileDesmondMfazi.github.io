@@ -753,3 +753,61 @@ nav a:hover {
         transform: translateY(-9px) rotate(-45deg);
     }
 }
+
+/* --- INFINITE STACK MARQUEE --- */
+.stack-section {
+    padding: 4rem 0;
+    background: var(--bg-white);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.stack-title {
+    text-align: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--charcoal-light);
+    margin-bottom: 2.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    /* Soft gradient masks on the edges for a fade-in/out effect */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+    display: inline-block;
+    /* Adjust the 30s to make the scroll faster or slower */
+    animation: scroll-left 35s linear infinite;
+}
+
+/* Pause the animation if the user hovers over the logos */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.marquee-track img {
+    height: 40px; /* Uniform height for all logos */
+    margin: 0 2.5rem;
+    vertical-align: middle;
+    filter: grayscale(100%) opacity(0.6);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.marquee-track img:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
