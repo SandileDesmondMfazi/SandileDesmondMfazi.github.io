@@ -7,6 +7,24 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS ADDITIONS FOR VISUAL DEPTH -->
+    <style>
+        /* Creates a subtle engineering grid background for tech sites */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), 
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+            background-color: var(--bg-white);
+        }
+        
+        /* A very light, premium cool-gray to alternate sections and break up the pure white */
+        .bg-alternate {
+            background-color: #F9FAFB !important;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+    </style>
 </head>
 <body>
 
@@ -35,14 +53,40 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section (Now with subtle grid background) -->
+    <section class="hero bg-grid">
         <div class="hero-text gsap-reveal">
-            <span class="badge">Offshore Microsoft BI Contractor | UK & Europe Alignment</span>
-            <h1>Eliminate Reporting Bottlenecks & Recover Lost Margin with Senior Microsoft BI Architecture.</h1>
-            <p>I help UK enterprise and mid-market organizations transform fragile legacy databases into automated, certified Power BI & SQL Server ecosystems—operating Outside IR35 with seamless GMT alignment.</p>
+            <span class="badge">Independent Senior Data Architect | UK & European Delivery</span>
+            <h1>Architecting Resilient Data Infrastructure & Certified BI Ecosystems.</h1>
+            <p>I help UK mid-market and enterprise organizations transform fragile legacy databases into automated, single-source-of-truth architectures—leveraging the Modern Data Stack and Power BI to deliver enterprise-grade performance Outside IR35.</p>
+            
+            <!-- Authority Badges -->
+            <div class="authority-grid" style="display: flex; gap: 1.5rem; margin-bottom: 2.5rem; flex-wrap: wrap;">
+                
+                <div style="border-left: 2px solid var(--brand-green); padding-left: 0.8rem;">
+                    <span style="font-weight: 700; color: var(--charcoal); display: block; font-size: 1.1rem;">200M+ Rows</span>
+                    <span style="font-size: 0.8rem; color: var(--charcoal-light); text-transform: uppercase;">Data Scale Engineered</span>
+                </div>
+
+                <div style="border-left: 2px solid var(--brand-green); padding-left: 0.8rem;">
+                    <span style="font-weight: 700; color: var(--charcoal); display: block; font-size: 1.1rem;">First-Class Honours</span>
+                    <span style="font-size: 0.8rem; color: var(--charcoal-light); text-transform: uppercase;">BI & Data Analytics</span>
+                </div>
+
+                <div style="border-left: 2px solid var(--brand-green); padding-left: 0.8rem;">
+                    <span style="font-weight: 700; color: var(--charcoal); display: block; font-size: 1.1rem;">Multinational</span>
+                    <span style="font-size: 0.8rem; color: var(--charcoal-light); text-transform: uppercase;">Architecture Rollouts</span>
+                </div>
+
+                <div style="border-left: 2px solid var(--brand-green); padding-left: 0.8rem;">
+                    <span style="font-weight: 700; color: var(--charcoal); display: block; font-size: 1.1rem;">Outside IR35</span>
+                    <span style="font-size: 0.8rem; color: var(--charcoal-light); text-transform: uppercase;">GMT+2 UK Alignment</span>
+                </div>
+            </div>
+
             <div class="hero-buttons">
-                <a href="projects" class="btn-primary">View Case Studies</a>
+                <a href="projects" class="btn-primary">Explore Case Studies</a>
+                <a href="onboarding" class="btn-secondary" style="margin-left: 1rem; border: 1px solid var(--border-color); padding: 1rem 1.8rem; text-decoration: none; color: var(--charcoal); font-weight: 600; text-transform: uppercase; font-size: 0.85rem;">Engagement Model</a>
             </div>
         </div>
         <div class="hero-image-container gsap-reveal">
@@ -50,18 +94,16 @@
         </div>
     </section>
 
-    <!-- Our Stack Marquee -->
-    <section class="stack-section">
+    <!-- Our Stack Marquee (Alternating Background) -->
+    <section class="stack-section bg-alternate">
         <h3 class="stack-title">The Enterprise Data Stack</h3>
         <div class="marquee-container">
-            <!-- The track contains TWO identical sets of logos to create the infinite loop -->
             <div class="marquee-track">
-                <!-- SET 1 -->
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt="SQL Server">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg" alt="Snowflake">
-                <img src="https://www.getdbt.com/_next/image?url=%2Fimg%2Flogos%2Fdbt-labs-logo.svg" alt="dbt">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/databricks/databricks-original.svg" alt="databricks">
+                <img src="https://svgicons.com/img/110770/dbt.svg" alt="dbt">
+                <img src="//logotyp.us/file/databricks.svg" alt="databricks">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft Azure">
@@ -69,12 +111,12 @@
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud / BigQuery">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas">
                 
-                <!-- SET 2 (Exact Duplicate for the loop) -->
+                <!-- Duplicate for loop -->
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt="SQL Server">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg" alt="Snowflake">
-                <img src="https://www.getdbt.com/_next/image?url=%2Fimg%2Flogos%2Fdbt-labs-logo.svg" alt="dbt">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/databricks/databricks-original.svg" alt="databricks">
+                <img src="https://svgicons.com/img/110770/dbt.svg" alt="dbt">
+                <img src="//logotyp.us/file/databricks.svg" alt="databricks">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft Azure">
@@ -85,64 +127,137 @@
         </div>
     </section>
 
-    <!-- Professional Profile Section -->
-    <section class="profile-section">
-        <div class="profile-header gsap-reveal">
-            <span class="badge">Architectural Philosophy</span>
-            <h2>Bridging the Gap Between Data and Operations</h2>
+    <!-- SECTION 3: Pain-Agitation-Solution (Asymmetrical Sticky Grid) -->
+    <section class="section-container split-section">
+        <div class="sticky-rail gsap-reveal">
+            <span class="badge">The Diagnosis</span>
+            <h2 style="border: none;">What's Holding Your Operations Back?</h2>
+            <p style="font-size: 1.15rem; color: var(--charcoal-light);">Pick your bottleneck. I will engineer the exact structural fix.</p>
         </div>
-        <div class="profile-content gsap-reveal">
-            <p>I hold a <strong>First-Class Honours degree in Business Intelligence and Data Analytics</strong>, providing a rigorous academic foundation to my enterprise consulting.</p>
-            <p>Over the past <strong>2 years and 4 months</strong> of active, project-based delivery, I have focused entirely on the intersection of data engineering and business strategy. I do not simply build dashboards; I architect the underlying semantic models and ETL pipelines required to establish a singular, verifiable source of truth.</p>
-            <p>Beyond the technical architecture, my background includes leading analytics training and corporate consulting. This dual expertise ensures that the solutions I deploy are not just technically sound, but are actively adopted by operational teams and leadership alike.</p>
+        
+        <div class="cards-rail">
+            <div class="editorial-card gsap-reveal" style="padding: 2.5rem; border-left: 4px solid var(--brand-green); background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">01</span>
+                <h3 style="margin-top: 0.5rem;">Drowning in manual spreadsheet extraction?</h3>
+                <p>I deploy zero-maintenance <strong>Ingestion Pipelines</strong> (Fivetran, Airbyte, SSIS) to automatically pull data from your operational tools directly into the cloud. Eliminate the human bottleneck.</p>
+            </div>
+            
+            <div class="editorial-card gsap-reveal" style="padding: 2.5rem; border-left: 4px solid var(--brand-green); background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">02</span>
+                <h3 style="margin-top: 0.5rem;">Messy, siloed legacy databases?</h3>
+                <p>Stop overwriting historical states. I build highly scalable <strong>Data Warehouses & Lakehouses</strong> (Snowflake, Databricks, SQL Server) to establish a singular, cross-border source of truth.</p>
+            </div>
+
+            <div class="editorial-card gsap-reveal" style="padding: 2.5rem; border-left: 4px solid var(--brand-green); background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">03</span>
+                <h3 style="margin-top: 0.5rem;">Conflicting executive KPIs?</h3>
+                <p>Eliminate departmental metric debates. I engineer governed <strong>dbt Models & Power BI Dashboards</strong>, ensuring Finance, Sales, and Marketing all report on the exact same numbers.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Expanded Offshore BI Delivery Section -->
-    <section class="delivery-section">
-        <div class="delivery-content gsap-reveal">
-            <div class="delivery-text">
-                <h2>The Global Delivery Advantage</h2>
+    <!-- SECTION 4: The 3-Phase Process (Alternating Background) -->
+    <section class="section-container bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="gsap-reveal" style="text-align: center; max-width: 700px; margin: 0 auto;">
+            <span class="badge">The Architecture Framework</span>
+            <h2 style="border: none;">How I Build Your Reporting Engine</h2>
+            <p style="color: var(--charcoal-light);">Three phases. One compounding system. Every engagement starts with foundational stability and scales into advanced intelligence.</p>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-card gsap-reveal" style="background: var(--bg-white);">
+                <span style="font-weight: 700; color: var(--charcoal-light);">01. EXTRACTION & LOAD</span>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">The Pipeline</h3>
+                <p style="font-size: 0.95rem;">I securely connect your SaaS apps, CRMs, and on-premise databases, piping raw data directly into a unified cloud environment with zero data loss.</p>
+                <div class="tech-pill-container">
+                    <span class="tech-pill">Fivetran</span>
+                    <span class="tech-pill">SSIS</span>
+                    <span class="tech-pill">Python</span>
+                </div>
             </div>
-            <div class="delivery-text">
-                <p>Operating as an independent B2B consultant from Gaborone, Botswana (GMT+2), I provide a highly strategic timezone overlap for UK and European enterprise clients.</p>
-                <p>This geographic positioning ensures seamless, real-time collaboration during your core business hours, alongside the distinct advantage of asynchronous data pipeline execution—meaning complex SSIS integrations and Power BI semantic models are processed overnight, ready for your leadership teams by morning.</p>
-                <p>By engaging my services on a flexible, offshore contracting basis, organizations immediately bypass the overhead of full-time hires while instantly securing high-level architectural expertise specifically tailored to the Microsoft technical ecosystem.</p>
-                
-                <div class="delivery-stats">
-                    <div class="stat-box">
-                        <span class="stat-number">GMT+2</span>
-                        <span class="stat-label">Timezone Alignment</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Microsoft BI Stack Focus</span>
-                    </div>
+
+            <div class="process-card gsap-reveal" style="background: var(--bg-white);">
+                <span style="font-weight: 700; color: var(--charcoal-light);">02. TRANSFORM & STORE</span>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">The Backbone</h3>
+                <p style="font-size: 0.95rem;">I untangle messy JSON and legacy tables, applying Kimball modeling via modular dbt code to create clean, tested star-schema data marts.</p>
+                <div class="tech-pill-container">
+                    <span class="tech-pill">Snowflake</span>
+                    <span class="tech-pill">Databricks</span>
+                    <span class="tech-pill">dbt</span>
+                </div>
+            </div>
+
+            <div class="process-card gsap-reveal" style="background: var(--bg-white);">
+                <span style="font-weight: 700; color: var(--charcoal-light);">03. SERVE & VISUALIZE</span>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">The Multiplier</h3>
+                <p style="font-size: 0.95rem;">I deploy governed semantic models and real-time dashboards. The value of your data multiplies through automated daily refreshes and executive visibility.</p>
+                <div class="tech-pill-container">
+                    <span class="tech-pill">Power BI</span>
+                    <span class="tech-pill">Looker</span>
+                    <span class="tech-pill">Semantic Layer</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Wall of Tools -->
-    <section class="tools-wall">
-        <div class="tools-container gsap-reveal">
-            <h3 class="tools-title">Primary Technical Arsenal</h3>
-            <div class="tools-grid">
-                <img src="images/tool-sqlserver.svg" alt="Microsoft SQL Server" class="tool-logo">
-                <img src="images/tool-ssis.png" alt="SSIS" class="tool-logo">
-                <img src="images/tool-ssas.png" alt="SSAS" class="tool-logo">
-                <img src="images/tool-ssrs.png" alt="SSRS" class="tool-logo">
-                <img src="images/tool-powerbi.png" alt="Power BI" class="tool-logo">
-                <img src="images/tool-powerapps.png" alt="Power Apps" class="tool-logo">
-                <img src="images/tool-azuredatafactory.png" alt="Azure Data Factory" class="tool-logo">
-                <img src="images/tool-azuresql.png" alt="Azure SQL Database" class="tool-logo">
-                <img src="images/tool-excel.png" alt="Microsoft Excel" class="tool-logo">
-                <img src="images/tool-MSLists.png" alt="Microsoft Lists" class="tool-logo">
-                <img src="images/tool-SharePoint.png" alt="Microsoft SharePoint" class="tool-logo">
-                <img src="images/tool-bigquery.png" alt="Google BigQuery" class="tool-logo">
-                <img src="images/tool-looker.png" alt="Looker Studio" class="tool-logo">
-                <img src="images/tool-mariadb.png" alt="MariaDB" class="tool-logo">
-                <img src="images/tool-oracledb.png" alt="OracleDB" class="tool-logo">
+    <!-- SECTION 5 & 7: Industry Verticals (Grid Pattern Background) -->
+    <section class="section-container bg-grid" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="gsap-reveal">
+            <span class="badge">Proven Deployments</span>
+            <h2 style="border: none;">Vertical Expertise</h2>
+        </div>
+        
+        <div class="grid-2">
+            <!-- Enterprise Vertical -->
+            <div class="editorial-card gsap-reveal" style="background: #FFFFFF; padding: 2.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <h3 style="font-family: 'Playfair Display', serif;">Financial Services & Enterprise</h3>
+                <p style="margin-bottom: 1.5rem;">"Sandile took absolute ownership... His ability to untangle legacy data and engineer a highly scalable SSIS and Tabular pipeline recovered critical operational history."</p>
+                <ul style="list-style-type: none; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    <li style="margin-bottom: 0.5rem;">✓ Reconstructed 115M+ overwritten audit logs.</li>
+                    <li>✓ Cross-border RLS compliance (Botswana, SA, Zambia).</li>
+                </ul>
+                <!-- The fixed button class -->
+                <a href="case-study-enterprise" class="btn-primary">View Architecture</a>
+            </div>
+
+            <!-- Agriculture Vertical -->
+            <div class="editorial-card gsap-reveal" style="background: #FFFFFF; padding: 2.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <h3 style="font-family: 'Playfair Display', serif;">Agriculture & Logistics</h3>
+                <p style="margin-bottom: 1.5rem;">"The custom cloud architecture completely transformed how we manage our logistics. It eliminated our reliance on vulnerable paper records and gave us real-time visibility."</p>
+                <ul style="list-style-type: none; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    <li style="margin-bottom: 0.5rem;">✓ 100% elimination of manual field tracking.</li>
+                    <li>✓ Zero-maintenance serverless BigQuery infrastructure.</li>
+                </ul>
+                <!-- The fixed button class -->
+                <a href="case-study-agriculture" class="btn-primary">View Architecture</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Risk Reversal Grid -->
+    <!-- Changed to 'section-container' to constrain width and perfectly align the grid -->
+    <section class="section-container bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="gsap-reveal" style="max-width: 800px;">
+            <span class="badge">Why Trust SDM?</span>
+            <h2 style="border: none;">Zero Fluff. Total Governance.</h2>
+        </div>
+        
+        <div class="risk-grid gsap-reveal">
+            <div class="risk-item">
+                <h4 style="color: var(--brand-green);">01. Outside IR35 & Compliant</h4>
+                <p style="font-size: 0.95rem;">Strict B2B Statement of Work (SOW) engagements. You secure high-level data architecture without the UK tax risks or overhead of full-time hires.</p>
+            </div>
+            <div class="risk-item">
+                <h4 style="color: var(--brand-green);">02. Direct Accountability</h4>
+                <p style="font-size: 0.95rem;">As an independent consultant, I do not bait-and-switch. The senior architect you speak to on the discovery call is the exact same engineer writing your SQL and DAX code.</p>
+            </div>
+            <div class="risk-item">
+                <h4 style="color: var(--brand-green);">03. Revenue-First Engineering</h4>
+                <p style="font-size: 0.95rem;">I do not build tech for tech's sake. From dbt models to API extractions, every line of logic I write is tied to an operational outcome your business can measure.</p>
+            </div>
+            <div class="risk-item">
+                <h4 style="color: var(--brand-green);">04. No Vendor Lock-In</h4>
+                <p style="font-size: 0.95rem;">You own the intellectual property. I provide full metric catalog documentation, inline Git repository comments, and structured handoffs to your internal teams.</p>
             </div>
         </div>
     </section>
@@ -160,7 +275,7 @@
 
         <div class="disclaimer-text gsap-reveal">
             <p><strong>B2B Offshore Contracting:</strong> Operating globally as an independent Business Intelligence Consultant and data architecture contractor. All client engagements are executed under strict non-disclosure agreements (NDAs) to ensure total data sovereignty and operational confidentiality.</p>
-            <p style="margin-top: 0.5rem;">Microsoft, SQL Server, Power BI, and Power Apps are registered trademarks of the Microsoft Corporation. This consultancy is an independent service provider and is not directly affiliated with or endorsed by Microsoft Corporation.</p>
+            <p style="margin-top: 0.5rem;">Snowflake, Databricks, Fivetran, Microsoft, SQL Server, and Power BI are registered trademarks of their respective corporations. This consultancy is an independent service provider and is not directly affiliated with or endorsed by these entities.</p>
             <p style="margin-top: 1rem;">&copy; 2026 Sandile Desmond Mfazi. All rights reserved.</p>
         </div>
     </footer>

@@ -811,3 +811,130 @@ nav a:hover {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); } 
 }
+
+/* --- ASYMMETRICAL STICKY SPLIT LAYOUT (For "Pick Your Pain") --- */
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.sticky-rail {
+    position: sticky;
+    top: 120px; /* Accounts for the navbar height */
+}
+
+.cards-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* --- 3-COLUMN PROCESS GRID ("The Revenue Engine") --- */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.process-card {
+    background: var(--bg-off-white);
+    padding: 2.5rem 2rem;
+    border-top: 4px solid var(--brand-green);
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-pill-container {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tech-pill {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--charcoal-light);
+    border-radius: 20px;
+}
+
+/* --- 2x3 RISK REVERSAL GRID ("Why Trust Us?") --- */
+.risk-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 4rem;
+    margin-top: 3rem;
+}
+
+.risk-item h4 {
+    font-size: 1.2rem;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+}
+
+/* --- MOBILE RESPONSIVENESS OVERRIDES --- */
+@media (max-width: 1024px) {
+    .split-section { grid-template-columns: 1fr; }
+    .sticky-rail { position: relative; top: 0; margin-bottom: 2rem; }
+    .process-grid { grid-template-columns: 1fr; }
+    .risk-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+body {
+    background-color: var(--bg-white);
+    /* Creates a subtle 40px architectural grid */
+    background-image: 
+        linear-gradient(rgba(23, 123, 87, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 123, 87, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Add this anywhere in your CSS */
+.hero {
+    position: relative;
+    z-index: 1; /* Keeps content above the glow */
+}
+
+/* Injects a soft, transparent green gradient behind the hero text */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(23,123,87,0.04) 0%, rgba(255,255,255,0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- FIX: Off-White Variable Fallback --- */
+:root {
+    --bg-off-white: #F9FAFB;
+}
+
+/* --- FIX: Button Text Visibility in Editorial Cards --- */
+.editorial-card a.btn-primary {
+    color: var(--bg-white) !important;
+    border-bottom: none;
+    padding: 0.6rem 1.2rem;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    border-radius: 2px; /* Very slight rounding for a premium feel */
+}
+
+.editorial-card a.btn-primary:hover {
+    background: var(--charcoal);
+    color: var(--bg-white) !important;
+}
