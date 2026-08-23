@@ -1368,3 +1368,18 @@ body {
     .mega-col { border-right: none; border-bottom: 1px solid var(--border-color); }
     .mega-menu-footer { flex-direction: column; gap: 1rem; text-align: center; }
 }
+
+/* Explicit open state for JS toggles */
+.dropdown-menu.open {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+/* Ensure desktop hover still works if JS opens menu */
+@media (min-width: 769px) {
+    .dropdown-menu.open {
+        transform: translateY(0);
+    }
+}

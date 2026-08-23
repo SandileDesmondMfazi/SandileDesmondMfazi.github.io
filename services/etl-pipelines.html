@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights & Deliverables | Sandile Desmond Mfazi</title>
+    <title>Ingestion Pipelines | Sandile Desmond Mfazi</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="/style.css">
-    <!-- Import Corporate Editorial Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <!-- Header Navigation with Mega Menus -->
     <header class="navbar">
                 <div class="logo">
@@ -98,7 +96,7 @@
                 <!-- INDUSTRIES MEGA MENU -->
                 <li class="nav-item has-mega-menu">
                     <a href="/industries" class="nav-link dropdown-toggle">Industries</a>
-                    <div class="dropdown-menu mega-menu" style="width: 600px;">
+                    <div class="dropdown-menu mega-menu" style="width: 600px;"> <!-- Narrower for 2 columns -->
                         <div class="mega-menu-content" style="grid-template-columns: repeat(2, 1fr);">
                             
                             <!-- Column 1 -->
@@ -133,54 +131,69 @@
         </nav>
     </header>
 
-    <!-- Main Projects Section -->
-    <section class="projects-section">
-        <h2 class="gsap-reveal">Architectural Deliverables</h2>
-        
-        <div class="projects-grid">
-            
-            <div class="project-card gsap-reveal">
-                <span class="tag">Enterprise Data Architecture</span>
-                <h3>Recovered 115M Records & Automated Multinational Enterprise Reporting</h3>
-                <p><strong>The Challenge:</strong> The client's legacy database overwrote historical states, destroying critical policy lifecycles. Furthermore, disparate systems across three countries caused severe reporting bottlenecks and conflicting KPIs.</p>
-                <p><strong>The Solution:</strong> Architected a fully automated, end-to-end Microsoft BI pipeline establishing a singular, verifiable source of truth for over 200 million operational records.</p>
-                
-                <div class="architecture-details">
-                    <strong>Architectural Outcomes:</strong>
-                    <ul>
-                        <li><strong>History Reconstruction:</strong> Parsed 115+ million raw audit logs to mathematically rebuild lost historical contract snapshots via specialized SQL environments.</li>
-                        <li><strong>Data Centralization:</strong> Consolidated 21.4 million contracts and 39.1 million transactions into a single automated data warehouse.</li>
-                        <li><strong>Semantic Modeling:</strong> Deployed SSAS Tabular Models to handle complex DAX measures, Pula FX conversions, and multi-tier arrears bucket migrations.</li>
-                        <li><strong>Data Governance:</strong> Enforced Row-Level Security (RLS) across Botswana, South Africa, and Zambia via an SSRS Native-Mode web portal.</li>
-                    </ul>
-                </div>
-                
-                <!-- Gateway button to the dedicated case study page -->
-                <a href="/case-study-enterprise.html" class="btn-primary" style="margin-top: 2rem;">Read Deep Dive Analysis</a>
+
+    <!-- Service Hero -->
+    <section class="hero bg-grid">
+        <div class="hero-text gsap-reveal">
+            <span class="badge">Ingestion Pipelines</span>
+            <h1>Automated, zero-loss data extraction.</h1>
+            <p>I architect resilient ETL pipelines utilizing SSIS, Fivetran, and custom Python to securely extract raw data from your CRMs and ERPs into a unified cloud environment.</p>
+            <div class="hero-buttons">
+                <a href="/contact.html" class="btn-primary">Audit Your Data Pipelines</a>
             </div>
-
-            <div class="project-card gsap-reveal">
-                <span class="tag">Cloud Data Infrastructure</span>
-                <h3>Real-Time Cloud Data Portal for Livestock Logistics</h3>
-                <p><strong>The Challenge:</strong> Field operations relied entirely on vulnerable analog paper records, causing multi-day reporting latency, data corruption, and a fundamental lack of executive visibility into farm logistics.</p>
-                <p><strong>The Solution:</strong> Engineered a zero-maintenance, serverless cloud database application to digitize data collection directly from the field to the executive dashboard.</p>
-                
-                <div class="architecture-details">
-                    <strong>Architectural Outcomes:</strong>
-                    <ul>
-                        <li><strong>Front-End Ingestion:</strong> Developed custom, mobile-responsive data entry interfaces utilizing Google Apps Script for field operators.</li>
-                        <li><strong>Backend Cloud Storage:</strong> Engineered automated pipelines to push sanitized, validated form data directly into structured, relational Google BigQuery tables.</li>
-                        <li><strong>Real-Time Visualization:</strong> Connected the BigQuery data warehouse directly to Looker Studio to deliver live operational metrics to stakeholders.</li>
-                        <li><strong>Business Impact:</strong> Achieved a 100% elimination of paper-based tracking, reducing data latency from 72+ hours to sub-60-second cloud synchronization.</li>
-                    </ul>
-                </div>
-
-                <!-- Gateway button to the dedicated case study page -->
-                <a href="/case-study-agriculture.html" class="btn-primary" style="margin-top: 2rem;">Read Deep Dive Analysis</a>
-            </div>
-
         </div>
     </section>
+
+    <!-- The Problem Sticky Grid -->
+    <section class="section-container split-section bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="sticky-rail gsap-reveal">
+            <h2 style="border: none; font-size: 2rem;">The Symptoms of Broken Ingestion</h2>
+            <p style="font-size: 1.15rem; color: var(--charcoal-light);">If your data isn't reaching the warehouse properly, it usually looks like this.</p>
+        </div>
+        
+        <div class="cards-rail">
+            <div class="editorial-card gsap-reveal" style="padding: 2.5rem; border-left: 4px solid var(--brand-green); background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">01. Brittle Integrations</span>
+                <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">Custom scripts constantly failing.</h3>
+                <p>When SaaS applications update their APIs, hard-coded extraction scripts break. Analysts spend days fixing broken code instead of analyzing the business.</p>
+            </div>
+            
+            <div class="editorial-card gsap-reveal" style="padding: 2.5rem; border-left: 4px solid var(--brand-green); background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">02. Reporting Latency</span>
+                <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">Waiting days for database syncs.</h3>
+                <p>Heavy on-premise extractions take too long to process. Executives end up making critical strategic decisions based on data that is already 72 hours old.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution Process -->
+    <section class="section-container" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="gsap-reveal">
+            <span class="badge">The Implementation</span>
+            <h2 style="border: none;">How I Build Your Pipelines</h2>
+        </div>
+        
+        <div class="process-grid">
+            <div class="process-card gsap-reveal" style="background: var(--bg-off-white);">
+                <span style="font-weight: 700; color: var(--charcoal-light);">PHASE 1</span>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">Source Connectivity</h3>
+                <p style="font-size: 0.95rem;">I securely connect to your legacy databases (via ODBC) or cloud SaaS applications using managed connectors to ensure a reliable extraction point.</p>
+            </div>
+
+            <div class="process-card gsap-reveal" style="background: var(--bg-off-white);">
+                <span style="font-weight: 700; color: var(--charcoal-light);">PHASE 2</span>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">Incremental Syncing</h3>
+                <p style="font-size: 0.95rem;">Instead of querying massive tables every day, I deploy Change Data Capture (CDC) strategies to sync only new or updated rows, saving massive compute costs.</p>
+            </div>
+
+            <div class="process-card gsap-reveal" style="background: var(--bg-off-white);">
+                <span style="font-weight: 700; color: var(--charcoal-light);">PHASE 3</span>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">Orchestration</h3>
+                <p style="font-size: 0.95rem;">Pipelines are scheduled and orchestrated automatically (via SSIS Agent or cloud orchestrators) so the data is always ready before your morning standup.</p>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Global B2B Fat Footer -->
     <footer class="fat-footer">
@@ -241,7 +254,7 @@
                     <li><a href="/onboarding.html">Outside IR35 Contractor</a></li>
                     <li><a href="/onboarding.html">GDPR Data Compliance</a></li>
                     <li><a href="/onboarding.html">GMT+2 (London Alignment)</a></li>
-                    <li><a href="/contact.html">Book Project Discovery</a></li>
+                    <li><a href="contact">Book Project Discovery</a></li>
                 </ul>
             </div>
             
@@ -253,11 +266,9 @@
         </div>
     </footer>
 
-    <!-- Physics and Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    <script src="/script.js"></script>
-
+    <script src="../script.js"></script>
 </body>
 </html>

@@ -50,3 +50,39 @@ if (mobileMenu) {
         navMenu.classList.toggle('active');
     });
 };
+
+// 4. Dropdown toggle behavior for touch/mobile
+const dropdownToggles = document.querySelectorAll('.nav-link.dropdown-toggle');
+dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        // Only handle toggle behavior when the link is a trigger (href="#" or prevented)
+        e.preventDefault();
+        e.stopPropagation();
+
+        const parent = toggle.parentElement;
+        const menu = parent.querySelector('.dropdown-menu');
+        if (!menu) return;
+
+        const isOpen = menu.classList.contains('open');
+        // Close any other open menus at the same level
+        document.querySelectorAll('.dropdown-menu.open').forEach(m => {
+            if (m !== menu) m.classList.remove('open');
+        });
+
+        if (isOpen) {
+            menu.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+        } else {
+            menu.classList.add('open');
+            toggle.setAttribute('aria-expanded', 'true');
+        }
+    });
+});
+
+// Close open menus when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item')) {
+        document.querySelectorAll('.dropdown-menu.open').forEach(m => m.classList.remove('open'));
+        document.querySelectorAll('.nav-link.dropdown-toggle[aria-expanded="true"]').forEach(t => t.setAttribute('aria-expanded', 'false'));
+    }
+});

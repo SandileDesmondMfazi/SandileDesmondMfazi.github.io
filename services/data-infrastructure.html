@@ -3,21 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights & Deliverables | Sandile Desmond Mfazi</title>
+    <title>Data Infrastructure Implementation | Sandile Desmond Mfazi</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="/style.css">
-    <!-- Import Corporate Editorial Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), 
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+            background-color: var(--bg-white);
+        }
+        .bg-alternate {
+            background-color: #F9FAFB !important;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-grid">
 
     <!-- Header Navigation with Mega Menus -->
     <header class="navbar">
-                <div class="logo">
-            	<a href="/">
-                	<img src="/images/logo.png" alt="SDM Business Intelligence Logo">
-            	</a>
-        	</div>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo.png" alt="SDM Business Intelligence Logo">
+            </a>
+        </div>
         
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -133,52 +146,65 @@
         </nav>
     </header>
 
-    <!-- Main Projects Section -->
-    <section class="projects-section">
-        <h2 class="gsap-reveal">Architectural Deliverables</h2>
+    <!-- Service Hero -->
+    <section class="hero">
+        <div class="hero-text gsap-reveal">
+            <span class="badge">Modern Data Stack Deployment</span>
+            <h1>Stop overwriting history. Unify your siloed systems.</h1>
+            <p>I build scalable cloud data warehouses and lakehouses using Snowflake, Databricks, and SQL Server to act as your enterprise's unshakeable single source of truth.</p>
+            <div class="hero-buttons">
+                <a href="/contact.html" class="btn-primary">Map Your Architecture</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem Sticky Grid -->
+    <section class="section-container split-section bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="sticky-rail gsap-reveal">
+            <h2 style="border: none; font-size: 2rem;">The Symptoms of a Broken Pipeline</h2>
+            <p style="font-size: 1.15rem; color: var(--charcoal-light);">If your data environment is failing, it usually looks like this.</p>
+        </div>
         
-        <div class="projects-grid">
+        <div class="cards-rail">
+            <div class="editorial-card gsap-reveal" style="padding: 2.5rem; border-left: 4px solid var(--brand-green); background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">01. Missing History</span>
+                <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">Legacy databases overwriting states.</h3>
+                <p>Transactional databases aren't meant for analytics. When records update, historical context is destroyed, making churn, vintage, and retention analysis mathematically impossible.</p>
+            </div>
             
-            <div class="project-card gsap-reveal">
-                <span class="tag">Enterprise Data Architecture</span>
-                <h3>Recovered 115M Records & Automated Multinational Enterprise Reporting</h3>
-                <p><strong>The Challenge:</strong> The client's legacy database overwrote historical states, destroying critical policy lifecycles. Furthermore, disparate systems across three countries caused severe reporting bottlenecks and conflicting KPIs.</p>
-                <p><strong>The Solution:</strong> Architected a fully automated, end-to-end Microsoft BI pipeline establishing a singular, verifiable source of truth for over 200 million operational records.</p>
-                
-                <div class="architecture-details">
-                    <strong>Architectural Outcomes:</strong>
-                    <ul>
-                        <li><strong>History Reconstruction:</strong> Parsed 115+ million raw audit logs to mathematically rebuild lost historical contract snapshots via specialized SQL environments.</li>
-                        <li><strong>Data Centralization:</strong> Consolidated 21.4 million contracts and 39.1 million transactions into a single automated data warehouse.</li>
-                        <li><strong>Semantic Modeling:</strong> Deployed SSAS Tabular Models to handle complex DAX measures, Pula FX conversions, and multi-tier arrears bucket migrations.</li>
-                        <li><strong>Data Governance:</strong> Enforced Row-Level Security (RLS) across Botswana, South Africa, and Zambia via an SSRS Native-Mode web portal.</li>
-                    </ul>
-                </div>
-                
-                <!-- Gateway button to the dedicated case study page -->
-                <a href="/case-study-enterprise.html" class="btn-primary" style="margin-top: 2rem;">Read Deep Dive Analysis</a>
+            <div class="editorial-card gsap-reveal" style="padding: 2.5rem; border-left: 4px solid var(--brand-green); background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">02. Query Crashes</span>
+                <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">Analytical queries breaking production.</h3>
+                <p>Running heavy aggregate reports directly on your live operational systems slows down the application for your users and leads to constant timeout errors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution Process -->
+    <section class="section-container" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="gsap-reveal">
+            <span class="badge">The Implementation</span>
+            <h2 style="border: none;">How I Build Your Infrastructure</h2>
+        </div>
+        
+        <div class="process-grid">
+            <div class="process-card gsap-reveal" style="background: var(--bg-off-white);">
+                <span style="font-weight: 700; color: var(--charcoal-light);">PHASE 1</span>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">Automated Extraction</h3>
+                <p style="font-size: 0.95rem;">I deploy Fivetran, Airbyte, or custom Python scripts to pull raw data from your CRMs and operational databases directly into cloud storage.</p>
             </div>
 
-            <div class="project-card gsap-reveal">
-                <span class="tag">Cloud Data Infrastructure</span>
-                <h3>Real-Time Cloud Data Portal for Livestock Logistics</h3>
-                <p><strong>The Challenge:</strong> Field operations relied entirely on vulnerable analog paper records, causing multi-day reporting latency, data corruption, and a fundamental lack of executive visibility into farm logistics.</p>
-                <p><strong>The Solution:</strong> Engineered a zero-maintenance, serverless cloud database application to digitize data collection directly from the field to the executive dashboard.</p>
-                
-                <div class="architecture-details">
-                    <strong>Architectural Outcomes:</strong>
-                    <ul>
-                        <li><strong>Front-End Ingestion:</strong> Developed custom, mobile-responsive data entry interfaces utilizing Google Apps Script for field operators.</li>
-                        <li><strong>Backend Cloud Storage:</strong> Engineered automated pipelines to push sanitized, validated form data directly into structured, relational Google BigQuery tables.</li>
-                        <li><strong>Real-Time Visualization:</strong> Connected the BigQuery data warehouse directly to Looker Studio to deliver live operational metrics to stakeholders.</li>
-                        <li><strong>Business Impact:</strong> Achieved a 100% elimination of paper-based tracking, reducing data latency from 72+ hours to sub-60-second cloud synchronization.</li>
-                    </ul>
-                </div>
-
-                <!-- Gateway button to the dedicated case study page -->
-                <a href="/case-study-agriculture.html" class="btn-primary" style="margin-top: 2rem;">Read Deep Dive Analysis</a>
+            <div class="process-card gsap-reveal" style="background: var(--bg-off-white);">
+                <span style="font-weight: 700; color: var(--charcoal-light);">PHASE 2</span>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">Cloud Warehousing</h3>
+                <p style="font-size: 0.95rem;">I configure Snowflake or Databricks to house your data. This separates compute from storage, meaning you can query billions of rows in seconds without crashing systems.</p>
             </div>
 
+            <div class="process-card gsap-reveal" style="background: var(--bg-off-white);">
+                <span style="font-weight: 700; color: var(--charcoal-light);">PHASE 3</span>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">Kimball Modeling</h3>
+                <p style="font-size: 0.95rem;">I use dbt (data build tool) to transform raw JSON into clean, tested star-schema dimensional models ready for governed BI consumption.</p>
+            </div>
         </div>
     </section>
 
@@ -202,8 +228,6 @@
                         <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Upwork icon</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
                         </svg>
                     </a>
-
-
                     <!-- Email Icon -->
                     <a href="mailto:sandilemfazi.12@gmail.com" aria-label="Email">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -228,9 +252,8 @@
             <div class="footer-col">
                 <h4>Industries Served</h4>
                 <ul>
-                    <li><a href="/case-study-enterprise.html">Financial Services</a></li>
-                    <li><a href="/case-study-agriculture.html">Agriculture</a></li>
-                    <li><a href="/industries/index.html">FinTech & Services</a></li>
+                    <li><a href="/industries/financial-services.html">Financial Services</a></li>
+                    <li><a href="/industries/agriculture-logistics.html">Agriculture & Logistics</a></li>
                 </ul>
             </div>
 
@@ -253,11 +276,9 @@
         </div>
     </footer>
 
-    <!-- Physics and Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="/script.js"></script>
-
 </body>
 </html>

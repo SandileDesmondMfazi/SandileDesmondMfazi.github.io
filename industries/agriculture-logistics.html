@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights & Deliverables | Sandile Desmond Mfazi</title>
+    <title>Agriculture & Logistics Intelligence | Sandile Desmond Mfazi</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="/style.css">
-    <!-- Import Corporate Editorial Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Creates a subtle engineering grid background for tech sites */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), 
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+            background-color: var(--bg-white);
+        }
+        
+        /* A very light, premium cool-gray to alternate sections and break up the pure white */
+        .bg-alternate {
+            background-color: #F9FAFB !important;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-grid">
 
     <!-- Header Navigation with Mega Menus -->
     <header class="navbar">
-                <div class="logo">
-            	<a href="/">
-                	<img src="/images/logo.png" alt="SDM Business Intelligence Logo">
-            	</a>
-        	</div>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo.png" alt="SDM Business Intelligence Logo">
+            </a>
+        </div>
         
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -133,52 +149,52 @@
         </nav>
     </header>
 
-    <!-- Main Projects Section -->
-    <section class="projects-section">
-        <h2 class="gsap-reveal">Architectural Deliverables</h2>
+    <!-- Industry Hero -->
+    <section class="hero">
+        <div class="hero-text gsap-reveal">
+            <span class="badge">Agriculture & Logistics Operations</span>
+            <h1>Eliminate manual field tracking. Gain real-time supply chain visibility.</h1>
+            <p>I engineer zero-maintenance, serverless cloud data portals that digitize complex logistics, bypassing the immense overhead of traditional ERP systems.</p>
+            <div class="hero-buttons">
+                <a href="/contact.html" class="btn-primary">Discuss Your Logistics Model</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Spotlight -->
+    <section class="section-container bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="gsap-reveal" style="max-width: 800px; margin-bottom: 3rem;">
+            <span class="badge">Deployment Spotlight</span>
+            <h2 style="border: none;">Southern African Livestock Logistics Rollout</h2>
+        </div>
         
-        <div class="projects-grid">
-            
-            <div class="project-card gsap-reveal">
-                <span class="tag">Enterprise Data Architecture</span>
-                <h3>Recovered 115M Records & Automated Multinational Enterprise Reporting</h3>
-                <p><strong>The Challenge:</strong> The client's legacy database overwrote historical states, destroying critical policy lifecycles. Furthermore, disparate systems across three countries caused severe reporting bottlenecks and conflicting KPIs.</p>
-                <p><strong>The Solution:</strong> Architected a fully automated, end-to-end Microsoft BI pipeline establishing a singular, verifiable source of truth for over 200 million operational records.</p>
-                
-                <div class="architecture-details">
-                    <strong>Architectural Outcomes:</strong>
-                    <ul>
-                        <li><strong>History Reconstruction:</strong> Parsed 115+ million raw audit logs to mathematically rebuild lost historical contract snapshots via specialized SQL environments.</li>
-                        <li><strong>Data Centralization:</strong> Consolidated 21.4 million contracts and 39.1 million transactions into a single automated data warehouse.</li>
-                        <li><strong>Semantic Modeling:</strong> Deployed SSAS Tabular Models to handle complex DAX measures, Pula FX conversions, and multi-tier arrears bucket migrations.</li>
-                        <li><strong>Data Governance:</strong> Enforced Row-Level Security (RLS) across Botswana, South Africa, and Zambia via an SSRS Native-Mode web portal.</li>
-                    </ul>
-                </div>
-                
-                <!-- Gateway button to the dedicated case study page -->
-                <a href="/case-study-enterprise.html" class="btn-primary" style="margin-top: 2rem;">Read Deep Dive Analysis</a>
+        <div class="process-grid">
+            <div class="process-card gsap-reveal" style="background: var(--bg-white);">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; text-transform: uppercase; color: var(--charcoal-light);">The Bottleneck</h3>
+                <p style="font-size: 1rem; margin-top: 1rem;">Field operations relied entirely on vulnerable analog paper records. Physical data collection caused severe multi-day reporting latency (72+ hours) between remote fields and the central executive office.</p>
             </div>
 
-            <div class="project-card gsap-reveal">
-                <span class="tag">Cloud Data Infrastructure</span>
-                <h3>Real-Time Cloud Data Portal for Livestock Logistics</h3>
-                <p><strong>The Challenge:</strong> Field operations relied entirely on vulnerable analog paper records, causing multi-day reporting latency, data corruption, and a fundamental lack of executive visibility into farm logistics.</p>
-                <p><strong>The Solution:</strong> Engineered a zero-maintenance, serverless cloud database application to digitize data collection directly from the field to the executive dashboard.</p>
-                
-                <div class="architecture-details">
-                    <strong>Architectural Outcomes:</strong>
-                    <ul>
-                        <li><strong>Front-End Ingestion:</strong> Developed custom, mobile-responsive data entry interfaces utilizing Google Apps Script for field operators.</li>
-                        <li><strong>Backend Cloud Storage:</strong> Engineered automated pipelines to push sanitized, validated form data directly into structured, relational Google BigQuery tables.</li>
-                        <li><strong>Real-Time Visualization:</strong> Connected the BigQuery data warehouse directly to Looker Studio to deliver live operational metrics to stakeholders.</li>
-                        <li><strong>Business Impact:</strong> Achieved a 100% elimination of paper-based tracking, reducing data latency from 72+ hours to sub-60-second cloud synchronization.</li>
-                    </ul>
-                </div>
-
-                <!-- Gateway button to the dedicated case study page -->
-                <a href="/case-study-agriculture.html" class="btn-primary" style="margin-top: 2rem;">Read Deep Dive Analysis</a>
+            <div class="process-card gsap-reveal" style="background: var(--bg-white); border-top-color: var(--brand-green);">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; text-transform: uppercase; color: var(--charcoal-light);">The Architecture</h3>
+                <p style="font-size: 1rem; margin-top: 1rem;">I mapped field operator workflows and designed a lightweight, serverless cloud architecture. Using Google Apps Script as middleware, field inputs were validated and pushed via API directly into structured BigQuery tables.</p>
             </div>
 
+            <div class="process-card gsap-reveal" style="background: var(--bg-white);">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; text-transform: uppercase; color: var(--charcoal-light);">The Business Impact</h3>
+                <p style="font-size: 1rem; margin-top: 1rem;">Achieved a 100% elimination of paper-based tracking. Reporting latency was reduced from multi-day delays to sub-60-second cloud synchronization via Looker Studio dashboards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Block -->
+    <section class="section-container" style="padding-top: 5rem; padding-bottom: 5rem; text-align: center;">
+        <div class="gsap-reveal" style="max-width: 900px; margin: 0 auto; background: var(--bg-white); padding: 4rem; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic; color: var(--charcoal); line-height: 1.6;">
+                "The custom cloud architecture completely transformed how we manage our logistics. It eliminated our reliance on vulnerable paper records and gave us real-time, automated visibility into our field operations—achieving enterprise-level efficiency without the massive financial overhead of a traditional ERP."
+            </p>
+            <p style="margin-top: 2rem; font-weight: 700; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem;">
+                — Owner & Managing Director, Regional Agricultural Enterprise
+            </p>
         </div>
     </section>
 
@@ -202,8 +218,6 @@
                         <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Upwork icon</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
                         </svg>
                     </a>
-
-
                     <!-- Email Icon -->
                     <a href="mailto:sandilemfazi.12@gmail.com" aria-label="Email">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -228,9 +242,8 @@
             <div class="footer-col">
                 <h4>Industries Served</h4>
                 <ul>
-                    <li><a href="/case-study-enterprise.html">Financial Services</a></li>
-                    <li><a href="/case-study-agriculture.html">Agriculture</a></li>
-                    <li><a href="/industries/index.html">FinTech & Services</a></li>
+                    <li><a href="/industries/financial-services.html">Financial Services</a></li>
+                    <li><a href="/industries/agriculture-logistics.html">Agriculture & Logistics</a></li>
                 </ul>
             </div>
 
@@ -253,11 +266,9 @@
         </div>
     </footer>
 
-    <!-- Physics and Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="/script.js"></script>
-
 </body>
 </html>
