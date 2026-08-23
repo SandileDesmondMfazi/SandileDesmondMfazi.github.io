@@ -92,6 +92,33 @@ nav a:hover {
     color: var(--accent-green);
 }
 
+/* Dropdown indicator for menu items with submenus */
+.nav-link.dropdown-toggle {
+    position: relative;
+    padding-right: 1.6rem; /* room for the arrow */
+}
+.nav-link.dropdown-toggle::after {
+    content: "▾"; /* larger, clearer down arrow */
+    position: absolute;
+    right: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.05rem; /* slightly larger than text */
+    color: var(--brand-green);
+    opacity: 0.95;
+    transition: transform 0.18s ease, color 0.18s ease;
+}
+.nav-link.dropdown-toggle[aria-expanded="true"]::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .nav-link.dropdown-toggle::after {
+        right: 0.2rem;
+        font-size: 1rem;
+    }
+}
+
 /* Hero Section with Image */
 .hero {
     display: flex;
@@ -937,4 +964,407 @@ body {
 .editorial-card a.btn-primary:hover {
     background: var(--charcoal);
     color: var(--bg-white) !important;
+}
+
+/* --- FOOTER GRID STYLES --- */
+.fat-footer {
+    background-color: var(--bg-white);
+    padding: 5rem 5% 2rem;
+    border-top: 4px solid var(--brand-green);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    max-width: 1300px;
+    margin: 0 auto 4rem auto;
+}
+
+.footer-col h4 {
+    font-size: 1rem;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-col ul a {
+    color: var(--charcoal-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.footer-col ul a:hover {
+    color: var(--brand-green);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    color: var(--charcoal-light);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--brand-green);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr; /* 2x2 grid on tablets */
+    }
+}
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Stack vertically on mobile */
+    }
+}
+
+/* --- HERO BUTTON FIXES --- */
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.hero-buttons .btn-primary, 
+.hero-buttons .btn-secondary {
+    padding: 0.8rem 1.5rem !important; /* Slimmer padding */
+    font-size: 0.85rem !important;
+    margin: 0 !important; /* Removes the stray margin that caused stacking */
+    white-space: nowrap; /* Forces text onto one line */
+}
+
+/* --- DROPDOWN & MEGA MENU SYSTEM --- */
+.nav-item {
+    position: relative; /* Anchor for standard dropdown */
+}
+
+.nav-item.has-mega-menu {
+    position: static; /* Anchor for the full-width mega menu */
+}
+
+.nav-link.dropdown-toggle::after {
+    content: ' ▼';
+    font-size: 0.6em;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--brand-green);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 200;
+    min-width: 240px;
+    padding: 1rem 0;
+}
+
+/* Hover trigger for desktop */
+@media (min-width: 769px) {
+    .nav-item:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/* Standard Dropdown Styling (For Industries) */
+.dropdown-menu li {
+    margin: 0;
+    display: block;
+}
+
+.dropdown-menu a {
+    padding: 0.6rem 1.5rem;
+    display: block;
+    text-transform: none; /* Keeps industry names readable */
+    letter-spacing: normal;
+    font-weight: 500;
+    color: var(--charcoal);
+}
+
+.dropdown-menu a:hover {
+    background: var(--bg-off-white);
+    color: var(--brand-green);
+}
+
+/* Mega Menu Styling (For Services) */
+.mega-menu {
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 4rem;
+}
+
+.mega-menu-intro h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--charcoal);
+}
+
+.mega-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.mega-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin: 0.3rem 0 0.8rem 0;
+    color: var(--brand-green);
+}
+
+/* Mobile Dropdown Overrides */
+@media (max-width: 768px) {
+    .dropdown-menu, .mega-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--brand-green);
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none; /* Handled by JS in a real app, but for now we keep it clean */
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .nav-item:active .dropdown-menu,
+    .nav-item:hover .dropdown-menu {
+        display: block; /* Native CSS fallback for mobile tapping */
+    }
+
+    .mega-menu {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .mega-menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- TERA BULLION MEGA MENU SYSTEM --- */
+.nav-item {
+    position: relative; 
+}
+
+.nav-link.dropdown-toggle::after {
+    content: ' ▾';
+    font-size: 0.6em;
+    vertical-align: middle;
+    opacity: 0.7;
+    margin-left: 4px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 200;
+}
+
+@media (min-width: 769px) {
+    .nav-item:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Standard Dropdown (For Industries) */
+.standard-dropdown {
+    min-width: 260px;
+    padding: 0.5rem 0;
+    border-top: 3px solid var(--brand-green);
+}
+
+.standard-dropdown a {
+    padding: 0.8rem 1.5rem;
+    display: block;
+    text-transform: none;
+    font-weight: 500;
+    color: var(--charcoal);
+    font-size: 0.95rem;
+}
+
+.standard-dropdown a:hover {
+    background: var(--bg-off-white);
+    color: var(--brand-green);
+}
+
+/* Mega Menu Structure (For Services) */
+.mega-menu {
+    width: 850px; /* Forces the wide 3-column layout */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-menu-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+}
+
+.mega-col {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.mega-col:last-child {
+    border-right: none;
+}
+
+.mega-col-header {
+    font-size: 0.8rem;
+    color: var(--brand-green); /* Electric blue accent matching Tera Bullion */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.blue-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--brand-green);
+    border-radius: 50%;
+}
+
+.mega-col-sub {
+    font-size: 0.7rem;
+    color: var(--charcoal-light);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 2.5rem;
+}
+
+.mega-service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-decoration: none;
+}
+
+.mega-service:last-child {
+    margin-bottom: 0;
+}
+
+.service-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+}
+
+.mega-service:hover .service-name {
+    color: var(--brand-green);
+}
+
+.service-tech {
+    font-size: 0.7rem;
+    color: var(--charcoal-light);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+/* Mega Menu Footer Bar */
+.mega-menu-footer {
+    background-color: var(--bg-off-white);
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.mega-footer-question {
+    font-size: 0.8rem;
+    color: var(--charcoal-light);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+}
+
+.mega-footer-cta {
+    font-size: 0.9rem;
+    color: var(--brand-green);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.mega-footer-cta:hover {
+    color: var(--charcoal);
+}
+
+/* Mobile Overrides */
+@media (max-width: 1024px) {
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--brand-green);
+        display: none; /* Hide on mobile by default */
+    }
+    .nav-item:hover .dropdown-menu {
+        display: block;
+        transform: none;
+    }
+    .mega-menu { width: 100%; }
+    .mega-menu-content { grid-template-columns: 1fr; }
+    .mega-col { border-right: none; border-bottom: 1px solid var(--border-color); }
+    .mega-menu-footer { flex-direction: column; gap: 1rem; text-align: center; }
 }
