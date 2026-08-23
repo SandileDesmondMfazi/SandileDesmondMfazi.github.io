@@ -24,9 +24,14 @@
         /* Dashboard Embed Styles */
         .dashboard-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: var(--bg-off-white); }
         .dashboard-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .browser-chrome { display: flex; gap: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1rem; }
-        .browser-dot { width: 12px; height: 12px; border-radius: 50%; background: #E2E8F0; }
         
+        /* Updated Browser Chrome to handle the new link */
+        .browser-chrome { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1rem; }
+        .browser-dot { width: 12px; height: 12px; border-radius: 50%; background: #E2E8F0; }
+        .chrome-dots { display: flex; gap: 0.5rem; }
+        .chrome-link { background: none; border: none; color: var(--brand-green); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: color 0.3s; }
+        .chrome-link:hover { color: var(--charcoal); }
+
         /* Portfolio Card Hover Effects */
         .portfolio-card img { transition: transform 0.6s ease, filter 0.6s ease; }
         .portfolio-card:hover img { transform: scale(1.05); filter: grayscale(0%); }
@@ -93,7 +98,7 @@
                         </div>
                         <div class="mega-menu-footer">
                             <span class="mega-footer-question">NOT SURE WHERE TO START?</span>
-                            <a href="/contact.html" class="mega-footer-cta">GET MY FREE BUILD PLAN &rarr;</a>
+                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a>
                         </div>
                     </div>
                 </li>
@@ -120,13 +125,13 @@
                         </div>
                         <div class="mega-menu-footer">
                             <span class="mega-footer-question">DON'T SEE YOUR INDUSTRY?</span>
-                            <a href="/contact.html" class="mega-footer-cta">LET'S DISCUSS YOUR USE CASE &rarr;</a>
+                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a>
                         </div>
                     </div>
                 </li>
 
                 <li><a href="/onboarding.html">Engagement Model</a></li>
-                <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">Get Your Blueprint</a></li>
+                <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">GET YOUR BLUEPRINT</a></li>
             </ul>
         </nav>
     </header>
@@ -154,14 +159,18 @@
         
         <!-- Browser Chrome Wrapper for the Embed -->
         <div class="gsap-reveal" style="background: var(--bg-white); border: 1px solid var(--border-color); padding: 1rem; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-radius: 4px;">
+            
+            <!-- NEW: The Clickable Chrome Header -->
             <div class="browser-chrome">
-                <div class="browser-dot"></div>
-                <div class="browser-dot"></div>
-                <div class="browser-dot"></div>
+                <div class="chrome-dots">
+                    <div class="browser-dot"></div>
+                    <div class="browser-dot"></div>
+                    <div class="browser-dot"></div>
+                </div>
+                <button class="chrome-link" onclick="openModal('showcase')">View Architecture Details &rarr;</button>
             </div>
             
             <div class="dashboard-container">
-                <!-- REPLACE THE 'src' BELOW WITH YOUR ACTUAL POWER BI "PUBLISH TO WEB" LINK -->
                 <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYTAzYzdhYzctZTM2ZS00YWY1LWE1N2YtZjRmZDM1YjMyMjQzIiwidCI6IjQ5NzZjNTM0LWNkY2MtNDgxMS05MjkxLTVjYjI3MjM2Y2IwNiJ9" allowFullScreen="true" title="SDM Power BI Showcase"></iframe>
             </div>
         </div>
@@ -217,42 +226,124 @@
         </div>
     </section>
 
-    <!-- NEW: Dashboard Mini-Portfolio Grid -->
+    <!-- Dashboard Mini-Portfolio Grid -->
     <section class="section-container bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
         <div class="gsap-reveal" style="margin-bottom: 3rem;">
             <span class="badge">Deployment Gallery</span>
-            <h2 style="border: none;">Industry-Specific Intelligence</h2>
-            <p style="font-size: 1.15rem; color: var(--charcoal-light); max-width: 700px;">A selection of certified reporting suites engineered to solve complex operational visibility constraints.</p>
+            <h2 style="border: none;">Cross-Functional Intelligence</h2>
+            <p style="font-size: 1.15rem; color: var(--charcoal-light); max-width: 700px;">A selection of certified reporting suites engineered to solve complex operational and revenue visibility constraints.</p>
         </div>
 
         <div class="grid-2">
-            <!-- Portfolio Item 1 -->
-            <div class="editorial-card portfolio-card gsap-reveal" style="padding: 0; background: var(--bg-white); border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+            <!-- Portfolio Item 1: Sales Performance -->
+            <div class="editorial-card portfolio-card gsap-reveal" onclick="openModal('sales')" style="padding: 0; background: var(--bg-white); border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
                 <div style="aspect-ratio: 16/9; background: #E2E8F0; position: relative; overflow: hidden;">
-                    <!-- ADD A SCREENSHOT OF A FINANCIAL DASHBOARD HERE -->
-                    <img src="/images/portfolio-finance.jpg" alt="Financial Services Dashboard" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%);">
+                    <img src="/images/portfolio-sales.jpg" alt="Sales Performance Dashboard" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%);">
                 </div>
-                <div style="padding: 2.5rem;">
-                    <span style="color: var(--brand-green); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;">Financial Services</span>
-                    <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">Multinational Policy Tracker</h3>
-                    <p style="font-size: 0.95rem; color: var(--charcoal-light);">A cross-border reporting suite featuring dynamic Pula/Rand FX conversion and strict Row-Level Security to isolate regional manager data access.</p>
+                <div style="padding: 2.5rem 2.5rem 0 2.5rem;">
+                    <span style="color: var(--brand-green); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;">Revenue Analytics</span>
+                    <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">B2B Sales Performance Engine</h3>
+                    <p style="font-size: 0.95rem; color: var(--charcoal-light);">A centralized reporting suite tracking pipeline velocity, rep performance, and forecasted MRR. Built on a governed dbt semantic layer.</p>
                 </div>
             </div>
 
-            <!-- Portfolio Item 2 -->
-            <div class="editorial-card portfolio-card gsap-reveal" style="padding: 0; background: var(--bg-white); border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+            <!-- Portfolio Item 2: Operational Reporting -->
+            <div class="editorial-card portfolio-card gsap-reveal" onclick="openModal('operations')" style="padding: 0; background: var(--bg-white); border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
                 <div style="aspect-ratio: 16/9; background: #E2E8F0; position: relative; overflow: hidden;">
-                    <!-- ADD A SCREENSHOT OF A LOGISTICS/FARM DASHBOARD HERE -->
-                    <img src="/images/portfolio-agriculture.jpg" alt="Agriculture Logistics Dashboard" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%);">
+                    <img src="/images/portfolio-operations.jpg" alt="Operational Reporting Dashboard" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%);">
                 </div>
-                <div style="padding: 2.5rem;">
-                    <span style="color: var(--brand-green); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;">Agriculture & Logistics</span>
-                    <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">Livestock Operations Portal</h3>
-                    <p style="font-size: 0.95rem; color: var(--charcoal-light);">Real-time supply chain mapping consuming serverless BigQuery data, enabling zero-latency field-to-executive reporting and operational pivoting.</p>
+                <div style="padding: 2.5rem 2.5rem 0 2.5rem;">
+                    <span style="color: var(--brand-green); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;">Operational Visibility</span>
+                    <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">Enterprise Operations Hub</h3>
+                    <p style="font-size: 0.95rem; color: var(--charcoal-light);">An automated operational dashboard replacing daily manual Excel exports. Features real-time anomaly detection and resource utilization metrics.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- THE INVISIBLE MODAL STRUCTURE -->
+    <div id="portfolioModal" class="modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            
+            <div style="margin-bottom: 2rem;">
+                <span id="modal-tag" class="badge"></span>
+                <h3 id="modal-title" style="font-size: 2.2rem; margin-top: 0.5rem;"></h3>
+            </div>
+            
+            <img id="modal-img" src="" alt="Project Preview" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 2rem; filter: grayscale(20%);">
+            
+            <p id="modal-desc" style="color: var(--charcoal); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2.5rem;"></p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                <div>
+                    <strong style="font-size: 0.85rem; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Technical Stack</strong>
+                    <p id="modal-tech" style="font-size: 1.05rem; color: var(--brand-green); font-weight: 600;"></p>
+                </div>
+                <div>
+                    <strong style="font-size: 0.85rem; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Business Impact</strong>
+                    <p id="modal-impact" style="font-size: 1.05rem; color: var(--charcoal); font-weight: 600;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL LOGIC SCRIPT (Updated to include the showcase report) -->
+    <script>
+        const portfolioData = {
+            showcase: {
+                tag: "Interactive Data Lab",
+                title: "Executive KPI Semantic Model",
+                img: "/images/portfolio-showcase.jpg", // Create a screenshot of this report
+                desc: "An interactive demonstration of a governed Power BI semantic layer. This project involved standardizing fragmented metric definitions across Finance, Sales, and Marketing into a single canonical DAX model, eliminating departmental reporting conflicts.",
+                tech: "Power BI, DAX, SQL Server, SSIS",
+                impact: "Established a verifiable single source of truth, automating cross-departmental executive reporting."
+            },
+            sales: {
+                tag: "Revenue Analytics",
+                title: "B2B Sales Performance Engine",
+                img: "/images/portfolio-sales.jpg",
+                desc: "This dashboard was engineered to completely eliminate metric discrepancies between Sales and Finance. By pulling raw CRM data via Fivetran and pushing it through a governed dbt semantic model, executives gained a real-time, unified view of pipeline velocity, rep performance, and forecasted MRR.",
+                tech: "Power BI, DAX, SQL Server, SSIS",
+                impact: "Unified KPI reporting and eliminated 100% of inter-departmental metric disputes."
+            },
+            operations: {
+                tag: "Operational Visibility",
+                title: "Enterprise Operations Hub",
+                img: "/images/portfolio-operations.jpg",
+                desc: "Designed to replace fragile, daily manual Excel exports. This dashboard connects directly to a centralized SQL Server warehouse to provide operations managers with real-time anomaly detection, resource utilization metrics, and automated alert flagging.",
+                tech: "Power BI, DAX, SQL Server, SSIS",
+                impact: "Recovered 20+ analyst hours per week previously wasted on manual data aggregation."
+            }
+        };
+
+        function openModal(projectId) {
+            const data = portfolioData[projectId];
+            if(!data) return;
+            
+            document.getElementById('modal-tag').innerText = data.tag;
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-img').src = data.img;
+            document.getElementById('modal-desc').innerText = data.desc;
+            document.getElementById('modal-tech').innerText = data.tech;
+            document.getElementById('modal-impact').innerText = data.impact;
+            
+            document.getElementById('portfolioModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal() {
+            document.getElementById('portfolioModal').classList.remove('active');
+            document.body.style.overflow = ''; 
+        }
+
+        document.addEventListener('keydown', function(event){
+            if(event.key === "Escape"){
+                closeModal();
+            }
+        });
+    </script>
 
     <!-- Global B2B Fat Footer -->
     <footer class="fat-footer">
@@ -264,18 +355,13 @@
                 <p style="color: var(--charcoal-light); font-size: 0.95rem; max-width: 300px;">Engineering the Modern Data Stack and BI ecosystems for organizations that refuse to stay manual.</p>
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/sandilemfazi/" target="_blank" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     </a>
                     <a href="YOUR_UPWORK_LINK" target="_blank" aria-label="Upwork">
-                        <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Upwork icon</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
-                        </svg>
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Upwork icon</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
                     </a>
                     <a href="mailto:sandilemfazi.12@gmail.com" aria-label="Email">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
-                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
                     </a>
                 </div>
             </div>

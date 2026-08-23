@@ -3,43 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Sandile Desmond Mfazi</title>
+    <title>Get Your Blueprint | Sandile Desmond Mfazi</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        .contact-container { max-width: 1100px; margin: 5rem auto; padding: 0 5%; }
+        .contact-container { max-width: 1200px; margin: 5rem auto; padding: 0 5%; }
         
-        /* NEW: Split Grid Layout */
-        .contact-wrapper {
+        /* The Blueprint Split Layout */
+        .blueprint-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            margin-top: 4rem;
+            align-items: start;
         }
 
-        @media (max-width: 768px) {
-            .contact-wrapper {
+        @media (max-width: 900px) {
+            .blueprint-wrapper {
                 grid-template-columns: 1fr;
+                gap: 3rem;
             }
         }
 
-        .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
-        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-        .form-group label { font-size: 0.9rem; font-weight: 600; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.05em; }
-        .form-group input, .form-group textarea { padding: 1rem; border: 1px solid var(--border-color); border-radius: 0; font-family: 'Inter', sans-serif; font-size: 1rem; background: var(--bg-off-white); transition: border-color 0.3s; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--brand-green); }
-        .form-group textarea { resize: vertical; min-height: 150px; }
-        #form-status { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; margin-top: 1rem; }
+        /* Diagnostic Form Styles */
+        .diagnostic-card {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-top: 4px solid var(--brand-green);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+        }
+
+        .step-indicator {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--charcoal-light);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .form-group { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2rem; }
+        .form-group label { font-size: 0.95rem; font-weight: 600; color: var(--charcoal); }
         
-        .booking-section {
-            background: var(--bg-off-white);
+        /* Custom Select & Input Styling to match Tech Brutalism */
+        .form-group select, .form-group input, .form-group textarea { 
+            padding: 1.2rem; 
+            border: 1px solid var(--border-color); 
+            border-radius: 0; 
+            font-family: 'Inter', sans-serif; 
+            font-size: 1rem; 
+            background: var(--bg-off-white); 
+            transition: all 0.3s ease; 
+            appearance: none;
+        }
+        
+        .form-group select {
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%231A1A1A%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1.2rem top 50%;
+            background-size: 0.8rem auto;
+            cursor: pointer;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { 
+            outline: none; 
+            border-color: var(--brand-green); 
+            background: var(--bg-white);
+        }
+
+        /* Booking Frame Styles */
+        .booking-frame {
             border: 1px solid var(--border-color);
-            padding-top: 1rem;
+            background: var(--bg-white);
+            padding: 0;
+            overflow: hidden;
+            display: none; /* Hidden until step 1 is complete */
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .trust-bullets { list-style: none; padding: 0; margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem; }
+        .trust-bullets li { display: flex; gap: 1rem; margin-bottom: 1rem; font-size: 0.95rem; color: var(--charcoal); align-items: flex-start;}
+        .trust-bullets svg { flex-shrink: 0; width: 20px; height: 20px; color: var(--brand-green); margin-top: 2px;}
+
+        /* Grid Background Pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), 
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+            background-color: var(--bg-off-white);
         }
     </style>
 </head>
-<body>
+<body class="bg-grid">
 
     <!-- Header Navigation with Mega Menus -->
     <header class="navbar">
@@ -64,63 +126,43 @@
                     <a href="#" role="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" onclick="return false;">Services</a>
                     <div class="dropdown-menu mega-menu">
                         <div class="mega-menu-content">
-                            
                             <!-- Column 1: The Hook -->
                             <div class="mega-col">
-                                <div class="mega-col-header">
-                                    <span class="blue-dot"></span> THE HOOK
-                                </div>
+                                <div class="mega-col-header"><span class="blue-dot"></span> THE HOOK</div>
                                 <div class="mega-col-sub">GET IN THE DOOR</div>
-                                
                                 <a href="/services/workflow-automation.html" class="mega-service">
-                                    <span class="service-name">Custom Automation</span>
-                                    <span class="service-tech">MAKE / POWER AUTOMATE</span>
+                                    <span class="service-name">Custom Automation</span><span class="service-tech">MAKE / POWER AUTOMATE</span>
                                 </a>
                                 <a href="/services/custom-portals.html" class="mega-service">
-                                    <span class="service-name">Web & Data Portals</span>
-                                    <span class="service-tech">APPS SCRIPT / POWER APPS</span>
+                                    <span class="service-name">Web & Data Portals</span><span class="service-tech">APPS SCRIPT / POWER APPS</span>
                                 </a>
                             </div>
-
                             <!-- Column 2: The Backbone -->
                             <div class="mega-col">
-                                <div class="mega-col-header">
-                                    <span class="blue-dot"></span> THE BACKBONE
-                                </div>
+                                <div class="mega-col-header"><span class="blue-dot"></span> THE BACKBONE</div>
                                 <div class="mega-col-sub">UNIFY SYSTEMS</div>
-                                
                                 <a href="/services/data-infrastructure.html" class="mega-service">
-                                    <span class="service-name">Data Infrastructure</span>
-                                    <span class="service-tech">SNOWFLAKE / DATABRICKS</span>
+                                    <span class="service-name">Data Infrastructure</span><span class="service-tech">SNOWFLAKE / DATABRICKS</span>
                                 </a>
                                 <a href="/services/etl-pipelines.html" class="mega-service">
-                                    <span class="service-name">Ingestion Pipelines</span>
-                                    <span class="service-tech">FIVETRAN / SSIS</span>
+                                    <span class="service-name">Ingestion Pipelines</span><span class="service-tech">FIVETRAN / SSIS</span>
                                 </a>
                             </div>
-
                             <!-- Column 3: The Multiplier -->
                             <div class="mega-col">
-                                <div class="mega-col-header">
-                                    <span class="blue-dot"></span> THE MULTIPLIER
-                                </div>
+                                <div class="mega-col-header"><span class="blue-dot"></span> THE MULTIPLIER</div>
                                 <div class="mega-col-sub">SCALE VALUE</div>
-                                
                                 <a href="/services/semantic-modeling.html" class="mega-service">
-                                    <span class="service-name">Semantic Modeling</span>
-                                    <span class="service-tech">DBT / DAX</span>
+                                    <span class="service-name">Semantic Modeling</span><span class="service-tech">DBT / DAX</span>
                                 </a>
                                 <a href="/services/bi-dashboards.html" class="mega-service">
-                                    <span class="service-name">BI Dashboards</span>
-                                    <span class="service-tech">POWER BI / LOOKER</span>
+                                    <span class="service-name">BI Dashboards</span><span class="service-tech">POWER BI / LOOKER</span>
                                 </a>
                             </div>
                         </div>
-
-                        <!-- Mega Menu CTA Footer -->
                         <div class="mega-menu-footer">
                             <span class="mega-footer-question">NOT SURE WHERE TO START?</span>
-                            <a href="/contact.html" class="mega-footer-cta">GET MY FREE BUILD PLAN &rarr;</a>
+                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a>
                         </div>
                     </div>
                 </li>
@@ -130,7 +172,6 @@
                     <a href="/industries" class="nav-link dropdown-toggle">Industries</a>
                     <div class="dropdown-menu mega-menu" style="width: 600px;">
                         <div class="mega-menu-content" style="grid-template-columns: repeat(2, 1fr);">
-                            
                             <!-- Column 1 -->
                             <div class="mega-col" style="padding: 2rem;">
                                 <a href="/industries/financial-services.html" class="mega-service" style="align-items: flex-start; text-align: left;">
@@ -138,7 +179,6 @@
                                     <span class="service-tech">AUDIT TRAILS & COMPLIANCE</span>
                                 </a>
                             </div>
-
                             <!-- Column 2 -->
                             <div class="mega-col" style="padding: 2rem;">
                                 <a href="/industries/agriculture-logistics.html" class="mega-service" style="align-items: flex-start; text-align: left;">
@@ -146,61 +186,112 @@
                                     <span class="service-tech">SUPPLY CHAIN VISIBILITY</span>
                                 </a>
                             </div>
-
                         </div>
-
-                        <!-- Mega Menu CTA Footer -->
                         <div class="mega-menu-footer">
                             <span class="mega-footer-question">DON'T SEE YOUR INDUSTRY?</span>
-                            <a href="/contact.html" class="mega-footer-cta">LET'S DISCUSS YOUR USE CASE &rarr;</a>
+                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a>
                         </div>
                     </div>
                 </li>
 
                 <li><a href="/onboarding.html">Engagement Model</a></li>
-                <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">Get Your Blueprint</a></li>
+                <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">GET YOUR BLUEPRINT</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="contact-container gsap-reveal">
-        <span class="badge">Project Discovery</span>
-        <h1 style="font-size: 2.8rem;">Initiate an Engagement.</h1>
-        <p style="color: var(--charcoal-light); font-size: 1.1rem; max-width: 800px;">Book a direct discovery call aligned with UK business hours, or use the secure form to outline your current reporting bottlenecks and data architecture requirements. All communications are strictly confidential.</p>
+    <section class="contact-container">
         
-        <div class="contact-wrapper">
-            <!-- Left Column: Booking Widget -->
-            <div class="booking-section">
-                <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_CALENDLY_URL_HERE?hide_landing_page_details=1&primary_color=177b57" style="min-width:320px;height:630px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                <!-- Calendly inline widget end -->
+        <div class="gsap-reveal" style="max-width: 800px;">
+            <span class="badge">Architecture Strategy Session</span>
+            <h1 style="font-size: 3.2rem; margin-bottom: 1rem;">Get Your Architecture Blueprint.</h1>
+            <p style="color: var(--charcoal-light); font-size: 1.2rem; line-height: 1.6;">Tell me what's broken in your data pipeline. I will map out the exact structural fix.</p>
+        </div>
+        
+        <div class="blueprint-wrapper">
+            
+            <!-- Left Column: The Value Proposition & Trust Details -->
+            <div class="gsap-reveal" style="padding-top: 1rem;">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1rem;">Free 30-Minute Architecture Consultation</h3>
+                <p style="color: var(--charcoal-light); font-size: 1.05rem;">A direct 1-on-1 strategy session to audit your current environment and map out how a Modern Data Stack deployment can resolve your reporting bottlenecks.</p>
+                
+                <ul class="trust-bullets">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <span><strong>No Pitch Deck.</strong> We look directly at your architecture diagrams, your code, and your bottlenecks.</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <span><strong>Direct Accountability.</strong> You speak directly with me, I will be writing your SQL and DAX, not a sales representative.</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <span><strong>UK & EU Alignment.</strong> Appointments are strictly aligned to London (GMT/BST) business hours for seamless cross-border collaboration.</span>
+                    </li>
+                </ul>
+
+                <div style="margin-top: 3rem;">
+                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Operating Framework</span>
+                    <p style="font-size: 0.95rem; color: var(--charcoal); margin: 0;"><strong>Gaborone, Botswana</strong> &nbsp;|&nbsp; B2B Offshore Contracting</p>
+                </div>
             </div>
 
-            <!-- Right Column: Standard Inquiry Form -->
-            <div>
-                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 0.05em;">Submit Architecture Inquiry</h3>
-                <form id="contact-form" action="https://formspree.io/f/xdaqbndw" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Company / Organization</label>
-                        <input type="text" id="company" name="company" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Work Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Project Scope & Requirements</label>
-                        <textarea id="message" name="message" placeholder="Briefly describe your data architecture needs or pipeline constraints..." required></textarea>
-                    </div>
-                    <button type="submit" id="submit-btn" class="btn-primary" style="align-self: flex-start; margin-top: 1rem; cursor: pointer; border: none;">Transmit Inquiry</button>
+            <!-- Right Column: The 2-Step Diagnostic Form -->
+            <div class="diagnostic-card gsap-reveal">
+                
+                <!-- STEP 1: Diagnostic Intake -->
+                <div id="step-1">
+                    <span class="step-indicator">Step 1 / 2 &mdash; The Problem</span>
                     
-                    <p id="form-status"></p>
-                </form>
+                    <form id="diagnostic-form" onsubmit="proceedToBooking(event)">
+                        
+                        <div class="form-group">
+                            <label for="service">Which architectural solution brought you here? *</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a primary focus...</option>
+                                <option value="data-infrastructure">Data Infrastructure & Warehousing</option>
+                                <option value="etl-pipelines">ETL & Ingestion Pipelines</option>
+                                <option value="semantic-modeling">dbt / Semantic Modeling</option>
+                                <option value="bi-dashboards">Power BI / Executive Dashboards</option>
+                                <option value="workflow-automation">Custom Workflow Automation</option>
+                                <option value="not-sure">Not sure yet (Need an Audit)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="industry">Industry / Vertical *</label>
+                            <select id="industry" name="industry" required>
+                                <option value="" disabled selected>Select your industry...</option>
+                                <option value="financial-services">Financial Services & Enterprise</option>
+                                <option value="agriculture">Agriculture & Logistics</option>
+                                <option value="b2b-saas">B2B SaaS & Tech</option>
+                                <option value="retail">Retail & Manufacturing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bottleneck">What is the exact reporting bottleneck you are trying to fix? *</label>
+                            <textarea id="bottleneck" name="bottleneck" placeholder="E.g., 'We have 15 different Excel sheets that crash daily...' or 'Our legacy database is overwriting historical states...'" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">Continue to Booking</button>
+                    </form>
+                </div>
+
+                <!-- STEP 2: Calendly Booking (Hidden initially) -->
+                <div id="step-2" class="booking-frame">
+                    <div style="padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                        <span class="step-indicator" style="margin: 0; color: var(--brand-green);">Step 2 / 2 &mdash; Select a Time</span>
+                        <button onclick="backToStep1()" style="background: none; border: none; font-size: 0.85rem; font-weight: 600; color: var(--charcoal-light); cursor: pointer; text-decoration: underline;">&larr; Back to Details</button>
+                    </div>
+                    
+                    <!-- Calendly inline widget begin -->
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_CALENDLY_URL_HERE?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=177b57" style="min-width:320px;height:550px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    <!-- Calendly inline widget end -->
+                </div>
+
             </div>
         </div>
     </section>
@@ -214,24 +305,14 @@
                 <img src="/images/logo.png" alt="SDM Business Intelligence Logo" style="height: 40px; margin-bottom: 1.5rem; filter: grayscale(100%); opacity: 0.8;">
                 <p style="color: var(--charcoal-light); font-size: 0.95rem; max-width: 300px;">Engineering the Modern Data Stack and BI ecosystems for organizations that refuse to stay manual.</p>
                 <div class="social-icons">
-                    <!-- LinkedIn Icon -->
                     <a href="https://www.linkedin.com/in/sandilemfazi/" target="_blank" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     </a>
-                    <!-- Upwork Icon -->
                     <a href="YOUR_UPWORK_LINK" target="_blank" aria-label="Upwork">
-                        <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Upwork icon</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
-                        </svg>
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Upwork icon</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
                     </a>
-
-
-                    <!-- Email Icon -->
                     <a href="mailto:sandilemfazi.12@gmail.com" aria-label="Email">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
-                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
                     </a>
                 </div>
             </div>
@@ -251,9 +332,8 @@
             <div class="footer-col">
                 <h4>Industries Served</h4>
                 <ul>
-                    <li><a href="/case-study-enterprise.html">Financial Services</a></li>
-                    <li><a href="/case-study-agriculture.html">Agriculture</a></li>
-                    <li><a href="/industries/index.html">FinTech & Services</a></li>
+                    <li><a href="/industries/financial-services.html">Financial Services</a></li>
+                    <li><a href="/industries/agriculture-logistics.html">Agriculture & Logistics</a></li>
                 </ul>
             </div>
 
@@ -282,56 +362,28 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="/script.js"></script>
 
-    <!-- AJAX Form Submission Script -->
+    <!-- 2-Step Form Logic -->
     <script>
-        var form = document.getElementById("contact-form");
-        var statusMessage = document.getElementById("form-status");
-        var submitButton = document.getElementById("submit-btn");
-
-        async function handleSubmit(event) {
-            event.preventDefault(); // Prevents the default redirect
+        // Note: In a production environment, you should capture this form data 
+        // (via Formspree or your backend) before revealing the Calendly widget.
+        // This script handles the UI swap.
+        function proceedToBooking(event) {
+            event.preventDefault(); // Prevent page reload
             
-            // Change button text to indicate processing
-            submitButton.innerHTML = "Transmitting...";
-            submitButton.style.opacity = "0.7";
-            submitButton.style.cursor = "not-allowed";
-            submitButton.disabled = true;
-
-            var data = new FormData(event.target);
-
-            fetch(event.target.action, {
-                method: form.method,
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    statusMessage.innerHTML = "Inquiry received. I will review your requirements and follow up via email.";
-                    statusMessage.style.color = "var(--brand-green)";
-                    form.reset(); // Clears the form fields
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            statusMessage.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-                        } else {
-                            statusMessage.innerHTML = "Oops! There was a problem submitting your inquiry.";
-                        }
-                        statusMessage.style.color = "red";
-                    })
-                }
-            }).catch(error => {
-                statusMessage.innerHTML = "Oops! There was a network problem submitting your inquiry.";
-                statusMessage.style.color = "red";
-            }).finally(() => {
-                // Reset button state
-                submitButton.innerHTML = "Transmit Inquiry";
-                submitButton.style.opacity = "1";
-                submitButton.style.cursor = "pointer";
-                submitButton.disabled = false;
-            });
+            // Hide Step 1
+            document.getElementById('step-1').style.display = 'none';
+            
+            // Show Step 2 (Calendly)
+            document.getElementById('step-2').style.display = 'block';
+            
+            // Optional: Scroll to the top of the card smoothly
+            document.querySelector('.diagnostic-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        form.addEventListener("submit", handleSubmit);
+
+        function backToStep1() {
+            document.getElementById('step-2').style.display = 'none';
+            document.getElementById('step-1').style.display = 'block';
+        }
     </script>
 </body>
 </html>

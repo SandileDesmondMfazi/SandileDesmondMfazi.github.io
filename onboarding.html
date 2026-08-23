@@ -7,27 +7,39 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        .compliance-block { background: var(--bg-off-white); padding: 2rem; border-left: 4px solid var(--brand-green); margin-bottom: 2rem; }
-        .compliance-block h3 { margin-bottom: 1rem; font-family: 'Inter', sans-serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        /* Visual Depth */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), 
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+            background-color: var(--bg-white);
+        }
+        
+        .compliance-block { background: var(--bg-white); padding: 2.5rem; border-left: 4px solid var(--brand-green); margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .compliance-block h3 { margin-bottom: 1rem; font-family: 'Inter', sans-serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal); }
+        .compliance-block p { color: var(--charcoal-light); font-size: 1rem; line-height: 1.6; }
         
         /* Checklist Table Styles */
-        .executive-table { width: 100%; border-collapse: collapse; margin: 1rem 0 3rem 0; font-family: 'Inter', sans-serif; }
-        .executive-table th, .executive-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); text-align: left; }
-        .executive-table th { color: var(--charcoal-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; background-color: var(--bg-off-white); }
+        .executive-table { width: 100%; border-collapse: collapse; margin: 1rem 0 3rem 0; font-family: 'Inter', sans-serif; background: var(--bg-white); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .executive-table th, .executive-table td { padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--border-color); text-align: left; }
+        .executive-table th { color: var(--charcoal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; background-color: #F9FAFB; }
         .executive-table td { color: var(--charcoal); font-size: 1rem; }
         .executive-table td strong { color: var(--brand-green); }
+
+        .tier-card { background: var(--bg-white); padding: 2.5rem; border-top: 4px solid var(--brand-green); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
     </style>
 </head>
-<body>
+<body class="bg-grid">
 
     <!-- Header Navigation with Mega Menus -->
     <header class="navbar">
-                <div class="logo">
-            	<a href="/">
-                	<img src="/images/logo.png" alt="SDM Business Intelligence Logo">
-            	</a>
-        	</div>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo.png" alt="SDM Business Intelligence Logo">
+            </a>
+        </div>
         
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -44,63 +56,43 @@
                     <a href="#" role="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" onclick="return false;">Services</a>
                     <div class="dropdown-menu mega-menu">
                         <div class="mega-menu-content">
-                            
                             <!-- Column 1: The Hook -->
                             <div class="mega-col">
-                                <div class="mega-col-header">
-                                    <span class="blue-dot"></span> THE HOOK
-                                </div>
+                                <div class="mega-col-header"><span class="blue-dot"></span> THE HOOK</div>
                                 <div class="mega-col-sub">GET IN THE DOOR</div>
-                                
                                 <a href="/services/workflow-automation.html" class="mega-service">
-                                    <span class="service-name">Custom Automation</span>
-                                    <span class="service-tech">MAKE / POWER AUTOMATE</span>
+                                    <span class="service-name">Custom Automation</span><span class="service-tech">MAKE / POWER AUTOMATE</span>
                                 </a>
                                 <a href="/services/custom-portals.html" class="mega-service">
-                                    <span class="service-name">Web & Data Portals</span>
-                                    <span class="service-tech">APPS SCRIPT / POWER APPS</span>
+                                    <span class="service-name">Web & Data Portals</span><span class="service-tech">APPS SCRIPT / POWER APPS</span>
                                 </a>
                             </div>
-
                             <!-- Column 2: The Backbone -->
                             <div class="mega-col">
-                                <div class="mega-col-header">
-                                    <span class="blue-dot"></span> THE BACKBONE
-                                </div>
+                                <div class="mega-col-header"><span class="blue-dot"></span> THE BACKBONE</div>
                                 <div class="mega-col-sub">UNIFY SYSTEMS</div>
-                                
                                 <a href="/services/data-infrastructure.html" class="mega-service">
-                                    <span class="service-name">Data Infrastructure</span>
-                                    <span class="service-tech">SNOWFLAKE / DATABRICKS</span>
+                                    <span class="service-name">Data Infrastructure</span><span class="service-tech">SNOWFLAKE / DATABRICKS</span>
                                 </a>
                                 <a href="/services/etl-pipelines.html" class="mega-service">
-                                    <span class="service-name">Ingestion Pipelines</span>
-                                    <span class="service-tech">FIVETRAN / SSIS</span>
+                                    <span class="service-name">Ingestion Pipelines</span><span class="service-tech">FIVETRAN / SSIS</span>
                                 </a>
                             </div>
-
                             <!-- Column 3: The Multiplier -->
                             <div class="mega-col">
-                                <div class="mega-col-header">
-                                    <span class="blue-dot"></span> THE MULTIPLIER
-                                </div>
+                                <div class="mega-col-header"><span class="blue-dot"></span> THE MULTIPLIER</div>
                                 <div class="mega-col-sub">SCALE VALUE</div>
-                                
                                 <a href="/services/semantic-modeling.html" class="mega-service">
-                                    <span class="service-name">Semantic Modeling</span>
-                                    <span class="service-tech">DBT / DAX</span>
+                                    <span class="service-name">Semantic Modeling</span><span class="service-tech">DBT / DAX</span>
                                 </a>
                                 <a href="/services/bi-dashboards.html" class="mega-service">
-                                    <span class="service-name">BI Dashboards</span>
-                                    <span class="service-tech">POWER BI / LOOKER</span>
+                                    <span class="service-name">BI Dashboards</span><span class="service-tech">POWER BI / LOOKER</span>
                                 </a>
                             </div>
                         </div>
-
-                        <!-- Mega Menu CTA Footer -->
                         <div class="mega-menu-footer">
                             <span class="mega-footer-question">NOT SURE WHERE TO START?</span>
-                            <a href="/contact.html" class="mega-footer-cta">GET MY FREE BUILD PLAN &rarr;</a>
+                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a>
                         </div>
                     </div>
                 </li>
@@ -110,7 +102,6 @@
                     <a href="/industries" class="nav-link dropdown-toggle">Industries</a>
                     <div class="dropdown-menu mega-menu" style="width: 600px;">
                         <div class="mega-menu-content" style="grid-template-columns: repeat(2, 1fr);">
-                            
                             <!-- Column 1 -->
                             <div class="mega-col" style="padding: 2rem;">
                                 <a href="/industries/financial-services.html" class="mega-service" style="align-items: flex-start; text-align: left;">
@@ -118,7 +109,6 @@
                                     <span class="service-tech">AUDIT TRAILS & COMPLIANCE</span>
                                 </a>
                             </div>
-
                             <!-- Column 2 -->
                             <div class="mega-col" style="padding: 2rem;">
                                 <a href="/industries/agriculture-logistics.html" class="mega-service" style="align-items: flex-start; text-align: left;">
@@ -126,63 +116,63 @@
                                     <span class="service-tech">SUPPLY CHAIN VISIBILITY</span>
                                 </a>
                             </div>
-
                         </div>
-
-                        <!-- Mega Menu CTA Footer -->
                         <div class="mega-menu-footer">
                             <span class="mega-footer-question">DON'T SEE YOUR INDUSTRY?</span>
-                            <a href="/contact.html" class="mega-footer-cta">LET'S DISCUSS YOUR USE CASE &rarr;</a>
+                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a>
                         </div>
                     </div>
                 </li>
 
-                <li><a href="/onboarding.html">Engagement Model</a></li>
-                <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">Get Your Blueprint</a></li>
+                <li><a href="/onboarding.html" class="active">Engagement Model</a></li>
+                <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">GET YOUR BLUEPRINT</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="article-layout">
-        <div class="article-content gsap-reveal">
-            
+    <!-- Engagement Hero -->
+    <section class="hero" style="padding-bottom: 2rem;">
+        <div class="hero-text gsap-reveal" style="max-width: 900px;">
             <span class="badge">B2B Contracting Framework</span>
-            <h1 style="margin-bottom: 3rem;">A frictionless, globally compliant engagement model.</h1>
-            
-            <p style="font-size: 1.2rem; color: var(--charcoal-light); margin-bottom: 2rem;">Engaging offshore data architecture expertise should not introduce legal or administrative overhead. My consultancy operates on a strict Business-to-Business (B2B) framework engineered for rapid onboarding with UK, European, and global enterprise clients.</p>
+            <h1>A frictionless, globally compliant engagement model.</h1>
+            <p>Engaging offshore data architecture expertise should not introduce legal or administrative overhead. I operate on a strict Business-to-Business (B2B) framework engineered for rapid onboarding with UK, European, and global enterprise clients.</p>
+        </div>
+    </section>
 
-            <!-- NEW: Service Tiers Section -->
-            <section style="margin: 4rem 0;">
-                <span class="badge">Contracting Tiers</span>
-                <h2 style="font-size: 2rem; margin-bottom: 2rem; border: none;">Flexible B2B Engagement Models</h2>
+    <div class="article-layout" style="padding-top: 0;">
+        <div class="article-content gsap-reveal">
+
+            <!-- Service Tiers Section -->
+            <section style="margin-bottom: 5rem;">
+                <h2 style="font-size: 2rem; margin-bottom: 2rem; border: none;">Flexible B2B Delivery Models</h2>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                     
                     <!-- Model 1: Fixed-Scope Sprint -->
-                    <div style="background: var(--bg-off-white); padding: 2.5rem; border-top: 4px solid var(--brand-green);">
-                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Architecture Audit & Recovery Sprint</h3>
-                        <p style="font-size: 0.85rem; color: var(--brand-green); font-weight: 700; text-transform: uppercase;">2 to 4-Week Fixed Project</p>
-                        <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Deep-dive diagnostic of legacy database performance, SSIS pipeline failures, and DAX optimization. Delivers a refactored pipeline and performance audit report.</p>
+                    <div class="tier-card">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Architecture Audit & Recovery</h3>
+                        <p style="font-size: 0.85rem; color: var(--brand-green); font-weight: 700; text-transform: uppercase;">2 to 4-Week Fixed Sprint</p>
+                        <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Deep-dive diagnostic of fragile pipelines, failing legacy databases, and untrackable dashboard logic. Delivers a refactored pipeline and a strategic recovery blueprint.</p>
                     </div>
 
                     <!-- Model 2: Dedicated Retainer -->
-                    <div style="background: var(--bg-off-white); padding: 2.5rem; border-top: 4px solid var(--brand-green);">
-                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Fractional BI Lead & Data Engineering</h3>
+                    <div class="tier-card">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Fractional Data Architect</h3>
                         <p style="font-size: 0.85rem; color: var(--brand-green); font-weight: 700; text-transform: uppercase;">Monthly Retainer (Outside IR35)</p>
-                        <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Dedicated B2B capacity for ongoing SQL Server, Azure Data Factory, and Power BI semantic model development, team enablement, and daily maintenance.</p>
+                        <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Dedicated B2B capacity for ongoing Snowflake administration, dbt model development, Power BI semantic layer maintenance, and internal team enablement.</p>
                     </div>
 
                     <!-- Model 3: End-to-End Build -->
-                    <div style="background: var(--bg-off-white); padding: 2.5rem; border-top: 4px solid var(--brand-green);">
-                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Enterprise Data Warehouse Rollout</h3>
+                    <div class="tier-card">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Modern Data Stack Rollout</h3>
                         <p style="font-size: 0.85rem; color: var(--brand-green); font-weight: 700; text-transform: uppercase;">Milestone-Based Project</p>
-                        <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Full-scale architecture execution: extract source data via SSIS/ADF, construct star-schema relational warehouses, build DAX models, and deploy RLS-secured Power BI reports.</p>
+                        <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Full-scale architecture execution: extracting operational data via Fivetran, building star-schema warehouses, and deploying RLS-secured executive reporting suites.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- NEW: UK Client Checklist -->
-            <h2 style="font-size: 1.8rem; margin-top: 3rem; border: none;">UK Client Compliance & Logistics Checklist</h2>
+            <!-- UK Client Checklist -->
+            <h2 style="font-size: 1.8rem; margin-top: 3rem; border: none;">UK Client Compliance Checklist</h2>
             <table class="executive-table">
                 <tr>
                     <th>Requirement</th>
@@ -225,12 +215,24 @@
         </div>
 
         <div class="article-sidebar gsap-reveal">
-            <h4>Onboarding Timeline</h4>
-            <ul style="font-size: 0.9rem; color: var(--charcoal); margin-top: 1rem; padding-left: 1rem;">
-                <li style="margin-bottom: 0.5rem;"><strong>Day 1:</strong> Initial Discovery Call</li>
-                <li style="margin-bottom: 0.5rem;"><strong>Day 2:</strong> NDA & SOW Generation</li>
-                <li style="margin-bottom: 0.5rem;"><strong>Day 3:</strong> Contract Execution</li>
-                <li style="margin-bottom: 0.5rem;"><strong>Day 5:</strong> Architecture Deployment Commences</li>
+            <h4 style="font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.9rem;">Onboarding Timeline</h4>
+            <ul style="list-style: none; font-size: 0.95rem; color: var(--charcoal); margin-top: 1.5rem; padding-left: 0; border-left: 2px solid var(--border-color);">
+                <li style="margin-bottom: 1.5rem; position: relative; padding-left: 1.5rem;">
+                    <span style="position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--brand-green);"></span>
+                    <strong style="display: block; color: var(--brand-green);">Day 1:</strong> Initial Diagnostic Call
+                </li>
+                <li style="margin-bottom: 1.5rem; position: relative; padding-left: 1.5rem;">
+                    <span style="position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--brand-green);"></span>
+                    <strong style="display: block; color: var(--brand-green);">Day 2:</strong> NDA & SOW Generation
+                </li>
+                <li style="margin-bottom: 1.5rem; position: relative; padding-left: 1.5rem;">
+                    <span style="position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--brand-green);"></span>
+                    <strong style="display: block; color: var(--brand-green);">Day 3:</strong> Contract Execution
+                </li>
+                <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem;">
+                    <span style="position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--brand-green);"></span>
+                    <strong style="display: block; color: var(--brand-green);">Day 5:</strong> Architecture Deployment Commences
+                </li>
             </ul>
         </div>
     </div>
@@ -246,22 +248,15 @@
                 <div class="social-icons">
                     <!-- LinkedIn Icon -->
                     <a href="https://www.linkedin.com/in/sandilemfazi/" target="_blank" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     </a>
                     <!-- Upwork Icon -->
                     <a href="YOUR_UPWORK_LINK" target="_blank" aria-label="Upwork">
-                        <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Upwork icon</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
-                        </svg>
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Upwork icon</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
                     </a>
-
-
                     <!-- Email Icon -->
                     <a href="mailto:sandilemfazi.12@gmail.com" aria-label="Email">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
-                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
                     </a>
                 </div>
             </div>
@@ -281,9 +276,8 @@
             <div class="footer-col">
                 <h4>Industries Served</h4>
                 <ul>
-                    <li><a href="/case-study-enterprise.html">Financial Services</a></li>
-                    <li><a href="/case-study-agriculture.html">Agriculture</a></li>
-                    <li><a href="/industries/index.html">FinTech & Services</a></li>
+                    <li><a href="/industries/financial-services.html">Financial Services</a></li>
+                    <li><a href="/industries/agriculture-logistics.html">Agriculture & Logistics</a></li>
                 </ul>
             </div>
 
