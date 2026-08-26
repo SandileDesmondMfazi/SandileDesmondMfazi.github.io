@@ -7,6 +7,13 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px); background-color: var(--bg-white); }
+        .bg-alternate { background-color: #F9FAFB !important; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        
+        .legal-content h3 { font-family: 'Inter', sans-serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal); margin: 3rem 0 1rem 0; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        .legal-content p { color: var(--charcoal-light); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    </style>
 </head>
 <body class="bg-grid">
 
@@ -107,28 +114,85 @@
         </nav>
     </header>
 
-    <!-- Legal Document Content -->
-    <section class="section-container" style="padding-top: 5rem; padding-bottom: 5rem; max-width: 800px; margin: 0 auto;">
-        <span class="badge">Legal Framework</span>
-        <h1 style="font-size: 2.8rem; margin-bottom: 1rem;">Privacy Policy</h1>
-        <p style="color: var(--charcoal-light); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3rem; font-weight: 600;">Effective Date: January 1, 2026</p>
-
-        <div style="color: var(--charcoal); font-size: 1.05rem; line-height: 1.8;">
-            <p style="margin-bottom: 1.5rem;">This Privacy Policy describes how Sandile Desmond Mfazi ("I", "me", "my consultancy") collects, uses, and protects the personal and corporate information you provide when utilizing this website and my Business Intelligence consulting services.</p>
-
-            <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin: 2.5rem 0 1rem 0; color: var(--brand-green);">1. Information Collection</h3>
-            <p style="margin-bottom: 1.5rem;">When you submit an inquiry via the "Get Your Blueprint" portal or book a consultation via Calendly, I collect standard B2B communication data, including your name, corporate email address, company name, and details regarding your data architecture requirements. This data is collected securely via third-party providers (Formspree and Calendly).</p>
-
-            <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin: 2.5rem 0 1rem 0; color: var(--brand-green);">2. Use of Information</h3>
-            <p style="margin-bottom: 1.5rem;">The information collected is strictly used to evaluate your business intelligence needs, prepare architectural blueprints, and facilitate direct B2B communication. I do not sell, rent, or lease your corporate or personal data to any third parties for marketing purposes.</p>
-
-            <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin: 2.5rem 0 1rem 0; color: var(--brand-green);">3. Client Data & Analytics Infrastructure</h3>
-            <p style="margin-bottom: 1.5rem;">This Privacy Policy applies to the usage of this website. For active consulting engagements, the handling of your proprietary company data, databases, and semantic models is governed by a strict, custom Non-Disclosure Agreement (NDA) and Master Services Agreement (MSA) executed prior to any infrastructure assessment.</p>
-
-            <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin: 2.5rem 0 1rem 0; color: var(--brand-green);">4. Contact</h3>
-            <p style="margin-bottom: 1.5rem;">For questions regarding this policy or to request the deletion of your inquiry data, please contact me directly at <strong>sandilemfazi.12@gmail.com</strong>.</p>
+    <!-- Trust Center Hero -->
+    <section class="hero" style="padding-bottom: 4rem;">
+        <div class="hero-text gsap-reveal" style="max-width: 900px;">
+            <span class="badge">Data Privacy</span>
+            <h1 style="font-size: 3.2rem;">Transparent handling of your corporate data.</h1>
+            <p>This policy defines exactly what information is collected when you utilize this website, how it is secured, and how it is utilized for B2B communication.</p>
         </div>
     </section>
+
+    <!-- Information Flow (The Boxes) -->
+    <section class="section-container bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="grid-2 gsap-reveal">
+            
+            <div class="editorial-card" style="padding: 2.5rem; background: var(--bg-white); border-top: 4px solid var(--brand-green); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em;">01. B2B Communication</h3>
+                <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Data collected via inquiry forms is strictly used to evaluate your business intelligence needs, prepare architectural blueprints, and facilitate direct professional dialogue.</p>
+            </div>
+
+            <div class="editorial-card" style="padding: 2.5rem; background: var(--bg-white); border-top: 4px solid var(--brand-green); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em;">02. Zero Third-Party Selling</h3>
+                <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">I do not sell, rent, or lease your corporate email, name, or project constraints to any third-party marketing agencies, brokers, or external software vendors.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Deep Dive Content -->
+    <section class="section-container legal-content gsap-reveal" style="max-width: 900px; padding-top: 4rem; padding-bottom: 6rem;">
+        
+        <h3>1. Information Collection</h3>
+        <p>When you interact with the "Get Your Blueprint" portal or book a consultation, I collect standard B2B contact data. This includes your Full Name, Corporate Email Address, Company Name, and the operational details you provide regarding your current infrastructure constraints. This data is securely processed using standard web transmission protocols.</p>
+
+        <h3>2. Third-Party Infrastructure</h3>
+        <p>To facilitate secure communication and scheduling, this site leverages trusted third-party infrastructure. Inquiry forms are routed securely via <strong>Formspree</strong>, calendar bookings are managed via <strong>Calendly</strong>, and the site is hosted on secure servers. These entities act as data sub-processors and maintain their own enterprise-grade privacy and security standards.</p>
+
+        <h3>3. Data Retention</h3>
+        <p>Inquiry data and communication logs are retained only as long as necessary to fulfill the purposes of project scoping and potential contract execution. If an inquiry does not result in a formal engagement, contact details and project descriptions are periodically purged from my active communication pipelines.</p>
+
+        <h3>4. Your Rights & Access</h3>
+        <p>You have the absolute right to know what personal data I hold about you, the right to request corrections to inaccuracies, and the right to request the complete deletion of your data from my communication systems ("Right to be Forgotten"). To exercise any of these rights, please contact me directly at <strong>sandilemfazi.12@gmail.com</strong>.</p>
+
+    </section>
+
+    <!-- THE COOKIE CONSENT BANNER -->
+    <div id="cookie-banner" class="cookie-banner">
+        <h4 class="cookie-title">Data & Privacy Governance</h4>
+        <p class="cookie-text">This architecture portal utilizes essential cookies to ensure secure routing and third-party cookies (via Calendly) to facilitate B2B scheduling. By proceeding, you consent to this localized processing. View the full <a href="/legal/cookie-policy.html">Cookie Policy</a>.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn btn-accept" onclick="acceptCookies()">Acknowledge & Accept</button>
+            <button class="cookie-btn btn-decline" onclick="declineCookies()">Strictly Necessary Only</button>
+        </div>
+    </div>
+
+    <!-- COOKIE LOGIC SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cookieBanner = document.getElementById("cookie-banner");
+            
+            // Check if the user has already made a cookie choice
+            if (!localStorage.getItem("sdm_cookie_consent")) {
+                // Wait 1 second before sliding the banner up for a smoother UX
+                setTimeout(() => {
+                    cookieBanner.classList.add("show");
+                }, 1000);
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem("sdm_cookie_consent", "accepted");
+            document.getElementById("cookie-banner").classList.remove("show");
+            // Here you would normally initialize Google Analytics if you had it
+        }
+
+        function declineCookies() {
+            localStorage.setItem("sdm_cookie_consent", "declined");
+            document.getElementById("cookie-banner").classList.remove("show");
+            // Calendly will still function, but this legally covers your bases
+        }
+    </script>
 
     <!-- Global B2B Fat Footer -->
     <footer class="fat-footer">
@@ -136,7 +200,7 @@
             
             <!-- Column 1: Brand & Trust -->
             <div class="footer-col">
-                <img src="images/logo.png" alt="SDM Business Intelligence Logo" style="height: 40px; margin-bottom: 1.5rem; filter: grayscale(100%); opacity: 0.8;">
+                <img src="/images/logo.png" alt="SDM Business Intelligence Logo" style="height: 40px; margin-bottom: 1.5rem; filter: grayscale(100%); opacity: 0.8;">
                 <p style="color: var(--charcoal-light); font-size: 0.95rem; max-width: 300px;">Engineering the Modern Data Stack and BI ecosystems for organizations that refuse to stay manual.</p>
                 <div class="social-icons">
                     <!-- LinkedIn Icon -->
@@ -210,5 +274,9 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>

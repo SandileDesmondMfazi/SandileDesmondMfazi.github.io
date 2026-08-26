@@ -382,6 +382,11 @@ nav a:hover {
     padding-top: 2rem;
 }
 
+.disclaimer-text.gsap-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
 /* Projects Page Specific Layout */
 .projects-section {
     padding: 5rem 5%;
@@ -1480,3 +1485,94 @@ body {
     .modal-content { padding: 2rem; }
 }
 
+/* --- B2B COOKIE CONSENT BANNER --- */
+.cookie-banner {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    max-width: 420px;
+    background: var(--charcoal);
+    color: var(--bg-white);
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border-left: 4px solid var(--brand-green);
+    z-index: 9999;
+    transform: translateY(150%);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cookie-banner.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.cookie-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--bg-white);
+}
+
+.cookie-text { 
+    font-size: 0.85rem; 
+    line-height: 1.6; 
+    margin-bottom: 1.5rem; 
+    color: #A0AEC0; 
+}
+
+.cookie-text a { 
+    color: var(--brand-green); 
+    text-decoration: none; 
+    font-weight: 600; 
+}
+
+.cookie-text a:hover {
+    text-decoration: underline;
+}
+
+.cookie-buttons { 
+    display: flex; 
+    gap: 1rem; 
+}
+
+.cookie-btn { 
+    padding: 0.6rem 1.2rem; 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 0.05em; 
+    cursor: pointer; 
+    border: none; 
+    transition: all 0.3s ease;
+}
+
+.btn-accept { 
+    background: var(--brand-green); 
+    color: var(--bg-white); 
+}
+
+.btn-accept:hover { 
+    background: var(--accent-green); 
+}
+
+.btn-decline { 
+    background: transparent; 
+    color: #E2E8F0; 
+    border: 1px solid #4A5568; 
+}
+
+.btn-decline:hover { 
+    background: rgba(255,255,255,0.05); 
+    border-color: #E2E8F0;
+}
+
+@media (max-width: 768px) {
+    .cookie-banner { 
+        bottom: 0; 
+        left: 0; 
+        max-width: 100%; 
+        border-left: none; 
+        border-top: 4px solid var(--brand-green); 
+    }
+}

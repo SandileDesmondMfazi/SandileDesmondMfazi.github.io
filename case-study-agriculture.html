@@ -249,6 +249,43 @@
         </div>
     </div>
 
+    <!-- THE COOKIE CONSENT BANNER -->
+    <div id="cookie-banner" class="cookie-banner">
+        <h4 class="cookie-title">Data & Privacy Governance</h4>
+        <p class="cookie-text">This architecture portal utilizes essential cookies to ensure secure routing and third-party cookies (via Calendly) to facilitate B2B scheduling. By proceeding, you consent to this localized processing. View the full <a href="/legal/cookie-policy.html">Cookie Policy</a>.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn btn-accept" onclick="acceptCookies()">Acknowledge & Accept</button>
+            <button class="cookie-btn btn-decline" onclick="declineCookies()">Strictly Necessary Only</button>
+        </div>
+    </div>
+
+    <!-- COOKIE LOGIC SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cookieBanner = document.getElementById("cookie-banner");
+            
+            // Check if the user has already made a cookie choice
+            if (!localStorage.getItem("sdm_cookie_consent")) {
+                // Wait 1 second before sliding the banner up for a smoother UX
+                setTimeout(() => {
+                    cookieBanner.classList.add("show");
+                }, 1000);
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem("sdm_cookie_consent", "accepted");
+            document.getElementById("cookie-banner").classList.remove("show");
+            // Here you would normally initialize Google Analytics if you had it
+        }
+
+        function declineCookies() {
+            localStorage.setItem("sdm_cookie_consent", "declined");
+            document.getElementById("cookie-banner").classList.remove("show");
+            // Calendly will still function, but this legally covers your bases
+        }
+    </script>
+
     <!-- Global B2B Fat Footer -->
     <footer class="fat-footer">
         <div class="footer-grid gsap-reveal">

@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GDPR Compliance | Sandile Desmond Mfazi</title>
+    <title>GDPR & Data Security | Sandile Desmond Mfazi</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px); background-color: var(--bg-white); }
+        .bg-alternate { background-color: #F9FAFB !important; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        
+        /* Legal Deep Dive Typography */
+        .legal-content h3 { font-family: 'Inter', sans-serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal); margin: 3rem 0 1rem 0; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        .legal-content p { color: var(--charcoal-light); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .legal-content ul { list-style: none; padding: 0; margin-bottom: 2rem; }
+        .legal-content li { font-size: 1.05rem; color: var(--charcoal-light); margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .legal-content li::before { content: "■"; color: var(--brand-green); position: absolute; left: 0; font-size: 0.8rem; top: 2px; }
+    </style>
 </head>
 <body class="bg-grid">
 
@@ -107,28 +118,100 @@
         </nav>
     </header>
 
-    <!-- Legal Document Content -->
-    <section class="section-container" style="padding-top: 5rem; padding-bottom: 5rem; max-width: 800px; margin: 0 auto;">
-        <span class="badge">Legal Framework</span>
-        <h1 style="font-size: 2.8rem; margin-bottom: 1rem;">GDPR & Data Protection</h1>
-        <p style="color: var(--charcoal-light); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3rem; font-weight: 600;">Standard Operating Procedures</p>
-
-        <div style="color: var(--charcoal); font-size: 1.05rem; line-height: 1.8;">
-            <p style="margin-bottom: 1.5rem;">As an offshore Data Architecture consultant servicing the UK and European markets, strict adherence to the General Data Protection Regulation (GDPR) and the UK Data Protection Act is a foundational pillar of my engagement model.</p>
-
-            <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin: 2.5rem 0 1rem 0; color: var(--brand-green);">1. Data Processor Role</h3>
-            <p style="margin-bottom: 1.5rem;">When engineering your data infrastructure, my consultancy operates as a <strong>Data Processor</strong> under GDPR. Your organization remains the Data Controller. All architectural work is strictly executed in compliance with a signed Data Processing Agreement (DPA), which outlines the boundaries of access, storage, and processing of your proprietary data.</p>
-
-            <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin: 2.5rem 0 1rem 0; color: var(--brand-green);">2. Data Sovereignty & Access</h3>
-            <p style="margin-bottom: 1.5rem;">To ensure the highest level of compliance, I implement a zero-extraction policy. Client data is never hosted, downloaded, or replicated onto unauthorized offshore hardware. All ETL pipeline development, database querying, and dashboard design is performed via your organization's approved Virtual Desktop Infrastructure (VDI), secure VPN, or strictly within your native cloud tenant (e.g., your Microsoft Fabric or Snowflake environments).</p>
-
-            <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin: 2.5rem 0 1rem 0; color: var(--brand-green);">3. Principle of Least Privilege</h3>
-            <p style="margin-bottom: 1.5rem;">During the engagement, I request access only to the data strictly necessary to complete the defined deliverables. Furthermore, I implement robust Row-Level Security (RLS) in the final semantic models to ensure your internal employees only view data they are legally authorized to access.</p>
-
-            <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin: 2.5rem 0 1rem 0; color: var(--brand-green);">4. Your Rights</h3>
-            <p style="margin-bottom: 1.5rem;">If you have submitted inquiry data via this website, you retain the right to access, rectify, or request the immediate erasure ("right to be forgotten") of your B2B contact information. Direct all compliance inquiries to <strong>sandilemfazi.12@gmail.com</strong>.</p>
+    <!-- Trust Center Hero -->
+    <section class="hero" style="padding-bottom: 4rem;">
+        <div class="hero-text gsap-reveal" style="max-width: 900px;">
+            <span class="badge">Data Protection Framework</span>
+            <h1 style="font-size: 3.2rem;">Enterprise-Grade Data Security & GDPR Alignment.</h1>
+            <p>Strict adherence to the General Data Protection Regulation (GDPR) and the UK Data Protection Act is a foundational pillar of my architectural engagement model.</p>
         </div>
     </section>
+
+    <!-- The Compliance Pillars (The Boxes) -->
+    <section class="section-container bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="grid-2 gsap-reveal">
+            
+            <div class="editorial-card" style="padding: 2.5rem; background: var(--bg-white); border-top: 4px solid var(--brand-green); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em;">01. Zero-Extraction Policy</h3>
+                <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Client data is never hosted, downloaded, or replicated onto unauthorized offshore hardware. All development is performed securely via your organization's approved Virtual Desktop Infrastructure (VDI) or native cloud tenant.</p>
+            </div>
+
+            <div class="editorial-card" style="padding: 2.5rem; background: var(--bg-white); border-top: 4px solid var(--brand-green); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em;">02. Cross-Border Compliance</h3>
+                <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Operating from Botswana, international data processing is legally secured through the execution of Standard Contractual Clauses (SCCs), ensuring complete alignment with EU and UK data transfer regulations.</p>
+            </div>
+
+            <div class="editorial-card" style="padding: 2.5rem; background: var(--bg-white); border-top: 4px solid var(--brand-green); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em;">03. Principle of Least Privilege</h3>
+                <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">During engagements, I request only the specific database access required to execute deliverables. Final models are deployed with strict Row-Level Security (RLS) to enforce internal data governance.</p>
+            </div>
+
+            <div class="editorial-card" style="padding: 2.5rem; background: var(--bg-white); border-top: 4px solid var(--brand-green); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em;">04. Data Processing Agreements</h3>
+                <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">I operate strictly as a Data Processor. Your organization remains the Data Controller. All workflows are governed by a mutual NDA and DPA prior to any infrastructure auditing.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Deep Dive Content -->
+    <section class="section-container legal-content gsap-reveal" style="max-width: 900px; padding-top: 4rem; padding-bottom: 6rem;">
+        
+        <h3>1. Roles and Responsibilities</h3>
+        <p>Under the definitions of the GDPR, my consultancy acts as a <strong>Data Processor</strong> when interacting with your organization's databases and analytics platforms. The client organization retains full rights and responsibilities as the <strong>Data Controller</strong>. I do not determine the purposes or the means of processing your proprietary data beyond the scope explicitly defined in our Statement of Work (SOW).</p>
+
+        <h3>2. Technical Security Measures</h3>
+        <p>To mitigate the risk of unauthorized access, accidental loss, or data breaches, the following technical protocols are enforced across all engagements:</p>
+        <ul>
+            <li>Multi-Factor Authentication (MFA) is strictly enforced on all developer accounts, internal communication tools, and repository access points.</li>
+            <li>No proprietary data, PII (Personally Identifiable Information), or PHI (Protected Health Information) is stored on local, unencrypted hardware.</li>
+            <li>Development and testing utilize anonymized or synthetic data sets whenever mathematically feasible.</li>
+        </ul>
+
+        <h3>3. Incident Response Protocol</h3>
+        <p>In the highly unlikely event of a suspected data breach involving my immediate development environment or credentials, I am committed to notifying the designated Data Controller at your organization within 24 hours of discovery, allowing your organization to meet the mandatory 72-hour GDPR reporting window to relevant supervisory authorities.</p>
+
+        <h3>4. Right to Audit</h3>
+        <p>Clients retain the right to conduct reasonable audits of the development environment and access logs to ensure compliance with the executed Data Processing Agreement and NDA, provided standard written notice is given.</p>
+
+    </section>
+
+    <!-- THE COOKIE CONSENT BANNER -->
+    <div id="cookie-banner" class="cookie-banner">
+        <h4 class="cookie-title">Data & Privacy Governance</h4>
+        <p class="cookie-text">This architecture portal utilizes essential cookies to ensure secure routing and third-party cookies (via Calendly) to facilitate B2B scheduling. By proceeding, you consent to this localized processing. View the full <a href="/legal/cookie-policy.html">Cookie Policy</a>.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn btn-accept" onclick="acceptCookies()">Acknowledge & Accept</button>
+            <button class="cookie-btn btn-decline" onclick="declineCookies()">Strictly Necessary Only</button>
+        </div>
+    </div>
+
+    <!-- COOKIE LOGIC SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cookieBanner = document.getElementById("cookie-banner");
+            
+            // Check if the user has already made a cookie choice
+            if (!localStorage.getItem("sdm_cookie_consent")) {
+                // Wait 1 second before sliding the banner up for a smoother UX
+                setTimeout(() => {
+                    cookieBanner.classList.add("show");
+                }, 1000);
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem("sdm_cookie_consent", "accepted");
+            document.getElementById("cookie-banner").classList.remove("show");
+            // Here you would normally initialize Google Analytics if you had it
+        }
+
+        function declineCookies() {
+            localStorage.setItem("sdm_cookie_consent", "declined");
+            document.getElementById("cookie-banner").classList.remove("show");
+            // Calendly will still function, but this legally covers your bases
+        }
+    </script>
 
     <!-- Global B2B Fat Footer -->
     <footer class="fat-footer">
@@ -136,7 +219,7 @@
             
             <!-- Column 1: Brand & Trust -->
             <div class="footer-col">
-                <img src="images/logo.png" alt="SDM Business Intelligence Logo" style="height: 40px; margin-bottom: 1.5rem; filter: grayscale(100%); opacity: 0.8;">
+                <img src="/images/logo.png" alt="SDM Business Intelligence Logo" style="height: 40px; margin-bottom: 1.5rem; filter: grayscale(100%); opacity: 0.8;">
                 <p style="color: var(--charcoal-light); font-size: 0.95rem; max-width: 300px;">Engineering the Modern Data Stack and BI ecosystems for organizations that refuse to stay manual.</p>
                 <div class="social-icons">
                     <!-- LinkedIn Icon -->
@@ -210,5 +293,9 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
