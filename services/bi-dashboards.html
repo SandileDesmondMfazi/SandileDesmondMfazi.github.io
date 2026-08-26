@@ -24,8 +24,6 @@
         /* Dashboard Embed Styles */
         .dashboard-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: var(--bg-off-white); }
         .dashboard-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        
-        /* Updated Browser Chrome to handle the new link */
         .browser-chrome { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1rem; }
         .browser-dot { width: 12px; height: 12px; border-radius: 50%; background: #E2E8F0; }
         .chrome-dots { display: flex; gap: 0.5rem; }
@@ -35,6 +33,92 @@
         /* Portfolio Card Hover Effects */
         .portfolio-card img { transition: transform 0.6s ease, filter 0.6s ease; }
         .portfolio-card:hover img { transform: scale(1.05); filter: grayscale(0%); }
+
+        /* Scope & Deliverables Grid */
+        .scope-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .scope-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .scope-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0.5rem 0 1.5rem 0; color: var(--charcoal); }
+        .scope-list { list-style: none; padding: 0; margin-bottom: 2.5rem; }
+        .scope-list li { margin-bottom: 0.8rem; font-size: 0.95rem; color: var(--charcoal); display: flex; align-items: flex-start; gap: 0.8rem; }
+        .scope-list li::before { content: "✓"; color: var(--brand-green); font-weight: bold; }
+        
+        .ideal-for {
+            background: var(--bg-off-white);
+            padding: 1.5rem;
+            border-left: 3px solid var(--brand-green);
+        }
+        .ideal-for strong { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-green); display: block; margin-bottom: 0.5rem; }
+
+        /* O&M Retainer Grid */
+        .om-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .om-card {
+            background: var(--bg-white);
+            border-top: 3px solid var(--brand-green);
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        /* FAQ Accordion Styles */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+            cursor: pointer;
+        }
+        .faq-question {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--brand-green);
+            transition: transform 0.3s ease;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, margin-top 0.3s ease;
+            color: var(--charcoal-light);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            margin-top: 1rem;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        @media (max-width: 900px) {
+            .scope-grid { grid-template-columns: 1fr; }
+            .om-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .om-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body class="bg-grid">
@@ -98,7 +182,7 @@
                         </div>
                         <div class="mega-menu-footer">
                             <span class="mega-footer-question">NOT SURE WHERE TO START?</span>
-                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a>
+                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT &rarr;</a>
                         </div>
                     </div>
                 </li>
@@ -125,13 +209,13 @@
                         </div>
                         <div class="mega-menu-footer">
                             <span class="mega-footer-question">DON'T SEE YOUR INDUSTRY?</span>
-                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a>
+                            <a href="/contact.html" class="mega-footer-cta">LET'S DISCUSS YOUR USE CASE &rarr;</a>
                         </div>
                     </div>
                 </li>
 
                 <li><a href="/onboarding.html">Engagement Model</a></li>
-                <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">GET YOUR BLUEPRINT</a></li>
+                <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">Get Your Blueprint</a></li>
             </ul>
         </nav>
     </header>
@@ -139,9 +223,9 @@
     <!-- Service Hero -->
     <section class="hero" style="padding-bottom: 4rem;">
         <div class="hero-text gsap-reveal">
-            <span class="badge">BI Visualization & Semantic Modeling</span>
+            <span class="badge">03 THE MULTIPLIER</span>
             <h1>End the debate over whose numbers are accurate.</h1>
-            <p>I engineer governed semantic models and real-time Power BI dashboards that ensure Finance, Sales, and Operations all report from the exact same certified data.</p>
+            <p>I engineer governed Power BI dashboards that ensure Finance, Sales, and Operations all report from the exact same certified semantic data layer.</p>
             <div class="hero-buttons">
                 <a href="#interactive-lab" class="btn-secondary" style="border: 1px solid var(--border-color); padding: 1rem 1.8rem; text-decoration: none; color: var(--charcoal); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; margin-right: 1rem;">Explore Data Lab</a>
                 <a href="/contact.html" class="btn-primary">Map Your Dashboard Rollout</a>
@@ -149,7 +233,7 @@
         </div>
     </section>
 
-    <!-- NEW: Interactive Dashboard Spotlight -->
+    <!-- Interactive Dashboard Spotlight -->
     <section id="interactive-lab" class="section-container" style="padding-top: 2rem; padding-bottom: 5rem;">
         <div class="gsap-reveal" style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
             <span class="badge">Interactive Deployment</span>
@@ -159,8 +243,6 @@
         
         <!-- Browser Chrome Wrapper for the Embed -->
         <div class="gsap-reveal" style="background: var(--bg-white); border: 1px solid var(--border-color); padding: 1rem; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-radius: 4px;">
-            
-            <!-- NEW: The Clickable Chrome Header -->
             <div class="browser-chrome">
                 <div class="chrome-dots">
                     <div class="browser-dot"></div>
@@ -176,57 +258,126 @@
         </div>
     </section>
 
-    <!-- The Problem Sticky Grid -->
+    <!-- The Cost of Doing Nothing (Split Section) -->
     <section class="section-container split-section bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        
+        <!-- Left Rail: The Agitation -->
         <div class="sticky-rail gsap-reveal">
-            <h2 style="border: none; font-size: 2rem;">The Symptoms of Fragmented Reporting</h2>
-            <p style="font-size: 1.15rem; color: var(--charcoal-light);">If you lack a canonical semantic layer, it usually looks like this.</p>
-        </div>
-        
-        <div class="cards-rail">
-            <div class="editorial-card gsap-reveal" style="padding: 2.5rem; border-left: 4px solid var(--brand-green); background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">01. Metric Chaos</span>
-                <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">Different departments, different results.</h3>
-                <p>Because calculations are isolated in individual analysts' spreadsheets, "Gross Margin" means something completely different to Sales than it does to Finance.</p>
-            </div>
+            <span class="badge">The Bottleneck</span>
+            <h2 style="border: none; font-size: 2.2rem; margin-bottom: 2rem;">The Cost of Fragmented Reporting</h2>
             
-            <div class="editorial-card gsap-reveal" style="padding: 2.5rem; border-left: 4px solid var(--brand-green); background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">02. Decision Latency</span>
-                <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">Executives waiting on manual reports.</h3>
-                <p>By the time operations managers compile, validate, and email the weekly performance Excel sheets, the data is already 72 hours out of date.</p>
+            <div style="margin-bottom: 2.5rem;">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">01</span>
+                <p style="margin-top: 0.5rem; color: var(--charcoal); font-size: 1.05rem;">You are suffering from metric chaos. Because calculations are isolated in individual analysts' spreadsheets, "Gross Margin" means something completely different to Sales than it does to Finance.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- The Solution Process -->
-    <section class="section-container" style="padding-top: 5rem; padding-bottom: 5rem;">
-        <div class="gsap-reveal">
-            <span class="badge">The Implementation</span>
-            <h2 style="border: none;">How I Build Your Analytics Layer</h2>
+            <div style="margin-bottom: 2.5rem;">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">02</span>
+                <p style="margin-top: 0.5rem; color: var(--charcoal); font-size: 1.05rem;">Your business suffers from severe decision latency. By the time operations managers compile, validate, and email the weekly performance Excel sheets, the data is already out of date.</p>
+            </div>
+
+            <div>
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">03</span>
+                <p style="margin-top: 0.5rem; color: var(--charcoal); font-size: 1.05rem;">There is zero data governance. If your lead analyst leaves the company, all the historical context and complex formula logic locked in their head leaves with them.</p>
+            </div>
         </div>
         
-        <div class="process-grid">
-            <div class="process-card gsap-reveal" style="background: var(--bg-off-white);">
-                <span style="font-weight: 700; color: var(--charcoal-light);">PHASE 1</span>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">Metric Standardization</h3>
-                <p style="font-size: 0.95rem;">I audit your current reports to locate where logic diverges, stripping out fragmented calculations and aligning stakeholders on concrete business definitions.</p>
-            </div>
+        <!-- Right Rail: The High-Level Architecture Visual -->
+        <div class="cards-rail gsap-reveal" style="background: var(--bg-white); border: 1px solid var(--border-color); padding: 3rem; box-shadow: 0 20px 40px rgba(0,0,0,0.04);">
+            <h3 style="font-family: 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--charcoal-light); margin-bottom: 2rem; text-align: center;">Reporting Architecture</h3>
+            
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                
+                <!-- Semantic Layer -->
+                <div style="text-align: center; width: 100%;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 0.1em;">GOVERNED DATA LAYER</span>
+                    <div style="background: var(--bg-off-white); border: 1px solid var(--border-color); padding: 1rem 2rem; margin-top: 0.5rem; font-weight: 600; border-radius: 4px;">
+                        CANONICAL SEMANTIC MODEL
+                    </div>
+                </div>
 
-            <div class="process-card gsap-reveal" style="background: var(--bg-off-white);">
-                <span style="font-weight: 700; color: var(--charcoal-light);">PHASE 2</span>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">Governed Semantic Models</h3>
-                <p style="font-size: 0.95rem;">I embed those definitions into a centralized dbt or DAX semantic layer. Time-intelligence and currency conversions are handled at the engine level, not the visual level.</p>
-            </div>
+                <div style="color: var(--brand-green); font-size: 1.5rem;">&darr;</div>
 
-            <div class="process-card gsap-reveal" style="background: var(--bg-off-white);">
-                <span style="font-weight: 700; color: var(--charcoal-light);">PHASE 3</span>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">Executive Visuals</h3>
-                <p style="font-size: 0.95rem;">I deploy interactive Power BI and Looker Studio dashboards secured with strict Row-Level Security, ensuring automated, daily visibility across your organization.</p>
+                <!-- BI Layer -->
+                <div style="text-align: center; width: 100%;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 0.1em;">VISUALIZATION ENGINE</span>
+                    <div style="background: var(--brand-green); color: white; padding: 1.5rem; margin-top: 0.5rem; font-weight: 600; border-radius: 4px; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <span>AUTO-REFRESHING DASHBOARDS</span>
+                        <span>ROW-LEVEL SECURITY (RLS)</span>
+                        <span>EXECUTIVE KPI DRILLDOWNS</span>
+                    </div>
+                    <p style="font-size: 0.75rem; margin-top: 0.8rem; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 0.1em;">POWER BI · LOOKER</p>
+                </div>
+
+                <div style="color: var(--brand-green); font-size: 1.5rem;">&darr;</div>
+
+                <!-- Output Layer -->
+                <div style="text-align: center; width: 100%;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 0.1em;">BUSINESS STAKEHOLDERS</span>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                        <div style="background: var(--bg-off-white); border: 1px solid var(--border-color); padding: 0.5rem; font-size: 0.8rem; font-weight: 600;">FINANCE</div>
+                        <div style="background: var(--bg-off-white); border: 1px solid var(--border-color); padding: 0.5rem; font-size: 0.8rem; font-weight: 600;">SALES</div>
+                        <div style="background: var(--bg-off-white); border: 1px solid var(--border-color); padding: 0.5rem; font-size: 0.8rem; font-weight: 600;">OPERATIONS</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Dashboard Mini-Portfolio Grid -->
+    <!-- Scope & Deliverables -->
+    <section class="section-container" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="gsap-reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="badge">02 THE ENGAGEMENT</span>
+            <h2 style="border: none;">Scope & Deliverables</h2>
+            <p style="color: var(--charcoal-light); font-size: 1.15rem;">Every engagement is scoped strictly to your operational reality. No bloat. No guesswork.</p>
+        </div>
+        
+        <div class="scope-grid">
+            
+            <!-- Tier 1: Departmental -->
+            <div class="scope-card gsap-reveal">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">01</span>
+                <h3>Departmental Dashboards</h3>
+                
+                <ul class="scope-list">
+                    <li><strong>2–3 Weeks</strong> Delivery Timeline</li>
+                    <li>1 to 2 Core Report Pages</li>
+                    <li>Connection to Existing Clean Data Sources</li>
+                    <li>Basic Filtering & Drilldowns</li>
+                    <li>Workspace Deployment & Handoff</li>
+                </ul>
+
+                <div class="ideal-for">
+                    <strong>Ideal For</strong>
+                    <p style="margin: 0; font-size: 0.95rem; color: var(--charcoal);">Individual teams (e.g., Marketing or Sales) that already have clean data but need to transition away from manual Excel charting.</p>
+                </div>
+            </div>
+
+            <!-- Tier 2: Executive -->
+            <div class="scope-card gsap-reveal" style="border-top: 4px solid var(--brand-green);">
+                <span style="position: absolute; top: -15px; right: 2rem; background: var(--brand-green); color: white; padding: 0.3rem 1rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Most Common Scope</span>
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">02</span>
+                <h3>Executive KPI Suites</h3>
+                
+                <ul class="scope-list">
+                    <li><strong>4–6 Weeks</strong> Delivery Timeline</li>
+                    <li>Full Metric Standardization & DAX Modeling</li>
+                    <li>Interactive 3–5 Page Reporting Suite</li>
+                    <li>Row-Level Security (RLS) Implementation</li>
+                    <li>Automated Refresh Scheduling</li>
+                </ul>
+
+                <div class="ideal-for">
+                    <strong>Ideal For</strong>
+                    <p style="margin: 0; font-size: 0.95rem; color: var(--charcoal);">C-Suite leadership needing cross-functional visibility, governed metric catalogs, and automated, multi-region reporting.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Dashboard Mini-Portfolio Grid (Cross-Functional) -->
     <section class="section-container bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
         <div class="gsap-reveal" style="margin-bottom: 3rem;">
             <span class="badge">Deployment Gallery</span>
@@ -261,6 +412,82 @@
         </div>
     </section>
 
+    <!-- O&M Retainer Section -->
+    <section class="section-container" style="padding-bottom: 5rem;">
+        <div class="gsap-reveal">
+            <span class="badge">Post-Deployment</span>
+            <h2 style="border: none;">Operations & Maintenance</h2>
+            <p style="color: var(--charcoal-light); font-size: 1.15rem; max-width: 800px;">Dashboards decay without active maintenance. My O&M retainers keep your reporting infrastructure secure, optimized, and continuously evolving to meet new business logic.</p>
+        </div>
+
+        <div class="om-grid gsap-reveal">
+            <div class="om-card">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">01</span>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Bug fixes & UI iterations</p>
+            </div>
+            <div class="om-card">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">02</span>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Automated refresh monitoring</p>
+            </div>
+            <div class="om-card">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">03</span>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Power BI Workspace scaling</p>
+            </div>
+            <div class="om-card">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">04</span>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Security & RLS governance updates</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-container bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="gsap-reveal" style="max-width: 800px; margin: 0 auto;">
+            <h2 style="border: none; text-align: center; margin-bottom: 3rem;">Frequently Asked Questions</h2>
+            
+            <div class="faq-accordion">
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>Do you build dashboards in tools other than Power BI?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        While my deepest expertise is within the Microsoft BI stack (Power BI & SSAS), I am fully equipped to deploy semantic layers and operational dashboards utilizing Looker or Tableau, depending on your organization's existing licensing and infrastructure.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>How do we handle data privacy and sensitive metrics?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Data governance is baked in from day one. I implement strict Row-Level Security (RLS) directly into the semantic model, ensuring that users—whether regional managers or field reps—only see the specific data rows they are explicitly authorized to view.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>What happens when our business definitions change?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Because I decouple the logic layer from the visual layer, changes are frictionless. If Finance changes the definition of "Net Revenue", I update the formula once in the central semantic model, and the new calculation instantly cascades to every dashboard across your company.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Happens Next CTA -->
+    <section class="section-container" style="padding-top: 5rem; padding-bottom: 5rem; text-align: center;">
+        <div class="gsap-reveal" style="max-width: 800px; margin: 0 auto;">
+            <h2 style="border: none; font-size: 2.2rem; margin-bottom: 1rem;">What Happens Next?</h2>
+            <p style="font-size: 1.15rem; color: var(--charcoal); margin-bottom: 2rem; line-height: 1.6;">If your metric definitions are scattered across spreadsheets, or your reporting architecture has outgrown its governance, it's time to centralize your operations. Schedule a discovery call to map your rollout.</p>
+            <a href="/contact.html" class="btn-primary" style="background: var(--charcoal);">Get Your Blueprint &rarr;</a>
+        </div>
+    </section>
+
     <!-- THE INVISIBLE MODAL STRUCTURE -->
     <div id="portfolioModal" class="modal">
         <div class="modal-overlay" onclick="closeModal()"></div>
@@ -289,13 +516,13 @@
         </div>
     </div>
 
-    <!-- MODAL LOGIC SCRIPT (Updated to include the showcase report) -->
+    <!-- MODAL LOGIC SCRIPT -->
     <script>
         const portfolioData = {
             showcase: {
                 tag: "Interactive Data Lab",
                 title: "Executive KPI Semantic Model",
-                img: "/images/portfolio-showcase.jpg", // Create a screenshot of this report
+                img: "/images/portfolio-showcase.jpg", // Ensure you create this screenshot
                 desc: "An interactive demonstration of a governed Power BI semantic layer. This project involved standardizing fragmented metric definitions across Finance, Sales, and Marketing into a single canonical DAX model, eliminating departmental reporting conflicts.",
                 tech: "Power BI, DAX, SQL Server, SSIS",
                 impact: "Established a verifiable single source of truth, automating cross-departmental executive reporting."

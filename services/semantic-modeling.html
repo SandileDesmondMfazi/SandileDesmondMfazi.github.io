@@ -7,15 +7,116 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), 
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+            background-color: var(--bg-white);
+        }
+        .bg-alternate {
+            background-color: #F9FAFB !important;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Scope & Deliverables Grid */
+        .scope-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .scope-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .scope-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0.5rem 0 1.5rem 0; color: var(--charcoal); }
+        .scope-list { list-style: none; padding: 0; margin-bottom: 2.5rem; }
+        .scope-list li { margin-bottom: 0.8rem; font-size: 0.95rem; color: var(--charcoal); display: flex; align-items: flex-start; gap: 0.8rem; }
+        .scope-list li::before { content: "✓"; color: var(--brand-green); font-weight: bold; }
+        
+        .ideal-for {
+            background: var(--bg-off-white);
+            padding: 1.5rem;
+            border-left: 3px solid var(--brand-green);
+        }
+        .ideal-for strong { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-green); display: block; margin-bottom: 0.5rem; }
+
+        /* O&M Retainer Grid */
+        .om-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .om-card {
+            background: var(--bg-white);
+            border-top: 3px solid var(--brand-green);
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        /* FAQ Accordion Styles */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+            cursor: pointer;
+        }
+        .faq-question {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--brand-green);
+            transition: transform 0.3s ease;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, margin-top 0.3s ease;
+            color: var(--charcoal-light);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            margin-top: 1rem;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        @media (max-width: 900px) {
+            .scope-grid { grid-template-columns: 1fr; }
+            .om-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .om-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-grid">
+
     <!-- Header Navigation with Mega Menus -->
     <header class="navbar">
-                <div class="logo">
-            	<a href="/">
-                	<img src="/images/logo.png" alt="SDM Business Intelligence Logo">
-            	</a>
-        	</div>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo.png" alt="SDM Business Intelligence Logo">
+            </a>
+        </div>
         
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -32,63 +133,43 @@
                     <a href="#" role="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" onclick="return false;">Services</a>
                     <div class="dropdown-menu mega-menu">
                         <div class="mega-menu-content">
-                            
                             <!-- Column 1: The Hook -->
                             <div class="mega-col">
-                                <div class="mega-col-header">
-                                    <span class="blue-dot"></span> THE HOOK
-                                </div>
+                                <div class="mega-col-header"><span class="blue-dot"></span> THE HOOK</div>
                                 <div class="mega-col-sub">GET IN THE DOOR</div>
-                                
                                 <a href="/services/workflow-automation.html" class="mega-service">
-                                    <span class="service-name">Custom Automation</span>
-                                    <span class="service-tech">MAKE / POWER AUTOMATE</span>
+                                    <span class="service-name">Custom Automation</span><span class="service-tech">MAKE / POWER AUTOMATE</span>
                                 </a>
                                 <a href="/services/custom-portals.html" class="mega-service">
-                                    <span class="service-name">Web & Data Portals</span>
-                                    <span class="service-tech">APPS SCRIPT / POWER APPS</span>
+                                    <span class="service-name">Web & Data Portals</span><span class="service-tech">APPS SCRIPT / POWER APPS</span>
                                 </a>
                             </div>
-
                             <!-- Column 2: The Backbone -->
                             <div class="mega-col">
-                                <div class="mega-col-header">
-                                    <span class="blue-dot"></span> THE BACKBONE
-                                </div>
+                                <div class="mega-col-header"><span class="blue-dot"></span> THE BACKBONE</div>
                                 <div class="mega-col-sub">UNIFY SYSTEMS</div>
-                                
                                 <a href="/services/data-infrastructure.html" class="mega-service">
-                                    <span class="service-name">Data Infrastructure</span>
-                                    <span class="service-tech">SNOWFLAKE / DATABRICKS</span>
+                                    <span class="service-name">Data Infrastructure</span><span class="service-tech">SNOWFLAKE / DATABRICKS</span>
                                 </a>
                                 <a href="/services/etl-pipelines.html" class="mega-service">
-                                    <span class="service-name">Ingestion Pipelines</span>
-                                    <span class="service-tech">FIVETRAN / SSIS</span>
+                                    <span class="service-name">Ingestion Pipelines</span><span class="service-tech">FIVETRAN / SSIS</span>
                                 </a>
                             </div>
-
                             <!-- Column 3: The Multiplier -->
                             <div class="mega-col">
-                                <div class="mega-col-header">
-                                    <span class="blue-dot"></span> THE MULTIPLIER
-                                </div>
+                                <div class="mega-col-header"><span class="blue-dot"></span> THE MULTIPLIER</div>
                                 <div class="mega-col-sub">SCALE VALUE</div>
-                                
                                 <a href="/services/semantic-modeling.html" class="mega-service">
-                                    <span class="service-name">Semantic Modeling</span>
-                                    <span class="service-tech">DBT / DAX</span>
+                                    <span class="service-name">Semantic Modeling</span><span class="service-tech">DBT / DAX</span>
                                 </a>
                                 <a href="/services/bi-dashboards.html" class="mega-service">
-                                    <span class="service-name">BI Dashboards</span>
-                                    <span class="service-tech">POWER BI / LOOKER</span>
+                                    <span class="service-name">BI Dashboards</span><span class="service-tech">POWER BI / LOOKER</span>
                                 </a>
                             </div>
                         </div>
-
-                        <!-- Mega Menu CTA Footer -->
                         <div class="mega-menu-footer">
                             <span class="mega-footer-question">NOT SURE WHERE TO START?</span>
-                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a>
+                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT &rarr;</a>
                         </div>
                     </div>
                 </li>
@@ -96,9 +177,8 @@
                 <!-- INDUSTRIES MEGA MENU -->
                 <li class="nav-item has-mega-menu">
                     <a href="/industries" class="nav-link dropdown-toggle">Industries</a>
-                    <div class="dropdown-menu mega-menu" style="width: 600px;"> <!-- Narrower for 2 columns -->
+                    <div class="dropdown-menu mega-menu" style="width: 600px;">
                         <div class="mega-menu-content" style="grid-template-columns: repeat(2, 1fr);">
-                            
                             <!-- Column 1 -->
                             <div class="mega-col" style="padding: 2rem;">
                                 <a href="/industries/financial-services.html" class="mega-service" style="align-items: flex-start; text-align: left;">
@@ -106,7 +186,6 @@
                                     <span class="service-tech">AUDIT TRAILS & COMPLIANCE</span>
                                 </a>
                             </div>
-
                             <!-- Column 2 -->
                             <div class="mega-col" style="padding: 2rem;">
                                 <a href="/industries/agriculture-logistics.html" class="mega-service" style="align-items: flex-start; text-align: left;">
@@ -114,86 +193,225 @@
                                     <span class="service-tech">SUPPLY CHAIN VISIBILITY</span>
                                 </a>
                             </div>
-
                         </div>
-
-                        <!-- Mega Menu CTA Footer -->
                         <div class="mega-menu-footer">
                             <span class="mega-footer-question">DON'T SEE YOUR INDUSTRY?</span>
-                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a>
+                            <a href="/contact.html" class="mega-footer-cta">LET'S DISCUSS YOUR USE CASE &rarr;</a>
                         </div>
                     </div>
                 </li>
 
                 <li><a href="/onboarding.html">Engagement Model</a></li>
-                <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">GET YOUR BLUEPRINT</a></li>
+                <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">Get Your Blueprint</a></li>
             </ul>
         </nav>
     </header>
 
-
     <!-- Service Hero -->
-    <section class="hero bg-grid">
+    <section class="hero" style="padding-bottom: 4rem;">
         <div class="hero-text gsap-reveal">
-            <span class="badge">dbt & Semantic Modeling</span>
+            <span class="badge">03 THE MULTIPLIER</span>
             <h1>Version-controlled, governed business logic.</h1>
-            <p>I untangle messy JSON and raw tables into clean, version-controlled dbt models and DAX semantic layers, ensuring data is ready for BI consumption.</p>
+            <p>I untangle messy JSON and raw tables into clean, version-controlled dbt models and DAX semantic layers, ensuring your data is standardized, tested, and ready for BI consumption.</p>
             <div class="hero-buttons">
                 <a href="/contact.html" class="btn-primary">Standardize Your Metrics</a>
             </div>
         </div>
     </section>
 
-    <!-- The Problem Sticky Grid -->
+    <!-- The Cost of Doing Nothing (Split Section) -->
     <section class="section-container split-section bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        
+        <!-- Left Rail: The Agitation -->
         <div class="sticky-rail gsap-reveal">
-            <h2 style="border: none; font-size: 2rem;">The Symptoms of Raw Data</h2>
-            <p style="font-size: 1.15rem; color: var(--charcoal-light);">If you are querying raw ingestion tables directly, it usually looks like this.</p>
-        </div>
-        
-        <div class="cards-rail">
-            <div class="editorial-card gsap-reveal" style="padding: 2.5rem; border-left: 4px solid var(--brand-green); background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">01. Sprawling Logic</span>
-                <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">Calculations hidden inside BI tools.</h3>
-                <p>When analysts write heavy SQL queries directly inside dashboarding tools, the logic becomes untrackable. If a metric formula changes, you have to manually update 50 different reports.</p>
-            </div>
+            <span class="badge">The Bottleneck</span>
+            <h2 style="border: none; font-size: 2.2rem; margin-bottom: 2rem;">The Cost of Raw Data</h2>
             
-            <div class="editorial-card gsap-reveal" style="padding: 2.5rem; border-left: 4px solid var(--brand-green); background: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">02. Performance Bottlenecks</span>
-                <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">Dashboards timing out.</h3>
-                <p>Forcing a visualization tool to parse unstructured JSON or massive flattened audit trails causes the engine to crash, leaving executives staring at loading screens.</p>
+            <div style="margin-bottom: 2.5rem;">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">01</span>
+                <p style="margin-top: 0.5rem; color: var(--charcoal); font-size: 1.05rem;">You are suffering from sprawling logic. When analysts write heavy SQL queries directly inside BI tools, calculations become untrackable. If a formula changes, you have to manually update 50 different dashboards.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- The Solution Process -->
-    <section class="section-container" style="padding-top: 5rem; padding-bottom: 5rem;">
-        <div class="gsap-reveal">
-            <span class="badge">The Implementation</span>
-            <h2 style="border: none;">How I Model Your Data</h2>
+            <div style="margin-bottom: 2.5rem;">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">02</span>
+                <p style="margin-top: 0.5rem; color: var(--charcoal); font-size: 1.05rem;">Your dashboards are timing out. Forcing a visualization tool like Power BI to parse unstructured JSON or massive flattened audit trails causes the engine to crash, leaving executives staring at loading screens.</p>
+            </div>
+
+            <div>
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">03</span>
+                <p style="margin-top: 0.5rem; color: var(--charcoal); font-size: 1.05rem;">Your data has zero quality assurance. Without automated dbt tests running upstream, bad data feeds directly into your reports, eroding trust in the analytics entirely.</p>
+            </div>
         </div>
         
-        <div class="process-grid">
-            <div class="process-card gsap-reveal" style="background: var(--bg-off-white);">
-                <span style="font-weight: 700; color: var(--charcoal-light);">PHASE 1</span>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">Kimball Methodologies</h3>
-                <p style="font-size: 0.95rem;">I audit your raw operational data and engineer it into structured Fact and Dimension tables (star schemas) optimized strictly for high-speed analytical querying.</p>
-            </div>
+        <!-- Right Rail: The High-Level Architecture Visual -->
+        <div class="cards-rail gsap-reveal" style="background: var(--bg-white); border: 1px solid var(--border-color); padding: 3rem; box-shadow: 0 20px 40px rgba(0,0,0,0.04);">
+            <h3 style="font-family: 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--charcoal-light); margin-bottom: 2rem; text-align: center;">Semantic Layer Architecture</h3>
+            
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                
+                <!-- Raw Data Layer -->
+                <div style="text-align: center; width: 100%;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 0.1em;">RAW WAREHOUSE DATA</span>
+                    <div style="background: var(--bg-off-white); border: 1px solid var(--border-color); padding: 1rem 2rem; margin-top: 0.5rem; font-weight: 600; border-radius: 4px;">
+                        UNTYPED JSON / MESSY TABLES
+                    </div>
+                </div>
 
-            <div class="process-card gsap-reveal" style="background: var(--bg-off-white);">
-                <span style="font-weight: 700; color: var(--charcoal-light);">PHASE 2</span>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">dbt Transformations</h3>
-                <p style="font-size: 0.95rem;">Business logic is moved upstream into the warehouse using modular, version-controlled dbt (data build tool) code, ensuring tests and validations occur before data is served.</p>
-            </div>
+                <div style="color: var(--brand-green); font-size: 1.5rem;">&darr;</div>
 
-            <div class="process-card gsap-reveal" style="background: var(--bg-off-white);">
-                <span style="font-weight: 700; color: var(--charcoal-light);">PHASE 3</span>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0.5rem 0;">Governed Catalogs</h3>
-                <p style="font-size: 0.95rem;">The output is a fully documented metric catalog. Any BI tool connecting to the layer inherits the exact same canonical definition of your KPIs.</p>
+                <!-- Transformation Layer -->
+                <div style="text-align: center; width: 100%;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 0.1em;">THE SEMANTIC LAYER</span>
+                    <div style="background: var(--brand-green); color: white; padding: 1.5rem; margin-top: 0.5rem; font-weight: 600; border-radius: 4px; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <span>KIMBALL STAR-SCHEMAS</span>
+                        <span>VERSION-CONTROLLED SQL</span>
+                        <span>AUTOMATED DATA TESTS</span>
+                    </div>
+                    <p style="font-size: 0.75rem; margin-top: 0.8rem; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 0.1em;">DBT · DAX MODELS</p>
+                </div>
+
+                <div style="color: var(--brand-green); font-size: 1.5rem;">&darr;</div>
+
+                <!-- Output Layer -->
+                <div style="text-align: center; width: 100%;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 0.1em;">CERTIFIED OUTPUTS</span>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+                        <div style="background: var(--bg-off-white); border: 1px solid var(--border-color); padding: 1rem; font-size: 0.9rem; font-weight: 600;">BI DASHBOARDS</div>
+                        <div style="background: var(--bg-off-white); border: 1px solid var(--border-color); padding: 1rem; font-size: 0.9rem; font-weight: 600;">METRIC CATALOGS</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
+    <!-- Scope & Deliverables -->
+    <section class="section-container" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="gsap-reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="badge">02 THE ENGAGEMENT</span>
+            <h2 style="border: none;">Scope & Deliverables</h2>
+            <p style="color: var(--charcoal-light); font-size: 1.15rem;">Every semantic engagement is scoped strictly to your operational reality. No bloat. No guesswork.</p>
+        </div>
+        
+        <div class="scope-grid">
+            
+            <!-- Tier 1: DAX -->
+            <div class="scope-card gsap-reveal">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">01</span>
+                <h3>DAX & Power BI Models</h3>
+                
+                <ul class="scope-list">
+                    <li><strong>2–4 Weeks</strong> Delivery Timeline</li>
+                    <li>SSAS Tabular Model Development</li>
+                    <li>Complex DAX Measure Engineering</li>
+                    <li>Dynamic Currency (FX) Conversions</li>
+                    <li>Row-Level Security (RLS) Implementation</li>
+                </ul>
+
+                <div class="ideal-for">
+                    <strong>Ideal For</strong>
+                    <p style="margin: 0; font-size: 0.95rem; color: var(--charcoal);">Organizations deeply embedded in the Microsoft stack that need to optimize their Power BI reporting layer for massive datasets.</p>
+                </div>
+            </div>
+
+            <!-- Tier 2: dbt -->
+            <div class="scope-card gsap-reveal" style="border-top: 4px solid var(--brand-green);">
+                <span style="position: absolute; top: -15px; right: 2rem; background: var(--brand-green); color: white; padding: 0.3rem 1rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Most Common Scope</span>
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">02</span>
+                <h3>dbt Semantic Layer Rollout</h3>
+                
+                <ul class="scope-list">
+                    <li><strong>4–8 Weeks</strong> Delivery Timeline</li>
+                    <li>Kimball Dimensional Modeling (Star Schemas)</li>
+                    <li>Version-Controlled SQL via Git</li>
+                    <li>Automated Data Testing & Assertions</li>
+                    <li>Auto-Generated Metric Documentation</li>
+                </ul>
+
+                <div class="ideal-for">
+                    <strong>Ideal For</strong>
+                    <p style="margin: 0; font-size: 0.95rem; color: var(--charcoal);">Modern data teams scaling rapidly on Snowflake or Databricks who need strict engineering governance applied to their business logic.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- O&M Retainer Section -->
+    <section class="section-container" style="padding-bottom: 5rem;">
+        <div class="gsap-reveal">
+            <span class="badge">Post-Deployment</span>
+            <h2 style="border: none;">Operations & Maintenance</h2>
+            <p style="color: var(--charcoal-light); font-size: 1.15rem; max-width: 800px;">Data systems decay without active maintenance. My O&M retainers keep your semantic infrastructure secure, optimized, and evolving as your business definitions change.</p>
+        </div>
+
+        <div class="om-grid gsap-reveal">
+            <div class="om-card">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">01</span>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Metric logic updates & iteration</p>
+            </div>
+            <div class="om-card">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">02</span>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Automated test monitoring</p>
+            </div>
+            <div class="om-card">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">03</span>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Performance & query optimization</p>
+            </div>
+            <div class="om-card">
+                <span style="color: var(--brand-green); font-weight: 700; font-size: 1.2rem;">04</span>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Git repository management</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-container bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="gsap-reveal" style="max-width: 800px; margin: 0 auto;">
+            <h2 style="border: none; text-align: center; margin-bottom: 3rem;">Frequently Asked Questions</h2>
+            
+            <div class="faq-accordion">
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>Why do we need dbt if we already write SQL?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Writing loose SQL scripts directly into reporting tools makes your logic impossible to track. dbt introduces software engineering best practices to data. It allows you to version-control your logic in Git, automatically test for bad data before it hits the dashboard, and modularize your code so you only have to update a metric formula in one single place.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>Do we need a semantic layer if we only use Power BI?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        If your organization exclusively uses Power BI, we can build a highly optimized semantic layer using DAX and SSAS. However, if your data teams use a mix of tools (e.g., Power BI for executives, Python for data science, and Excel for finance), a central dbt semantic layer sitting in Snowflake/Databricks ensures all of those distinct tools report the exact same numbers.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>Do you maintain the code after handover?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. After the initial build, I offer dedicated B2B fractional retainers. This ensures your infrastructure is actively monitored, new metrics are added cleanly, and your internal team receives ongoing architectural enablement.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Happens Next (Upsell to BI Dashboards) -->
+    <section class="section-container" style="padding-top: 5rem; padding-bottom: 5rem; text-align: center;">
+        <div class="gsap-reveal" style="max-width: 800px; margin: 0 auto;">
+            <h2 style="border: none; font-size: 2.2rem; margin-bottom: 1rem;">What Happens Next?</h2>
+            <p style="font-size: 1.15rem; color: var(--charcoal); margin-bottom: 2rem; line-height: 1.6;">Your operational data is now structured, tested, and certified in the semantic layer. The final move is feeding this unshakeable data into interactive dashboards so leadership has real-time KPI visibility.</p>
+            <a href="/services/bi-dashboards.html" class="btn-primary" style="background: var(--charcoal);">Explore BI Dashboards &rarr;</a>
+        </div>
+    </section>
 
     <!-- Global B2B Fat Footer -->
     <footer class="fat-footer">
@@ -206,22 +424,15 @@
                 <div class="social-icons">
                     <!-- LinkedIn Icon -->
                     <a href="https://www.linkedin.com/in/sandilemfazi/" target="_blank" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     </a>
                     <!-- Upwork Icon -->
                     <a href="YOUR_UPWORK_LINK" target="_blank" aria-label="Upwork">
-                        <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Upwork icon</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
-                        </svg>
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Upwork icon</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
                     </a>
-
-
                     <!-- Email Icon -->
                     <a href="mailto:sandilemfazi.12@gmail.com" aria-label="Email">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
-                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
                     </a>
                 </div>
             </div>
@@ -241,9 +452,8 @@
             <div class="footer-col">
                 <h4>Industries Served</h4>
                 <ul>
-                    <li><a href="/case-study-enterprise.html">Financial Services</a></li>
-                    <li><a href="/case-study-agriculture.html">Agriculture</a></li>
-                    <li><a href="/industries/index.html">FinTech & Services</a></li>
+                    <li><a href="/industries/financial-services.html">Financial Services</a></li>
+                    <li><a href="/industries/agriculture-logistics.html">Agriculture & Logistics</a></li>
                 </ul>
             </div>
 
@@ -254,7 +464,7 @@
                     <li><a href="/onboarding.html">Outside IR35 Contractor</a></li>
                     <li><a href="/onboarding.html">GDPR Data Compliance</a></li>
                     <li><a href="/onboarding.html">GMT+2 (London Alignment)</a></li>
-                    <li><a href="contact">Book Project Discovery</a></li>
+                    <li><a href="/contact.html">Book Project Discovery</a></li>
                 </ul>
             </div>
             
@@ -269,6 +479,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    <script src="../script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
