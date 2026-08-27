@@ -1576,3 +1576,12 @@ body {
         border-top: 4px solid var(--brand-green); 
     }
 }
+
+.disclaimer-text a {
+    transition: color 0.3s;
+}
+
+.disclaimer-text a:hover,
+.disclaimer-text a:focus-visible {
+    color: var(--brand-green) !important;
+}
