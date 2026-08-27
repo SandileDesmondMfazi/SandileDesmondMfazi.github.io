@@ -186,25 +186,32 @@ permalink: /legal/terms-conditions
         document.addEventListener("DOMContentLoaded", function() {
             const cookieBanner = document.getElementById("cookie-banner");
             
-            // Check if the user has already made a cookie choice
             if (!localStorage.getItem("sdm_cookie_consent")) {
-                // Wait 1 second before sliding the banner up for a smoother UX
                 setTimeout(() => {
                     cookieBanner.classList.add("show");
                 }, 1000);
+            } else if (localStorage.getItem("sdm_cookie_consent") === "accepted") {
+                // If they previously accepted on a past visit, ensure GA4 stays granted
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
             }
         });
 
         function acceptCookies() {
             localStorage.setItem("sdm_cookie_consent", "accepted");
             document.getElementById("cookie-banner").classList.remove("show");
-            // Here you would normally initialize Google Analytics if you had it
+            
+            // FIRE GOOGLE ANALYTICS: Update consent to granted
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+            });
         }
 
         function declineCookies() {
             localStorage.setItem("sdm_cookie_consent", "declined");
             document.getElementById("cookie-banner").classList.remove("show");
-            // Calendly will still function, but this legally covers your bases
+            // GA4 remains securely blocked
         }
     </script>
 

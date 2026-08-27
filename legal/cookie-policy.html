@@ -183,6 +183,50 @@ permalink: /legal/cookie-policy
 
     </section>
 
+    <!-- THE COOKIE CONSENT BANNER -->
+    <div id="cookie-banner" class="cookie-banner">
+        <h4 class="cookie-title">Data & Privacy Governance</h4>
+        <p class="cookie-text">This architecture portal utilizes essential cookies to ensure secure routing and third-party cookies (via Calendly) to facilitate B2B scheduling. By proceeding, you consent to this localized processing. View the full <a href="/legal/cookie-policy" style="color: var(--charcoal-light); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--brand-green)'" onmouseout="this.style.color='var(--charcoal-light)'">Cookie Policy</a>.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn btn-accept" onclick="acceptCookies()">Acknowledge & Accept</button>
+            <button class="cookie-btn btn-decline" onclick="declineCookies()">Strictly Necessary Only</button>
+        </div>
+    </div>
+
+    <!-- COOKIE LOGIC SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cookieBanner = document.getElementById("cookie-banner");
+            
+            if (!localStorage.getItem("sdm_cookie_consent")) {
+                setTimeout(() => {
+                    cookieBanner.classList.add("show");
+                }, 1000);
+            } else if (localStorage.getItem("sdm_cookie_consent") === "accepted") {
+                // If they previously accepted on a past visit, ensure GA4 stays granted
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem("sdm_cookie_consent", "accepted");
+            document.getElementById("cookie-banner").classList.remove("show");
+            
+            // FIRE GOOGLE ANALYTICS: Update consent to granted
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+            });
+        }
+
+        function declineCookies() {
+            localStorage.setItem("sdm_cookie_consent", "declined");
+            document.getElementById("cookie-banner").classList.remove("show");
+            // GA4 remains securely blocked
+        }
+    </script>
+
     <!-- Global B2B Fat Footer -->
     <footer class="fat-footer">
         <div class="footer-grid gsap-reveal">
