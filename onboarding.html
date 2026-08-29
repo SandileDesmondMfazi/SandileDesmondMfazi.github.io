@@ -6,35 +6,41 @@
     <title>Engagement Model | Sandile Desmond Mfazi</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Visual Depth */
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), 
-                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-            background-color: var(--bg-white);
-        }
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px); background-color: var(--bg-white); }
+        .bg-alternate { background-color: #F9FAFB !important; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
         
-        .bg-alternate {
-            background-color: #F9FAFB !important;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
+        /* 4-Stage Funnel Styles */
+        .stage-card { background: var(--bg-white); padding: 3rem; border: 1px solid var(--border-color); margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.03); position: relative; }
+        .stage-number { position: absolute; top: -1.5rem; left: 3rem; background: var(--charcoal); color: var(--bg-white); font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
         
-        .compliance-block { background: var(--bg-white); padding: 2.5rem; border-left: 4px solid var(--brand-green); margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
-        .compliance-block h3 { margin-bottom: 1rem; font-family: 'Inter', sans-serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal); }
-        .compliance-block p { color: var(--charcoal-light); font-size: 1rem; line-height: 1.6; }
+        .stage-card h3 { font-family: 'Inter', sans-serif; font-size: 1.5rem; margin: 1rem 0 0.5rem 0; color: var(--charcoal); }
+        .stage-meta { font-size: 0.85rem; font-weight: 700; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
         
-        /* Checklist Table Styles */
-        .executive-table { width: 100%; border-collapse: collapse; margin: 1rem 0 3rem 0; font-family: 'Inter', sans-serif; background: var(--bg-white); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
-        .executive-table th, .executive-table td { padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--border-color); text-align: left; }
-        .executive-table th { color: var(--charcoal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; background-color: #F9FAFB; }
-        .executive-table td { color: var(--charcoal); font-size: 1rem; }
-        .executive-table td strong { color: var(--brand-green); }
+        .deliverables-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+        .deliverables-list li { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.95rem; color: var(--charcoal-light); }
+        .deliverables-list li::before { content: "→"; color: var(--brand-green); font-weight: bold; }
 
-        .tier-card { background: var(--bg-white); padding: 2.5rem; border-top: 4px solid var(--brand-green); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        /* B2B Cookie Banner */
+        .cookie-banner { position: fixed; bottom: 2rem; left: 2rem; max-width: 420px; background: var(--charcoal); color: var(--bg-white); padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border-left: 4px solid var(--brand-green); z-index: 9999; transform: translateY(150%); opacity: 0; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .cookie-banner.show { transform: translateY(0); opacity: 1; }
+        .cookie-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--bg-white); }
+        .cookie-text { font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.5rem; color: #A0AEC0; }
+        .cookie-text a { color: var(--brand-green); text-decoration: none; font-weight: 600; }
+        .cookie-text a:hover { text-decoration: underline; }
+        .cookie-buttons { display: flex; gap: 1rem; }
+        .cookie-btn { padding: 0.6rem 1.2rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; border: none; transition: all 0.3s ease; }
+        .btn-accept { background: var(--brand-green); color: var(--bg-white); }
+        .btn-accept:hover { background: var(--accent-green); }
+        .btn-decline { background: transparent; color: #E2E8F0; border: 1px solid #4A5568; }
+        .btn-decline:hover { background: rgba(255,255,255,0.05); border-color: #E2E8F0; }
+
+        @media (max-width: 768px) { 
+            .deliverables-list { grid-template-columns: 1fr; } 
+            .cookie-banner { bottom: 0; left: 0; max-width: 100%; border-left: none; border-top: 4px solid var(--brand-green); }
+        }
     </style>
 </head>
 <body class="bg-grid">
@@ -66,10 +72,10 @@
                             <div class="mega-col">
                                 <div class="mega-col-header"><span class="blue-dot"></span> THE HOOK</div>
                                 <div class="mega-col-sub">GET IN THE DOOR</div>
-                                <a href="/services/workflow-automation" class="mega-service">
+                                <a href="/services/workflow-automation.html" class="mega-service">
                                     <span class="service-name">Custom Automation</span><span class="service-tech">MAKE / POWER AUTOMATE</span>
                                 </a>
-                                <a href="/services/custom-portals" class="mega-service">
+                                <a href="/services/custom-portals.html" class="mega-service">
                                     <span class="service-name">Web & Data Portals</span><span class="service-tech">APPS SCRIPT / POWER APPS</span>
                                 </a>
                             </div>
@@ -77,10 +83,10 @@
                             <div class="mega-col">
                                 <div class="mega-col-header"><span class="blue-dot"></span> THE BACKBONE</div>
                                 <div class="mega-col-sub">UNIFY SYSTEMS</div>
-                                <a href="/services/data-infrastructure" class="mega-service">
+                                <a href="/services/data-infrastructure.html" class="mega-service">
                                     <span class="service-name">Data Infrastructure</span><span class="service-tech">SNOWFLAKE / DATABRICKS</span>
                                 </a>
-                                <a href="/services/etl-pipelines" class="mega-service">
+                                <a href="/services/etl-pipelines.html" class="mega-service">
                                     <span class="service-name">Ingestion Pipelines</span><span class="service-tech">FIVETRAN / SSIS</span>
                                 </a>
                             </div>
@@ -88,17 +94,17 @@
                             <div class="mega-col">
                                 <div class="mega-col-header"><span class="blue-dot"></span> THE MULTIPLIER</div>
                                 <div class="mega-col-sub">SCALE VALUE</div>
-                                <a href="/services/semantic-modeling" class="mega-service">
+                                <a href="/services/semantic-modeling.html" class="mega-service">
                                     <span class="service-name">Semantic Modeling</span><span class="service-tech">DBT / DAX</span>
                                 </a>
-                                <a href="/services/bi-dashboards" class="mega-service">
+                                <a href="/services/bi-dashboards.html" class="mega-service">
                                     <span class="service-name">BI Dashboards</span><span class="service-tech">POWER BI / LOOKER</span>
                                 </a>
                             </div>
                         </div>
                         <div class="mega-menu-footer">
                             <span class="mega-footer-question">NOT SURE WHERE TO START?</span>
-                            <a href="/contact" class="mega-footer-cta">GET MY FREE BUILD PLAN &rarr;</a>
+                            <a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT &rarr;</a>
                         </div>
                     </div>
                 </li>
@@ -110,14 +116,14 @@
                         <div class="mega-menu-content" style="grid-template-columns: repeat(2, 1fr);">
                             <!-- Column 1 -->
                             <div class="mega-col" style="padding: 2rem;">
-                                <a href="/industries/financial-services" class="mega-service" style="align-items: flex-start; text-align: left;">
+                                <a href="/industries/financial-services.html" class="mega-service" style="align-items: flex-start; text-align: left;">
                                     <span class="service-name">Financial Services & Assurance</span>
                                     <span class="service-tech">AUDIT TRAILS & COMPLIANCE</span>
                                 </a>
                             </div>
                             <!-- Column 2 -->
                             <div class="mega-col" style="padding: 2rem;">
-                                <a href="/industries/agriculture-logistics" class="mega-service" style="align-items: flex-start; text-align: left;">
+                                <a href="/industries/agriculture-logistics.html" class="mega-service" style="align-items: flex-start; text-align: left;">
                                     <span class="service-name">Agriculture & Logistics</span>
                                     <span class="service-tech">SUPPLY CHAIN VISIBILITY</span>
                                 </a>
@@ -125,143 +131,218 @@
                         </div>
                         <div class="mega-menu-footer">
                             <span class="mega-footer-question">DON'T SEE YOUR INDUSTRY?</span>
-                            <a href="/contact" class="mega-footer-cta">LET'S DISCUSS YOUR USE CASE &rarr;</a>
+                            <a href="/contact.html" class="mega-footer-cta">LET'S DISCUSS YOUR USE CASE &rarr;</a>
                         </div>
                     </div>
                 </li>
 
-                <li><a href="/onboarding" class="active">Engagement Model</a></li>
-                <li><a href="/contact" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">Get Your Blueprint</a></li>
+                <li><a href="/onboarding.html" class="active">Engagement Model</a></li>
+                <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">Get Your Blueprint</a></li>
             </ul>
         </nav>
-
-                <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5K11W7S3J"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-S5K11W7S3J');
-        </script>
     </header>
 
     <!-- Engagement Hero -->
-    <section class="hero" style="padding-bottom: 2rem;">
+    <section class="hero" style="padding-bottom: 4rem;">
         <div class="hero-text gsap-reveal" style="max-width: 900px;">
-            <span class="badge">B2B Contracting Framework</span>
-            <h1>A frictionless, globally compliant engagement model.</h1>
-            <p>Engaging offshore data architecture expertise should not introduce legal or administrative overhead. I operate on a strict Business-to-Business (B2B) framework engineered for rapid onboarding with UK, European, and global enterprise clients.</p>
+            <span class="badge">B2B Value-Based Consulting</span>
+            <h1 style="font-size: 3.5rem;">Pricing based on economic impact, not hours worked.</h1>
+            <p style="font-size: 1.2rem; color: var(--charcoal-light); line-height: 1.6;">You are not buying lines of code or a dashboard. You are buying the elimination of manual labour, the reduction of operational risk, and the acceleration of decision velocity. Our engagement model is engineered around quantifying and capturing that value.</p>
         </div>
     </section>
 
-    <div class="article-layout" style="padding-top: 0;">
-        <div class="article-content gsap-reveal">
-
-            <!-- Service Tiers Section -->
-            <section style="margin-bottom: 5rem;">
-                <h2 style="font-size: 2rem; margin-bottom: 2rem; border: none;">Flexible B2B Delivery Models</h2>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    
-                    <!-- Model 1: Fixed-Scope Sprint -->
-                    <div class="tier-card">
-                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Architecture Audit & Recovery</h3>
-                        <p style="font-size: 0.85rem; color: var(--brand-green); font-weight: 700; text-transform: uppercase;">2 to 4-Week Fixed Sprint</p>
-                        <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Deep-dive diagnostic of fragile pipelines, failing legacy databases, and untrackable dashboard logic. Delivers a refactored pipeline and a strategic recovery blueprint.</p>
-                    </div>
-
-                    <!-- Model 2: Dedicated Retainer -->
-                    <div class="tier-card">
-                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Fractional Data Architect</h3>
-                        <p style="font-size: 0.85rem; color: var(--brand-green); font-weight: 700; text-transform: uppercase;">Monthly Retainer (Outside IR35)</p>
-                        <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Dedicated B2B capacity for ongoing Snowflake administration, dbt model development, Power BI semantic layer maintenance, and internal team enablement.</p>
-                    </div>
-
-                    <!-- Model 3: End-to-End Build -->
-                    <div class="tier-card">
-                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Modern Data Stack Rollout</h3>
-                        <p style="font-size: 0.85rem; color: var(--brand-green); font-weight: 700; text-transform: uppercase;">Milestone-Based Project</p>
-                        <p style="font-size: 0.95rem; color: var(--charcoal-light); margin-top: 1rem;">Full-scale architecture execution: extracting operational data via Fivetran, building star-schema warehouses, and deploying RLS-secured executive reporting suites.</p>
-                    </div>
+    <!-- NEW: The SDM Value Framework -->
+    <section class="section-container bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="gsap-reveal" style="max-width: 1000px; margin: 0 auto;">
+            <span class="badge">The SDM Value Framework&trade;</span>
+            <h2 style="border: none; font-size: 2.2rem; margin-bottom: 1.5rem;">How We Calculate Your ROI</h2>
+            <p style="color: var(--charcoal-light); font-size: 1.15rem; margin-bottom: 3rem; line-height: 1.6;">We do not charge arbitrary hourly rates. Your project investment is calculated as a strictly defined <strong>Value Capture Ratio</strong> (typically 8% to 15%) of the annualized economic value our architecture creates for your business. We measure this value across three primary pillars:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div style="background: var(--bg-white); padding: 2rem; border-top: 3px solid var(--brand-green); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.05em;">01. Time & Labour Savings</h4>
+                    <p style="font-size: 0.95rem; color: var(--charcoal-light); line-height: 1.6;">Quantifying and eliminating the hundreds of hours your highly-paid analysts spend manually exporting, cleaning, and consolidating Excel files every month.</p>
                 </div>
-            </section>
-
-            <!-- UK Client Checklist -->
-            <h2 style="font-size: 1.8rem; margin-top: 3rem; border: none;">UK Client Compliance Checklist</h2>
-            <table class="executive-table">
-                <tr>
-                    <th>Requirement</th>
-                    <th>Offshore B2B Solution</th>
-                </tr>
-                <tr>
-                    <td><strong>UK IR35 Status</strong></td>
-                    <td>Confirmed Outside IR35 (B2B Consultancy SOW / Deliverable-based).</td>
-                </tr>
-                <tr>
-                    <td><strong>Data Protection</strong></td>
-                    <td>100% GDPR Compliant. Development performed via client VDI / secure VPN.</td>
-                </tr>
-                <tr>
-                    <td><strong>Working Hours</strong></td>
-                    <td>100% Alignment with London (GMT/BST) for daily standups, Teams/Slack, and sprints.</td>
-                </tr>
-                <tr>
-                    <td><strong>Invoicing & Currency</strong></td>
-                    <td>Direct B2B invoicing in GBP (Â£) via Deel, Wise for Business, or international wire.</td>
-                </tr>
-                <tr>
-                    <td><strong>Contracting</strong></td>
-                    <td>Standard UK-compliant MSA & SOW with strict mutual NDAs.</td>
-                </tr>
-            </table>
-
-            <div class="compliance-block">
-                <h3>Legal Framework & Data Sovereignty</h3>
-                <p>Before any internal infrastructure is assessed, a mutual <strong>Non-Disclosure Agreement (NDA)</strong> is executed to ensure absolute operational confidentiality. Project scopes, deliverables, and timelines are then legally codified through a standard <strong>Master Services Agreement (MSA)</strong> and a project-specific <strong>Statement of Work (SOW)</strong>. Data sovereignty is strictly maintained; client data is never hosted on unauthorized external servers.</p>
+                <div style="background: var(--bg-white); padding: 2rem; border-top: 3px solid var(--brand-green); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.05em;">02. Revenue Recovery</h4>
+                    <p style="font-size: 0.95rem; color: var(--charcoal-light); line-height: 1.6;">Identifying pipeline leakage, missed cross-sells, and churn risks that are currently invisible due to fragmented systems and reporting latency.</p>
+                </div>
+                <div style="background: var(--bg-white); padding: 2rem; border-top: 3px solid var(--brand-green); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.05em;">03. Risk Avoidance</h4>
+                    <p style="font-size: 0.95rem; color: var(--charcoal-light); line-height: 1.6;">Calculating the financial exposure of bad data governance, broken spreadsheets, and lack of Row-Level Security, then architecting systems to neutralize it.</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="compliance-block">
-                <h3>Asynchronous Global Delivery</h3>
-                <p>Operating from Gaborone, Botswana (GMT+2), my timezone aligns perfectly with the UK and Europe for real-time daily stand-ups and collaborative architecture reviews. Furthermore, this alignment allows for highly efficient asynchronous delivery: heavy data pipeline processing, ETL orchestration, and semantic model deployments are executed during off-peak hours, ensuring dashboards are fully updated and stabilized prior to your executive team's morning review.</p>
-            </div>
-
-            <a href="/contact" class="btn-primary" style="margin-top: 2rem;">Initiate Project Discovery</a>
-
+    <!-- The 4-Stage Funnel -->
+    <section class="section-container" style="padding-top: 5rem; padding-bottom: 5rem; max-width: 1000px; margin: 0 auto;">
+        
+        <!-- Stage 1 -->
+        <div class="stage-card gsap-reveal">
+            <div class="stage-number">1</div>
+            <h3>Executive Discovery</h3>
+            <span class="stage-meta">30–45 Minutes • Complimentary</span>
+            <p style="color: var(--charcoal-light); font-size: 1.05rem; line-height: 1.6;">A high-level diagnosis of your operational friction. No sales pitches. We map how data currently flows through your business, where the manual bottlenecks exist, and what those inefficiencies are costing your organization. If there is sufficient economic value to be captured, we transition to a formal assessment.</p>
         </div>
 
-        <div class="article-sidebar gsap-reveal">
-            <h4 style="font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.9rem;">Onboarding Timeline</h4>
-            <ul style="list-style: none; font-size: 0.95rem; color: var(--charcoal); margin-top: 1.5rem; padding-left: 0; border-left: 2px solid var(--border-color);">
-                <li style="margin-bottom: 1.5rem; position: relative; padding-left: 1.5rem;">
-                    <span style="position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--brand-green);"></span>
-                    <strong style="display: block; color: var(--brand-green);">Day 1:</strong> Initial Diagnostic Call
-                </li>
-                <li style="margin-bottom: 1.5rem; position: relative; padding-left: 1.5rem;">
-                    <span style="position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--brand-green);"></span>
-                    <strong style="display: block; color: var(--brand-green);">Day 2:</strong> NDA & SOW Generation
-                </li>
-                <li style="margin-bottom: 1.5rem; position: relative; padding-left: 1.5rem;">
-                    <span style="position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--brand-green);"></span>
-                    <strong style="display: block; color: var(--brand-green);">Day 3:</strong> Contract Execution
-                </li>
-                <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem;">
-                    <span style="position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--brand-green);"></span>
-                    <strong style="display: block; color: var(--brand-green);">Day 5:</strong> Architecture Deployment Commences
-                </li>
+        <!-- Stage 2 -->
+        <div class="stage-card gsap-reveal" style="border-top: 4px solid var(--brand-green);">
+            <div class="stage-number" style="background: var(--brand-green);">2</div>
+            <h3>Data Value & Architecture Assessment</h3>
+            <span class="stage-meta">1–2 Weeks • Paid Engagement (From $3,500)</span>
+            <p style="color: var(--charcoal-light); font-size: 1.05rem; line-height: 1.6;">A deep-dive technical and economic audit. I assess your current systems, data quality, and manual processes to build a quantified business case.</p>
+            <strong style="display: block; margin-top: 1.5rem; font-size: 0.9rem; text-transform: uppercase; color: var(--charcoal);">Deliverables:</strong>
+            <ul class="deliverables-list">
+                <li>Current-State Architecture Map</li>
+                <li>Future-State Modern Data Stack Design</li>
+                <li>Economic Value Quantification (ROI)</li>
+                <li>Prioritized Implementation Roadmap</li>
+                <li>Executive Business Case</li>
+                <li>Fixed-Price Implementation Quote</li>
             </ul>
         </div>
-    </div>
+
+        <!-- Stage 3 -->
+        <div class="stage-card gsap-reveal">
+            <div class="stage-number">3</div>
+            <h3>Architecture Implementation</h3>
+            <span class="stage-meta">Milestone-Based • Priced via Value Capture Ratio</span>
+            <p style="color: var(--charcoal-light); font-size: 1.05rem; line-height: 1.6;">The execution phase. Guided by the architecture roadmap, we extract your siloed data, construct a scalable cloud warehouse, apply Kimball dimensional modeling, and deploy strictly governed executive reporting suites.</p>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="stage-card gsap-reveal" style="border-top: 4px solid var(--charcoal);">
+            <div class="stage-number">4</div>
+            <h3>Managed Data Partnership</h3>
+            <span class="stage-meta">Monthly Retainer • Outside IR35 Compliant</span>
+            <p style="color: var(--charcoal-light); font-size: 1.05rem; line-height: 1.6;">Data environments decay without active maintenance. I operate as your fractional Data Architecture partner, providing ongoing pipeline monitoring, logic iteration, infrastructure scaling, and strategic advisory via a predictable B2B monthly retainer.</p>
+        </div>
+
+    </section>
+
+    <!-- UK Client Checklist -->
+    <section class="section-container bg-alternate" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="gsap-reveal" style="max-width: 1000px; margin: 0 auto;">
+            <h2 style="font-size: 1.8rem; border: none; margin-bottom: 2rem;">Global Compliance & Logistics</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div style="background: var(--bg-white); padding: 2rem; border: 1px solid var(--border-color);">
+                    <h4 style="font-size: 1rem; text-transform: uppercase; color: var(--brand-green); margin-bottom: 0.5rem;">UK IR35 Status</h4>
+                    <p style="font-size: 0.95rem; color: var(--charcoal-light);">Confirmed Outside IR35 (B2B Consultancy SOW / Deliverable-based).</p>
+                </div>
+                <div style="background: var(--bg-white); padding: 2rem; border: 1px solid var(--border-color);">
+                    <h4 style="font-size: 1rem; text-transform: uppercase; color: var(--brand-green); margin-bottom: 0.5rem;">Working Hours</h4>
+                    <p style="font-size: 0.95rem; color: var(--charcoal-light);">100% Alignment with London, UK & European business hours (GMT+2).</p>
+                </div>
+                <div style="background: var(--bg-white); padding: 2rem; border: 1px solid var(--border-color);">
+                    <h4 style="font-size: 1rem; text-transform: uppercase; color: var(--brand-green); margin-bottom: 0.5rem;">Data Sovereignty</h4>
+                    <p style="font-size: 0.95rem; color: var(--charcoal-light);">100% GDPR Compliant. Development performed via client VDI / secure cloud tenant.</p>
+                </div>
+                <div style="background: var(--bg-white); padding: 2rem; border: 1px solid var(--border-color);">
+                    <h4 style="font-size: 1rem; text-transform: uppercase; color: var(--brand-green); margin-bottom: 0.5rem;">Invoicing & Currency</h4>
+                    <p style="font-size: 0.95rem; color: var(--charcoal-light);">Direct B2B invoicing in GBP, EUR, or USD via Deel, Wise, or bank wire.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="/contact.html" class="btn-primary" style="padding: 1.2rem 2.5rem; font-size: 1rem;">Book an Executive Discovery Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global B2B Fat Footer -->
+    <footer class="fat-footer">
+        <div class="footer-grid gsap-reveal">
+            <!-- Column 1: Brand & Trust -->
+            <div class="footer-col">
+                <img src="/images/logo.png" alt="SDM Business Intelligence Logo" style="height: 40px; margin-bottom: 1.5rem; filter: grayscale(100%); opacity: 0.8;">
+                <p style="color: var(--charcoal-light); font-size: 0.95rem; max-width: 300px;">Engineering the Modern Data Stack and BI ecosystems for organizations that refuse to stay manual.</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/sandilemfazi/" target="_blank" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="YOUR_UPWORK_LINK" target="_blank" aria-label="Upwork">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Upwork icon</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
+                    </a>
+                    <a href="mailto:sandilemfazi.12@gmail.com" aria-label="Email">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Services -->
+            <div class="footer-col">
+                <h4>Core Services</h4>
+                <ul>
+                    <li><a href="/services/data-infrastructure.html">Data Infrastructure & ETL</a></li>
+                    <li><a href="/services/semantic-modeling.html">dbt Semantic Modeling</a></li>
+                    <li><a href="/services/bi-dashboards.html">BI Dashboards (Power BI)</a></li>
+                    <li><a href="/services/workflow-automation.html">Workflow Automation</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Industries -->
+            <div class="footer-col">
+                <h4>Industries Served</h4>
+                <ul>
+                    <li><a href="/industries/financial-services.html">Financial Services</a></li>
+                    <li><a href="/industries/agriculture-logistics.html">Agriculture & Logistics</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Compliance & Legal -->
+            <div class="footer-col">
+                <h4>Operations</h4>
+                <ul>
+                    <li><a href="/onboarding.html">Outside IR35 Contractor</a></li>
+                    <li><a href="/onboarding.html">GDPR Data Compliance</a></li>
+                    <li><a href="/onboarding.html">GMT+2 (London Alignment)</a></li>
+                    <li><a href="/contact.html">Book Project Discovery</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- The Bottom Legal & Copyright Bar -->
+        <div class="disclaimer-text gsap-reveal" style="max-width: 1300px; margin: 0 auto; text-align: left; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+            <p style="margin: 0;"><strong>Gaborone, Botswana</strong> &nbsp;|&nbsp; B2B Offshore Contracting</p>
+            
+            <!-- Legal Links Cluster -->
+            <div style="display: flex; gap: 1.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; flex-wrap: wrap;">
+                <a href="/legal/privacy-policy.html" style="color: var(--charcoal-light); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--brand-green)'" onmouseout="this.style.color='var(--charcoal-light)'">Privacy Policy</a>
+                <a href="/legal/cookie-policy.html" style="color: var(--charcoal-light); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--brand-green)'" onmouseout="this.style.color='var(--charcoal-light)'">Cookie Policy</a>
+                <a href="/legal/terms-conditions.html" style="color: var(--charcoal-light); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--brand-green)'" onmouseout="this.style.color='var(--charcoal-light)'">Terms & Conditions</a>
+                <a href="/legal/gdpr-compliance.html" style="color: var(--charcoal-light); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--brand-green)'" onmouseout="this.style.color='var(--charcoal-light)'">GDPR Compliance</a>
+            </div>
+
+            <p style="margin: 0;">&copy; 2026 Sandile Desmond Mfazi. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- THE COOKIE CONSENT BANNER -->
     <div id="cookie-banner" class="cookie-banner">
         <h4 class="cookie-title">Data & Privacy Governance</h4>
-        <p class="cookie-text">This architecture portal utilizes essential cookies to ensure secure routing and third-party cookies (via Calendly) to facilitate B2B scheduling. By proceeding, you consent to this localized processing. View the full <a href="/legal/cookie-policy" style="color: var(--charcoal-light); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--brand-green)'" onmouseout="this.style.color='var(--charcoal-light)'">Cookie Policy</a>.</p>
+        <p class="cookie-text">This architecture portal utilizes essential cookies to ensure secure routing and third-party cookies (via Calendly) to facilitate B2B scheduling. By proceeding, you consent to this localized processing. View the full <a href="/legal/cookie-policy.html">Cookie Policy</a>.</p>
         <div class="cookie-buttons">
             <button class="cookie-btn btn-accept" onclick="acceptCookies()">Acknowledge & Accept</button>
             <button class="cookie-btn btn-decline" onclick="declineCookies()">Strictly Necessary Only</button>
         </div>
     </div>
+
+    <!-- Google Analytics 4 (GDPR Default: Denied) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // 1. Default all tracking to 'denied' before the user accepts cookies
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied'
+        });
+        gtag('js', new Date());
+        
+        // 2. Initialize the property (Replace G-XXXXXXXXXX with your actual ID)
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
     <!-- COOKIE LOGIC SCRIPT -->
     <script>
@@ -273,7 +354,6 @@
                     cookieBanner.classList.add("show");
                 }, 1000);
             } else if (localStorage.getItem("sdm_cookie_consent") === "accepted") {
-                // If they previously accepted on a past visit, ensure GA4 stays granted
                 gtag('consent', 'update', {
                     'analytics_storage': 'granted'
                 });
@@ -296,76 +376,6 @@
             // GA4 remains securely blocked
         }
     </script>
-
-    <!-- Global B2B Fat Footer -->
-    <footer class="fat-footer">
-        <div class="footer-grid gsap-reveal">
-            
-            <!-- Column 1: Brand & Trust -->
-            <div class="footer-col">
-                <img src="/images/logo.png" alt="SDM Business Intelligence Logo" style="height: 40px; margin-bottom: 1.5rem; filter: grayscale(100%); opacity: 0.8;">
-                <p style="color: var(--charcoal-light); font-size: 0.95rem; max-width: 300px;">Engineering the Modern Data Stack and BI ecosystems for organizations that refuse to stay manual.</p>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/sandilemfazi/" target="_blank" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
-                    <a href="YOUR_UPWORK_LINK" target="_blank" aria-label="Upwork">
-                        <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Upwork icon</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
-                    </a>
-                    <a href="mailto:sandilemfazi.12@gmail.com" aria-label="Email">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Column 2: Services -->
-            <div class="footer-col">
-                <h4>Core Services</h4>
-                <ul>
-                    <li><a href="/services/data-infrastructure">Data Infrastructure & ETL</a></li>
-                    <li><a href="/services/semantic-modeling">dbt Semantic Modeling</a></li>
-                    <li><a href="/services/bi-dashboards">BI Dashboards (Power BI)</a></li>
-                    <li><a href="/services/workflow-automation">Workflow Automation</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 3: Industries -->
-            <div class="footer-col">
-                <h4>Industries Served</h4>
-                <ul>
-                    <li><a href="/industries/financial-services">Financial Services</a></li>
-                    <li><a href="/industries/agriculture-logistics">Agriculture & Logistics</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 4: Compliance & Legal -->
-            <div class="footer-col">
-                <h4>Operations</h4>
-                <ul>
-                    <li><a href="/onboarding">Outside IR35 Contractor</a></li>
-                    <li><a href="/onboarding">GDPR Data Compliance</a></li>
-                    <li><a href="/onboarding">GMT+2 (London Alignment)</a></li>
-                    <li><a href="/contact">Book Project Discovery</a></li>
-                </ul>
-            </div>
-            
-        </div>
-
-        <!-- The Bottom Legal & Copyright Bar -->
-        <div class="disclaimer-text gsap-reveal" style="max-width: 1300px; margin: 0 auto; text-align: left; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
-            <p style="margin: 0;"><strong>Gaborone, Botswana</strong> &nbsp;|&nbsp; B2B Offshore Contracting</p>
-            
-            <!-- Inside the Fat Footer Disclaimer Section -->
-            <div style="display: flex; gap: 1.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; flex-wrap: wrap;">
-                <a href="/legal/privacy-policy" style="color: var(--charcoal-light); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--brand-green)'" onmouseout="this.style.color='var(--charcoal-light)'">Privacy Policy</a>
-                <a href="/legal/cookie-policy" style="color: var(--charcoal-light); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--brand-green)'" onmouseout="this.style.color='var(--charcoal-light)'">Cookie Policy</a>
-                <a href="/legal/terms-conditions" style="color: var(--charcoal-light); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--brand-green)'" onmouseout="this.style.color='var(--charcoal-light)'">Terms & Conditions</a>
-                <a href="/legal/gdpr-compliance" style="color: var(--charcoal-light); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--brand-green)'" onmouseout="this.style.color='var(--charcoal-light)'">GDPR Compliance</a>
-            </div>
-
-            <p style="margin: 0;">&copy; 2026 Sandile Desmond Mfazi. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>

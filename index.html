@@ -24,6 +24,49 @@
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
+        .arch-flow-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            text-align: center;
+        }
+        .arch-step {
+            flex: 1;
+            padding: 1.5rem 1rem;
+            background: var(--bg-off-white);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 130px;
+        }
+        .arch-step.final {
+            background: var(--brand-green);
+            color: white;
+            border-color: var(--brand-green);
+        }
+        .arch-arrow {
+            color: var(--charcoal-light);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Stacks vertically on mobile and rotates the arrows downward */
+        @media (max-width: 1024px) {
+            .arch-flow-wrapper {
+                flex-direction: column;
+            }
+            .arch-step {
+                width: 100%;
+                min-height: auto;
+            }
+            .arch-arrow {
+                transform: rotate(90deg);
+                margin: 0.5rem 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -162,9 +205,9 @@
     <!-- Hero Section -->
     <section class="hero bg-grid">
         <div class="hero-text gsap-reveal">
-            <span class="badge">Independent Senior Data Architect | UK & European Delivery</span>
-            <h1>Architecting Resilient Data Infrastructure & Certified BI Ecosystems.</h1>
-            <p>I help UK mid-market and enterprise organizations transform fragile legacy databases into automated, single-source-of-truth architecturesâ€”leveraging the Modern Data Stack to deliver enterprise-grade performance Outside IR35.</p>
+            <span class="badge">Offshore Data Engineering & BI Consulting</span>
+            <h1>Stop manually consolidating your business data.</h1>
+            <p>Your business has outgrown shared spreadsheets. I design and implement modern data infrastructure for growing companies that need reliable, automated reporting—without the overhead of hiring an entire internal data team.</p>
             
             <!-- Authority Badges -->
             <div class="authority-grid" style="display: flex; gap: 1.5rem; margin-bottom: 2.5rem; flex-wrap: wrap;">
@@ -180,23 +223,62 @@
                 </div>
 
                 <div style="border-left: 2px solid var(--brand-green); padding-left: 0.8rem;">
-                    <span style="font-weight: 700; color: var(--charcoal); display: block; font-size: 1.1rem;">Multinational</span>
-                    <span style="font-size: 0.8rem; color: var(--charcoal-light); text-transform: uppercase;">Architecture Rollouts</span>
-                </div>
-
-                <div style="border-left: 2px solid var(--brand-green); padding-left: 0.8rem;">
                     <span style="font-weight: 700; color: var(--charcoal); display: block; font-size: 1.1rem;">Outside IR35</span>
                     <span style="font-size: 0.8rem; color: var(--charcoal-light); text-transform: uppercase;">GMT+2 UK Alignment</span>
                 </div>
             </div>
 
             <div class="hero-buttons">
-                <a href="/contact" class="btn-primary">GET YOUR BLUEPRINT</a>
+                <a href="/contact" class="btn-primary">Book Executive Discovery</a>
                 <a href="/onboarding" class="btn-secondary" style="margin-left: 1rem; border: 1px solid var(--border-color); padding: 1rem 1.8rem; text-decoration: none; color: var(--charcoal); font-weight: 600; text-transform: uppercase; font-size: 0.85rem;">View Engagement Model</a>
             </div>
         </div>
         <div class="hero-image-container gsap-reveal">
             <img src="/images/profile.png" alt="Sandile Desmond Mfazi" class="hero-profile-pic">
+        </div>
+    </section>
+
+    <!-- The 5-Step Architecture Flow -->
+    <section class="section-container" style="padding-bottom: 5rem;">
+        <div class="gsap-reveal" style="background: var(--bg-white); border: 1px solid var(--border-color); padding: 3rem 2rem; border-top: 4px solid var(--charcoal); box-shadow: 0 20px 40px rgba(0,0,0,0.03);">
+            
+            <div class="arch-flow-wrapper">
+                
+                <div class="arch-step">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">01. Connect</span>
+                    <strong style="color: var(--charcoal); font-size: 0.95rem;">CRM • ERP • Finance • SaaS • Excel</strong>
+                </div>
+
+                <div class="arch-arrow">&rarr;</div>
+
+                <div class="arch-step">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">02. Centralize</span>
+                    <strong style="color: var(--charcoal); font-size: 0.95rem;">Cloud Data Warehouse / Lakehouse</strong>
+                </div>
+
+                <div class="arch-arrow">&rarr;</div>
+
+                <div class="arch-step">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">03. Transform</span>
+                    <strong style="color: var(--charcoal); font-size: 0.95rem;">dbt • SQL Server • Python</strong>
+                </div>
+
+                <div class="arch-arrow">&rarr;</div>
+
+                <div class="arch-step">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">04. Govern</span>
+                    <strong style="color: var(--charcoal); font-size: 0.95rem;">Certified Semantic Models</strong>
+                </div>
+
+                <div class="arch-arrow">&rarr;</div>
+
+                <div class="arch-step final">
+                    <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem; opacity: 0.9;">05. Decide</span>
+                    <strong style="font-size: 0.95rem;">Power BI / Executive Reporting</strong>
+                </div>
+
+            </div>
+            
         </div>
     </section>
 
