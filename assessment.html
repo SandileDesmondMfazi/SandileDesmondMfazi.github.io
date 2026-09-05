@@ -44,15 +44,52 @@
 </head>
 <body class="bg-grid">
     <header class="navbar">
-        <div class="logo"><a href="/"><img src="/images/logo.png" alt="SDM Data &amp; Analytics Consulting"></a></div>
+        <div class="logo"><a href="/index.html"><img src="/images/logo.png" alt="SDM Business Intelligence Logo"></a></div>
         <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-        <nav><ul class="nav-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/assessment.html" aria-current="page">Assessment</a></li>
-            <li><a href="/onboarding.html">How We Work</a></li>
-            <li><a href="/projects.html">Case Studies</a></li>
-            <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem;">BOOK DISCOVERY</a></li>
-        </ul></nav>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="/index.html">Home</a></li>
+                <li class="nav-item has-mega-menu">
+                    <a href="#" role="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <div class="dropdown-menu mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-col">
+                                <div class="mega-col-header"><span class="blue-dot"></span> THE HOOK</div>
+                                <div class="mega-col-sub">GET IN THE DOOR</div>
+                                <a href="/services/workflow-automation.html" class="mega-service"><span class="service-name">Custom Automation</span><span class="service-tech">MAKE / POWER AUTOMATE</span></a>
+                                <a href="/services/custom-portals.html" class="mega-service"><span class="service-name">Web &amp; Data Portals</span><span class="service-tech">APPS SCRIPT / POWER APPS</span></a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-header"><span class="blue-dot"></span> THE BACKBONE</div>
+                                <div class="mega-col-sub">UNIFY SYSTEMS</div>
+                                <a href="/services/data-infrastructure.html" class="mega-service"><span class="service-name">Data Infrastructure</span><span class="service-tech">SNOWFLAKE / DATABRICKS</span></a>
+                                <a href="/services/etl-pipelines.html" class="mega-service"><span class="service-name">Ingestion Pipelines</span><span class="service-tech">FIVETRAN / SSIS</span></a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-col-header"><span class="blue-dot"></span> THE MULTIPLIER</div>
+                                <div class="mega-col-sub">SCALE VALUE</div>
+                                <a href="/services/semantic-modeling.html" class="mega-service"><span class="service-name">Semantic Modeling</span><span class="service-tech">DBT / DAX</span></a>
+                                <a href="/services/bi-dashboards.html" class="mega-service"><span class="service-name">BI Dashboards</span><span class="service-tech">POWER BI / LOOKER</span></a>
+                            </div>
+                        </div>
+                        <div class="mega-menu-footer"><span class="mega-footer-question">NOT SURE WHERE TO START?</span><a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a></div>
+                    </div>
+                </li>
+                <li class="nav-item has-mega-menu">
+                    <a href="#" role="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Industries</a>
+                    <div class="dropdown-menu mega-menu" style="width: 600px;">
+                        <div class="mega-menu-content" style="grid-template-columns: repeat(2, 1fr);">
+                            <div class="mega-col" style="padding: 2rem;"><a href="/industries/financial-services.html" class="mega-service" style="align-items: flex-start; text-align: left;"><span class="service-name">Financial Services &amp; Assurance</span><span class="service-tech">AUDIT TRAILS &amp; COMPLIANCE</span></a></div>
+                            <div class="mega-col" style="padding: 2rem;"><a href="/industries/agriculture-logistics.html" class="mega-service" style="align-items: flex-start; text-align: left;"><span class="service-name">Agriculture &amp; Logistics</span><span class="service-tech">SUPPLY CHAIN VISIBILITY</span></a></div>
+                        </div>
+                        <div class="mega-menu-footer"><span class="mega-footer-question">DON'T SEE YOUR INDUSTRY?</span><a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a></div>
+                    </div>
+                </li>
+                <li><a href="/assessment.html" aria-current="page">Assessment</a></li>
+                <li><a href="/onboarding.html">How We Work</a></li>
+                <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">BOOK DISCOVERY</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="assessment-page">
@@ -124,6 +161,60 @@
             <a href="/contact.html" class="btn-primary">Book an Executive Discovery</a>
         </section>
     </main>
+
+    <footer class="fat-footer">
+        <div class="footer-grid gsap-reveal">
+            <div class="footer-col">
+                <img src="/images/logo.png" alt="SDM Business Intelligence Logo" style="height: 40px; margin-bottom: 1.5rem; filter: grayscale(100%); opacity: 0.8;">
+                <p style="color: var(--charcoal-light); font-size: 0.95rem; max-width: 300px;">Engineering the Modern Data Stack and BI ecosystems for organizations that refuse to stay manual.</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/sandilemfazi/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="mailto:sandilemfazi.12@gmail.com" aria-label="Email">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Core Services</h4>
+                <ul>
+                    <li><a href="/services/data-infrastructure.html">Data Infrastructure &amp; ETL</a></li>
+                    <li><a href="/services/semantic-modeling.html">dbt Semantic Modeling</a></li>
+                    <li><a href="/services/bi-dashboards.html">BI Dashboards (Power BI)</a></li>
+                    <li><a href="/services/workflow-automation.html">Workflow Automation</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Industries Served</h4>
+                <ul>
+                    <li><a href="/case-study-enterprise.html">Financial Services</a></li>
+                    <li><a href="/case-study-agriculture.html">Agriculture</a></li>
+                    <li><a href="/industries/index.html">FinTech &amp; Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Operations</h4>
+                <ul>
+                    <li><a href="/onboarding.html">Outside IR35 Contractor</a></li>
+                    <li><a href="/onboarding.html">GDPR Data Compliance</a></li>
+                    <li><a href="/onboarding.html">GMT+2 (London Alignment)</a></li>
+                    <li><a href="/contact.html">Book Project Discovery</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="disclaimer-text gsap-reveal" style="max-width: 1300px; margin: 0 auto; text-align: left; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+            <p style="margin: 0;"><strong>Gaborone, Botswana</strong> &nbsp;|&nbsp; B2B Offshore Contracting</p>
+            <div style="display: flex; gap: 1.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; flex-wrap: wrap;">
+                <a href="/legal/privacy-policy.html" style="color: var(--charcoal-light); text-decoration: none;">Privacy Policy</a>
+                <a href="/legal/cookie-policy.html" style="color: var(--charcoal-light); text-decoration: none;">Cookie Policy</a>
+                <a href="/legal/terms-conditions.html" style="color: var(--charcoal-light); text-decoration: none;">Terms &amp; Conditions</a>
+                <a href="/legal/gdpr-compliance.html" style="color: var(--charcoal-light); text-decoration: none;">GDPR Compliance</a>
+            </div>
+            <p style="margin: 0;">&copy; 2026 Sandile Desmond Mfazi. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
