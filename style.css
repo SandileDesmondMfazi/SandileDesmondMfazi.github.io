@@ -103,6 +103,159 @@ h2 {
     white-space: nowrap;
 }
 
+.section-intro {
+    max-width: 760px;
+    margin-bottom: 2.5rem;
+}
+
+.section-intro p {
+    color: var(--charcoal-light);
+    font-size: 1.08rem;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    border: 1px solid var(--border-color);
+    background: var(--border-color);
+}
+
+.value-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    min-height: 150px;
+    padding: 1.5rem;
+    background: var(--bg-white);
+}
+
+.value-card strong {
+    color: var(--charcoal);
+    font-size: 1rem;
+}
+
+.value-card span {
+    color: var(--charcoal-light);
+    font-size: 0.86rem;
+}
+
+.value-callout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    border-left: 4px solid var(--brand-green);
+    background: var(--bg-white);
+}
+
+.decision-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.7rem;
+}
+
+.decision-flow > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 125px;
+    padding: 1.2rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-off-white);
+}
+
+.decision-flow span {
+    color: var(--brand-green);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.decision-flow b {
+    align-self: center;
+    color: var(--brand-green);
+    font-size: 1.3rem;
+}
+
+.decision-flow .decision-final {
+    color: var(--bg-white);
+    background: var(--brand-green);
+    border-color: var(--brand-green);
+}
+
+.decision-flow .decision-final span {
+    color: var(--bg-white);
+}
+
+.assessment-preview {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.assessment-preview-copy p {
+    max-width: 680px;
+    color: var(--charcoal-light);
+    font-size: 1.08rem;
+}
+
+.check-list {
+    display: grid;
+    gap: 0.7rem;
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+    list-style: none;
+}
+
+.check-list li::before {
+    margin-right: 0.7rem;
+    color: var(--brand-green);
+    content: "✓";
+    font-weight: 700;
+}
+
+.assessment-price {
+    padding: 2rem;
+    border-top: 4px solid var(--brand-green);
+    background: var(--bg-white);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+.assessment-price-label {
+    display: block;
+    color: var(--charcoal-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.assessment-price strong {
+    display: block;
+    margin: 0.5rem 0 1rem;
+    color: var(--brand-green);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+}
+
+.assessment-price p,
+.assessment-price small {
+    color: var(--charcoal-light);
+}
+
+.assessment-price small {
+    display: block;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border-color);
+}
+
 /* ==========================================================================
    HEADER, NAVBAR & DROPDOWNS
    ========================================================================== */
@@ -1108,6 +1261,8 @@ nav a:hover {
     .split-section, .process-grid, .risk-grid { grid-template-columns: 1fr; }
     .sticky-rail { position: relative; top: 0; margin-bottom: 2rem; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
+    .value-grid { grid-template-columns: repeat(2, 1fr); }
+    .assessment-preview { grid-template-columns: 1fr; gap: 2rem; }
 }
 
 /* Mobile Devices (Max Width: 768px) */
@@ -1211,6 +1366,12 @@ nav a:hover {
     .cookie-banner { 
         bottom: 0; left: 0; max-width: 100%; border-left: none; border-top: 4px solid var(--brand-green); 
     }
+
+    .value-callout { align-items: flex-start; flex-direction: column; }
+    .decision-flow { flex-direction: column; }
+    .decision-flow > div { min-height: auto; }
+    .decision-flow b { transform: rotate(0); }
+    .value-grid { grid-template-columns: 1fr; }
 }
 
 /* Small Mobile Devices (Max Width: 480px) */
