@@ -41,7 +41,7 @@ permalink: /showcase
         .architecture-details p { margin-bottom: 1rem; line-height: 1.6; color: var(--charcoal); font-size: 1.05rem; }
         .architecture-details ul { margin-bottom: 1.5rem; list-style: none; padding: 0; }
         .architecture-details li { margin-bottom: 0.75rem; color: var(--charcoal); padding-left: 1.5em; position: relative; font-size: 1.05rem;}
-        .architecture-details li::before { content: "ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢"; color: var(--brand-green); font-weight: bold; position: absolute; left: 0; font-size: 1.2rem; }
+        .architecture-details li::before { content: "•"; color: var(--brand-green); font-weight: bold; position: absolute; left: 0; font-size: 1.2rem; }
 
         /* Report Blocks */
         .consultant-report { background: var(--bg-white); border-left: 4px solid var(--brand-green); padding: 2.5rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); }
@@ -201,14 +201,14 @@ permalink: /showcase
             <!-- 1. The Situation -->
             <h2 class="gsap-reveal">The Situation</h2>
             <div class="architecture-details gsap-reveal">
-                <p>The business was experiencing rapid YoY revenue growth, but leadership lacked visibility into regional profitability. The issue was not a lack of toolingÃ¢â‚¬â€they had SQL Server, modern CRMs, and ad platforms. The issue was that company-wide metrics were being manually built by operations managers in isolated Excel spreadsheets instead of a centralized data warehouse.</p>
+                <p>The business was experiencing rapid YoY revenue growth, but leadership lacked visibility into regional profitability. The issue was not a lack of tooling—they had SQL Server, modern CRMs, and ad platforms. The issue was that company-wide metrics were being manually built by operations managers in isolated Excel spreadsheets instead of a centralized data warehouse.</p>
                 <p>Because the analytics environment lacked a governed definition layer, the Finance and Marketing teams were consistently arriving at completely different numbers for the exact same metrics. They needed a seasoned Analytics Engineer to intervene, migrate the manual reports, create interoperable tables, and establish a single source of truth.</p>
             </div>
 
             <!-- 2. Why this engagement mattered -->
             <h2 class="gsap-reveal" style="margin-top: 3rem;">Why this engagement mattered</h2>
             <div class="architecture-details gsap-reveal">
-                <p>Inflexible reporting is a common byproduct of databases and dashboards that grow without centralized ownership. When calculations accumulate across ad-hoc queries without a unifying standard, the problem is rarely the data itselfÃ¢â‚¬â€it is the absence of a canonical definition layer.</p>
+                <p>Inflexible reporting is a common byproduct of databases and dashboards that grow without centralized ownership. When calculations accumulate across ad-hoc queries without a unifying standard, the problem is rarely the data itself—it is the absence of a canonical definition layer.</p>
                 <p>Resolving this requires more than just writing SQL. It requires stakeholder alignment on what metrics actually mean, disciplined upstream implementation in the ETL pipeline, and creating a concrete artifact that teams can align around. <strong>My approach prioritizes definition alignment before model development, ensuring that what gets built reflects what the business actually agreed on.</strong></p>
             </div>
 
@@ -217,7 +217,7 @@ permalink: /showcase
             <div class="architecture-details gsap-reveal">
                 <p>I worked across three distinct workstreams to stabilize and automate the environment:</p>
                 <ul>
-                    <li><strong>Metric Standardization & Governance:</strong> Rebuilt the transformation logic. Calculations previously distributed across individual analystsÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ spreadsheets were moved upstream into SQL Server views, versioned, and documented.</li>
+                    <li><strong>Metric Standardization & Governance:</strong> Rebuilt the transformation logic. Calculations previously distributed across individual analysts’ spreadsheets were moved upstream into SQL Server views, versioned, and documented.</li>
                     <li><strong>Semantic Layer Deployment:</strong> Engineered a governed Power BI Semantic Model using DAX. This handled the complex time-intelligence and currency formatting centrally, ensuring metric definitions were not replicated at the dashboard layer.</li>
                     <li><strong>Executive Dashboard Buildout:</strong> Developed a highly interactive, 3-page reporting suite covering macro trends, root-cause anomaly detection (Decomposition Trees), and What-If scenario modeling.</li>
                 </ul>
