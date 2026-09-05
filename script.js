@@ -4,7 +4,7 @@ const siteNavigation = document.querySelector('nav');
 if (siteNavigation) {
     siteNavigation.innerHTML = `
         <ul class="nav-menu">
-            <li><a href="/index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li class="nav-item has-mega-menu">
                 <a href="#" role="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Services</a>
                 <div class="dropdown-menu mega-menu">
@@ -12,38 +12,38 @@ if (siteNavigation) {
                         <div class="mega-col">
                             <div class="mega-col-header"><span class="blue-dot"></span> THE HOOK</div>
                             <div class="mega-col-sub">GET IN THE DOOR</div>
-                            <a href="/services/workflow-automation.html" class="mega-service"><span class="service-name">Custom Automation</span><span class="service-tech">MAKE / POWER AUTOMATE</span></a>
-                            <a href="/services/custom-portals.html" class="mega-service"><span class="service-name">Web &amp; Data Portals</span><span class="service-tech">APPS SCRIPT / POWER APPS</span></a>
+                            <a href="/services/workflow-automation" class="mega-service"><span class="service-name">Custom Automation</span><span class="service-tech">MAKE / POWER AUTOMATE</span></a>
+                            <a href="/services/custom-portals" class="mega-service"><span class="service-name">Web &amp; Data Portals</span><span class="service-tech">APPS SCRIPT / POWER APPS</span></a>
                         </div>
                         <div class="mega-col">
                             <div class="mega-col-header"><span class="blue-dot"></span> THE BACKBONE</div>
                             <div class="mega-col-sub">UNIFY SYSTEMS</div>
-                            <a href="/services/data-infrastructure.html" class="mega-service"><span class="service-name">Data Infrastructure</span><span class="service-tech">SNOWFLAKE / DATABRICKS</span></a>
-                            <a href="/services/etl-pipelines.html" class="mega-service"><span class="service-name">Ingestion Pipelines</span><span class="service-tech">FIVETRAN / SSIS</span></a>
+                            <a href="/services/data-infrastructure" class="mega-service"><span class="service-name">Data Infrastructure</span><span class="service-tech">SNOWFLAKE / DATABRICKS</span></a>
+                            <a href="/services/etl-pipelines" class="mega-service"><span class="service-name">Ingestion Pipelines</span><span class="service-tech">FIVETRAN / SSIS</span></a>
                         </div>
                         <div class="mega-col">
                             <div class="mega-col-header"><span class="blue-dot"></span> THE MULTIPLIER</div>
                             <div class="mega-col-sub">SCALE VALUE</div>
-                            <a href="/services/semantic-modeling.html" class="mega-service"><span class="service-name">Semantic Modeling</span><span class="service-tech">DBT / DAX</span></a>
-                            <a href="/services/bi-dashboards.html" class="mega-service"><span class="service-name">BI Dashboards</span><span class="service-tech">POWER BI / LOOKER</span></a>
+                            <a href="/services/semantic-modeling" class="mega-service"><span class="service-name">Semantic Modeling</span><span class="service-tech">DBT / DAX</span></a>
+                            <a href="/services/bi-dashboards" class="mega-service"><span class="service-name">BI Dashboards</span><span class="service-tech">POWER BI / LOOKER</span></a>
                         </div>
                     </div>
-                    <div class="mega-menu-footer"><span class="mega-footer-question">NOT SURE WHERE TO START?</span><a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a></div>
+                    <div class="mega-menu-footer"><span class="mega-footer-question">NOT SURE WHERE TO START?</span><a href="/contact" class="mega-footer-cta">GET YOUR BLUEPRINT</a></div>
                 </div>
             </li>
             <li class="nav-item has-mega-menu">
                 <a href="#" role="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Industries</a>
                 <div class="dropdown-menu mega-menu" style="width: 600px;">
                     <div class="mega-menu-content" style="grid-template-columns: repeat(2, 1fr);">
-                        <div class="mega-col" style="padding: 2rem;"><a href="/industries/financial-services.html" class="mega-service" style="align-items: flex-start; text-align: left;"><span class="service-name">Financial Services &amp; Assurance</span><span class="service-tech">AUDIT TRAILS &amp; COMPLIANCE</span></a></div>
-                        <div class="mega-col" style="padding: 2rem;"><a href="/industries/agriculture-logistics.html" class="mega-service" style="align-items: flex-start; text-align: left;"><span class="service-name">Agriculture &amp; Logistics</span><span class="service-tech">SUPPLY CHAIN VISIBILITY</span></a></div>
+                        <div class="mega-col" style="padding: 2rem;"><a href="/industries/financial-services" class="mega-service" style="align-items: flex-start; text-align: left;"><span class="service-name">Financial Services &amp; Assurance</span><span class="service-tech">AUDIT TRAILS &amp; COMPLIANCE</span></a></div>
+                        <div class="mega-col" style="padding: 2rem;"><a href="/industries/agriculture-logistics" class="mega-service" style="align-items: flex-start; text-align: left;"><span class="service-name">Agriculture &amp; Logistics</span><span class="service-tech">SUPPLY CHAIN VISIBILITY</span></a></div>
                     </div>
-                    <div class="mega-menu-footer"><span class="mega-footer-question">DON'T SEE YOUR INDUSTRY?</span><a href="/contact.html" class="mega-footer-cta">GET YOUR BLUEPRINT</a></div>
+                    <div class="mega-menu-footer"><span class="mega-footer-question">DON'T SEE YOUR INDUSTRY?</span><a href="/contact" class="mega-footer-cta">GET YOUR BLUEPRINT</a></div>
                 </div>
             </li>
-            <li><a href="/assessment.html">Assessment</a></li>
-            <li><a href="/onboarding.html">How We Work</a></li>
-            <li><a href="/contact.html" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">BOOK DISCOVERY</a></li>
+            <li><a href="/assessment">Assessment</a></li>
+            <li><a href="/onboarding">How We Work</a></li>
+            <li><a href="/contact" class="btn-primary" style="padding: 0.6rem 1.5rem; color: var(--bg-white);">BOOK DISCOVERY</a></li>
         </ul>`;
 }
 
