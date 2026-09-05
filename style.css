@@ -1576,8 +1576,8 @@ nav a:hover {
     .decision-flow b { transform: rotate(0); }
 
     /* =======================================================
-       7. COLLAPSED MOBILE FOOTER
-       Reduces vertical scroll by shifting to a 2-column grid
+       7. MOBILE FOOTER ACCORDION
+       Stacks into 1 column and hides lists behind a tap
        ======================================================= */
     .global-footer,
     .fat-footer {
@@ -1585,39 +1585,64 @@ nav a:hover {
     }
 
     .footer-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns side-by-side */
-        gap: 2rem 1rem;
+        grid-template-columns: 1fr;
+        gap: 0; 
     }
 
-    /* Brand column spans full width at the top */
+    /* Keep the Brand Bio visible at the top */
     .footer-col:first-child {
-        grid-column: 1 / -1; 
         padding-bottom: 1.5rem;
         border-bottom: 1px solid rgba(224, 224, 224, 0.7);
     }
 
-    /* Tighten typography to save vertical space */
-    .footer-col h4 { 
-        font-size: 0.85rem; 
-        margin-bottom: 0.5rem; 
+    /* Style the other headers as tappable accordion buttons */
+    .footer-col:not(:first-child) {
+        padding: 0;
+        border-bottom: 1px solid rgba(224, 224, 224, 0.7);
+    }
+
+    .footer-col:not(:first-child) h4 {
+        margin: 0;
+        padding: 1.25rem 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.95rem;
+    }
+
+    /* The "+" Icon */
+    .footer-col:not(:first-child) h4::after {
+        content: '+';
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--brand-green);
+        transition: transform 0.3s ease;
+    }
+
+    /* Turns the "+" into an "x" when open */
+    .footer-col.active h4::after {
+        transform: rotate(45deg); 
+    }
+
+    /* Hide the lists by default on mobile */
+    .footer-col:not(:first-child) ul {
+        display: none;
+        padding-bottom: 1.25rem;
+        gap: 0;
+    }
+
+    /* Show the lists when the .active class is applied */
+    .footer-col.active ul {
+        display: grid;
     }
     
-    .footer-col ul { display: grid; gap: 0; }
-    
-    /* Slightly smaller touch targets on footer to save height, but still accessible */
     .footer-col ul a,
     .footer-links a {
         display: inline-flex;
         align-items: center;
-        min-height: 38px; 
-        font-size: 0.8rem;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.25rem;
-        padding-top: 1.25rem;
+        min-height: 44px; /* Touch target size */
+        font-size: 0.85rem;
     }
 
     /* Bottom Legal Bar adjustments */
@@ -1626,6 +1651,8 @@ nav a:hover {
         align-items: center;
         text-align: center !important;
         gap: 1rem;
+        margin-top: 1rem;
+        border-top: none;
     }
     
     .disclaimer-text div {
@@ -1664,6 +1691,12 @@ nav a:hover {
     .global-footer,
     .article-layout {
         padding: 2.5rem 4%;
+    }
+
+    /* Hide Profile Pic & Weird Background Circle on Mobile */
+    .hero-image-container,
+    .value-section::after {
+        display: none !important;
     }
 
     .project-card,

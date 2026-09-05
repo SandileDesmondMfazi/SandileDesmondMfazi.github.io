@@ -135,3 +135,18 @@ document.addEventListener('click', (e) => {
         document.querySelectorAll('.nav-link.dropdown-toggle[aria-expanded="true"]').forEach(t => t.setAttribute('aria-expanded', 'false'));
     }
 });
+
+// Mobile Footer Accordion Toggle
+document.addEventListener("DOMContentLoaded", function() {
+    const footerHeaders = document.querySelectorAll('.footer-col:not(:first-child) h4');
+    
+    footerHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            // Only trigger the accordion effect on mobile screens
+            if (window.innerWidth <= 768) {
+                const parentCol = header.parentElement;
+                parentCol.classList.toggle('active');
+            }
+        });
+    });
+});
