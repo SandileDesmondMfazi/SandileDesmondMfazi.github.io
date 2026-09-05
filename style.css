@@ -1341,234 +1341,93 @@ nav a:hover {
 /* Mobile Devices (Max Width: 768px) */
 @media (max-width: 768px) {
     /* 1. Prevent Horizontal Scrolling & Overflow */
-    html,
-    body {
-        width: 100%;
-        max-width: 100vw;
-        overflow-x: hidden;
-    }
+    html, body { width: 100%; max-width: 100vw; overflow-x: hidden; }
+
+    /* Hide Desktop-Specific Elements */
+    .hero-image-container, .value-section::after { display: none !important; }
 
     /* 2. Touch-Optimized Navigation & Header */
-    .navbar {
-        position: sticky;
-        min-height: 72px;
-        padding: 1rem 5% !important;
-    }
-
+    .navbar { position: sticky; min-height: 72px; padding: 1rem 5% !important; }
     .navbar .logo img { height: 35px; max-width: 70vw; }
 
     .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        order: 3;
-        width: 44px;
-        height: 44px; /* 44px Minimum Touch Target */
-        margin-left: auto;
-        padding: 10px;
-        border: 0;
-        background: transparent;
-        cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        order: 3; width: 44px; height: 44px; margin-left: auto;
+        padding: 10px; border: 0; background: transparent; cursor: pointer;
     }
-
     .menu-toggle .bar { width: 24px; height: 3px; }
-
     nav { order: 2; }
 
     /* Smooth Slide-Down Mobile Menu */
     nav ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        max-height: calc(100vh - 72px);
-        overflow-y: auto;
-        padding: 1rem 5% 1.5rem !important;
-        gap: 0.35rem !important;
-        background: var(--bg-white);
-        border-top: 1px solid var(--border-color);
-        box-shadow: 0 16px 28px rgba(26, 26, 26, 0.1);
-        transform: translateY(-12px);
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
-            opacity 220ms ease, visibility 0s linear 280ms;
+        position: absolute; top: 100%; left: 0; display: flex; flex-direction: column;
+        align-items: stretch; width: 100%; max-height: calc(100vh - 72px);
+        overflow-y: auto; padding: 1rem 5% 1.5rem !important; gap: 0.35rem !important;
+        background: var(--bg-white); border-top: 1px solid var(--border-color);
+        box-shadow: 0 16px 28px rgba(26, 26, 26, 0.1); transform: translateY(-12px);
+        opacity: 0; visibility: hidden; pointer-events: none;
+        transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1), opacity 220ms ease, visibility 0s linear 280ms;
         z-index: 100;
     }
-
+    
     nav ul.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transition-delay: 0s;
+        transform: translateY(0); opacity: 1; visibility: visible;
+        pointer-events: auto; transition-delay: 0s;
     }
 
     /* Enforce Touch Targets on Links */
-    nav ul > li > a,
-    .nav-link.dropdown-toggle,
-    .mega-footer-cta {
-        display: flex;
-        align-items: center;
-        min-height: 44px;
-        width: 100%;
-        padding: 0.65rem 0.75rem;
+    nav ul > li > a, .nav-link.dropdown-toggle, .mega-footer-cta {
+        display: flex; align-items: center; min-height: 44px; width: 100%; padding: 0.65rem 0.75rem;
     }
-
-    nav ul > li > a.btn-primary {
-        justify-content: center;
-        width: 100%;
-        margin-top: 0.5rem;
-    }
+    nav ul > li > a.btn-primary { justify-content: center; width: 100%; margin-top: 0.5rem; }
 
     #mobile-menu.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
     #mobile-menu.is-active .bar:nth-child(2) { opacity: 0; }
     #mobile-menu.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
     /* Mobile Dropdown Resets */
-    .dropdown-menu,
-    .mega-menu {
-        position: static;
-        display: none;
-        width: 100% !important;
-        max-width: none;
-        max-height: none;
-        margin: 0.25rem 0 0.5rem;
-        padding: 0.5rem !important;
-        border: 0;
-        border-left: 2px solid var(--brand-green);
-        box-shadow: none;
-        background: var(--bg-off-white);
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transform: none !important;
+    .dropdown-menu, .mega-menu {
+        position: static; display: none; width: 100% !important; max-width: none;
+        max-height: none; margin: 0.25rem 0 0.5rem; padding: 0.5rem !important;
+        border: 0; border-left: 2px solid var(--brand-green); box-shadow: none;
+        background: var(--bg-off-white); opacity: 1; visibility: visible;
+        pointer-events: auto; transform: none !important;
     }
-
-    .dropdown-menu.open,
-    .nav-item:focus-within > .dropdown-menu {
-        display: block !important;
-    }
-
-    .dropdown-menu a,
-    .mega-service {
-        min-height: 44px;
-        margin: 0;
-        padding: 0.7rem 0.75rem;
-    }
-
-    .nav-link.dropdown-toggle::after {
-        width: 8px;
-        height: 8px;
-        margin-left: auto;
-        margin-top: -4px;
-    }
-
+    .dropdown-menu.open, .nav-item:focus-within > .dropdown-menu { display: block !important; }
+    .dropdown-menu a, .mega-service { min-height: 44px; margin: 0; padding: 0.7rem 0.75rem; }
+    .nav-link.dropdown-toggle::after { width: 8px; height: 8px; margin-left: auto; margin-top: -4px; }
     .mega-menu-content { grid-template-columns: 1fr; }
-    .mega-col {
-        padding: 1rem 0.5rem;
-        border-right: 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-    .mega-menu-footer {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.5rem;
-        padding: 1rem;
-        text-align: center;
-    }
+    .mega-col { padding: 1rem 0.5rem; border-right: 0; border-bottom: 1px solid var(--border-color); }
+    .mega-menu-footer { flex-direction: column; align-items: stretch; gap: 0.5rem; padding: 1rem; text-align: center; }
 
     /* 3. Typography Scaling */
-    h1,
-    .hero-text h1 {
-        max-width: 100%;
-        font-size: clamp(2rem, 8vw, 2.5rem) !important;
-        line-height: 1.12 !important;
-        text-wrap: balance;
-    }
-
-    h2,
-    .value-section .section-intro h2 {
-        font-size: clamp(1.65rem, 6vw, 2.1rem) !important;
-        line-height: 1.18;
-        text-wrap: balance;
-    }
-
+    h1, .hero-text h1 { max-width: 100%; font-size: clamp(2rem, 8vw, 2.5rem) !important; line-height: 1.12 !important; text-wrap: balance; }
+    h2, .value-section .section-intro h2 { font-size: clamp(1.65rem, 6vw, 2.1rem) !important; line-height: 1.18; text-wrap: balance; }
     h3 { line-height: 1.25; }
     body { font-size: 0.95rem; line-height: 1.6; }
-    .section-intro p,
-    .hero-text p,
-    .assessment-preview-copy p { font-size: 1rem; }
+    .section-intro p, .hero-text p, .assessment-preview-copy p { font-size: 1rem; }
 
     /* 4. Breathing Room & Padding Refinements */
-    .hero {
-        padding: 3rem 5% 3.5rem;
-        gap: 2rem;
-    }
-
-    .section-container,
-    .projects-section,
-    .delivery-section,
-    .profile-section,
-    .tools-wall,
-    .global-footer,
-    .article-layout {
-        padding-top: 2.75rem;
-        padding-bottom: 2.75rem;
-    }
+    .hero { padding: 3rem 5% 3.5rem; gap: 2rem; }
+    .section-container, .projects-section, .delivery-section, .profile-section, .tools-wall, .global-footer, .article-layout { padding-top: 2.75rem; padding-bottom: 2.75rem; }
 
     /* 5. Clean Grid Stacking */
-    .split-section,
-    .process-grid,
-    .risk-grid,
-    .dimension-grid,
-    .grid-2,
-    .assessment-preview,
-    .value-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
+    .split-section, .process-grid, .risk-grid, .dimension-grid, .grid-2, .assessment-preview, .value-grid, .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .sticky-rail { position: relative; top: 0; margin-bottom: 0.5rem; }
-    .project-card,
-    .process-card,
-    .architecture-details,
-    .assessment-price,
-    .modal-content { padding: 1.5rem; }
+    .project-card, .process-card, .architecture-details, .assessment-price, .modal-content { padding: 1.5rem; }
     .value-card { min-height: 0; padding: 1.35rem; }
-    
+
     /* 6. Fix Horizontal Overflows */
     .tools-grid { gap: 1.5rem; }
     .tool-logo { max-width: 100%; height: 32px; object-fit: contain; }
     .marquee-container { max-width: 100%; overflow: hidden; }
     .marquee-track img { height: 30px; margin: 0 1.25rem; }
 
-    .hero-buttons,
-    .value-callout {
-        align-items: stretch;
-        flex-direction: column;
-        width: 100%;
-    }
+    .hero-buttons, .value-callout { align-items: stretch; flex-direction: column; width: 100%; }
 
     /* Button Touch Targets */
-    .hero-buttons .btn-primary,
-    .hero-buttons .btn-secondary,
-    .value-callout .btn-primary,
-    .value-callout .btn-secondary,
-    .btn-accept,
-    .btn-decline {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 44px;
-        min-height: 44px;
-        width: 100%;
-        text-align: center;
+    .hero-buttons .btn-primary, .hero-buttons .btn-secondary, .value-callout .btn-primary, .value-callout .btn-secondary, .btn-accept, .btn-decline {
+        display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; width: 100%; text-align: center;
     }
 
     .decision-flow { flex-direction: column; }
@@ -1576,97 +1435,63 @@ nav a:hover {
     .decision-flow b { transform: rotate(0); }
 
     /* =======================================================
-       7. MOBILE FOOTER ACCORDION
-       Stacks into 1 column and hides lists behind a tap
+       7. MOBILE PROGRESSIVE DISCLOSURE (ACCORDIONS)
+       Applies to Diagnosis Cards, Vertical Expertise & Footer
        ======================================================= */
-    .global-footer,
-    .fat-footer {
-        padding: 2.75rem 5% 1.5rem;
+    
+    /* Diagnosis Cards ("What's Holding Your Operations Back?") & Vertical Expertise */
+    .editorial-card p, .editorial-card ul, .editorial-card .btn-primary {
+        display: none; /* Hidden by default on mobile */
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .editorial-card.active p, .editorial-card.active ul, .editorial-card.active .btn-primary {
+        display: block; /* Shown when tapped */
     }
 
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 0; 
-    }
-
-    /* Keep the Brand Bio visible at the top */
-    .footer-col:first-child {
-        padding-bottom: 1.5rem;
-        border-bottom: 1px solid rgba(224, 224, 224, 0.7);
-    }
-
-    /* Style the other headers as tappable accordion buttons */
-    .footer-col:not(:first-child) {
-        padding: 0;
-        border-bottom: 1px solid rgba(224, 224, 224, 0.7);
-    }
-
-    .footer-col:not(:first-child) h4 {
-        margin: 0;
-        padding: 1.25rem 0;
+    .editorial-card h3 {
+        position: relative;
+        padding-right: 2rem;
         cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.95rem;
+        font-size: 1.3rem !important; /* Slightly smaller for mobile */
+        margin-bottom: 0;
     }
 
-    /* The "+" Icon */
-    .footer-col:not(:first-child) h4::after {
+    .editorial-card h3::after {
         content: '+';
-        font-size: 1.5rem;
-        font-weight: 300;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
         color: var(--brand-green);
+        font-weight: 300;
+        font-size: 1.5rem;
         transition: transform 0.3s ease;
     }
 
-    /* Turns the "+" into an "x" when open */
-    .footer-col.active h4::after {
-        transform: rotate(45deg); 
+    .editorial-card.active h3::after {
+        content: '−';
     }
 
-    /* Hide the lists by default on mobile */
-    .footer-col:not(:first-child) ul {
-        display: none;
-        padding-bottom: 1.25rem;
-        gap: 0;
-    }
-
-    /* Show the lists when the .active class is applied */
-    .footer-col.active ul {
-        display: grid;
-    }
-    
-    .footer-col ul a,
-    .footer-links a {
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px; /* Touch target size */
-        font-size: 0.85rem;
-    }
+    /* Footer Accordion */
+    .global-footer, .fat-footer { padding: 2.75rem 5% 1.5rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 0; }
+    .footer-col:first-child { padding-bottom: 1.5rem; border-bottom: 1px solid rgba(224, 224, 224, 0.7); }
+    .footer-col:not(:first-child) { padding: 0; border-bottom: 1px solid rgba(224, 224, 224, 0.7); }
+    .footer-col:not(:first-child) h4 { margin: 0; padding: 1.25rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
+    .footer-col:not(:first-child) h4::after { content: '+'; font-size: 1.5rem; font-weight: 300; color: var(--brand-green); transition: transform 0.3s ease; }
+    .footer-col.active h4::after { transform: rotate(45deg); }
+    .footer-col:not(:first-child) ul { display: none; padding-bottom: 1.25rem; gap: 0; }
+    .footer-col.active ul { display: grid; }
+    .footer-col ul a, .footer-links a { display: inline-flex; align-items: center; min-height: 44px; font-size: 0.85rem; }
 
     /* Bottom Legal Bar adjustments */
-    .disclaimer-text {
-        flex-direction: column;
-        align-items: center;
-        text-align: center !important;
-        gap: 1rem;
-        margin-top: 1rem;
-        border-top: none;
-    }
-    
-    .disclaimer-text div {
-        justify-content: center;
-    }
+    .disclaimer-text { flex-direction: column; align-items: center; text-align: center !important; gap: 1rem; margin-top: 1rem; border-top: none; }
+    .disclaimer-text div { justify-content: center; }
 
-    .cookie-banner {
-        right: 0;
-        bottom: 0;
-        left: 0;
-        max-width: 100%;
-        border-left: 0;
-        border-top: 4px solid var(--brand-green);
-    }
+    .cookie-banner { right: 0; bottom: 0; left: 0; max-width: 100%; border-left: 0; border-top: 4px solid var(--brand-green); }
 }
 
 /* Small Mobile Devices (Max Width: 480px) */
@@ -1674,47 +1499,22 @@ nav a:hover {
     .navbar { padding-inline: 4% !important; }
     .navbar .logo img { height: 31px; }
     nav ul { padding-inline: 4% !important; }
-
-    h1,
-    .hero-text h1 { font-size: clamp(1.8rem, 9vw, 2.15rem) !important; }
-    h2,
-    .value-section .section-intro h2 {
-        font-size: clamp(1.5rem, 7.5vw, 1.8rem) !important;
-    }
-
+    
+    h1, .hero-text h1 { font-size: clamp(1.8rem, 9vw, 2.15rem) !important; }
+    h2, .value-section .section-intro h2 { font-size: clamp(1.5rem, 7.5vw, 1.8rem) !important; }
+    
     .hero { padding: 2.5rem 4% 3rem; }
-    .section-container,
-    .projects-section,
-    .delivery-section,
-    .profile-section,
-    .tools-wall,
-    .global-footer,
-    .article-layout {
-        padding: 2.5rem 4%;
-    }
-
-    /* Hide Profile Pic & Weird Background Circle on Mobile */
-    .hero-image-container,
-    .value-section::after {
-        display: none !important;
-    }
-
-    .project-card,
-    .process-card,
-    .architecture-details,
-    .assessment-price,
-    .modal-content,
-    .value-card { padding: 1.25rem; }
-
+    .section-container, .projects-section, .delivery-section, .profile-section, .tools-wall, .global-footer, .article-layout { padding: 2.5rem 4%; }
+    
+    .project-card, .process-card, .architecture-details, .assessment-price, .modal-content, .value-card { padding: 1.25rem; }
+    
     .mega-col { padding-inline: 0.25rem; }
     .service-name { font-size: 1rem; }
     .service-tech { font-size: 0.65rem; letter-spacing: 0.1em; }
     .stack-title { margin-bottom: 1.5rem; }
+    
     .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .tool-logo { max-width: 85%; height: 28px; }
     .value-callout { padding: 1.25rem; }
-    
-    /* Keep Footer as 2 columns on very small screens to save scroll */
-    .footer-grid { gap: 1.25rem 0.75rem; }
     .footer-logo img { max-width: min(180px, 80vw); }
 }
