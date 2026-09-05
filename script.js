@@ -150,3 +150,21 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// Progressive Disclosure for Homepage Cards (Mobile Only)
+document.addEventListener("DOMContentLoaded", function() {
+    // Select all H3s inside the Diagnosis and Vertical Expertise cards
+    const cardHeaders = document.querySelectorAll('.editorial-card h3');
+    
+    cardHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            // Only fire the accordion logic on mobile screens
+            if (window.innerWidth <= 768) {
+                const parentCard = header.parentElement;
+                
+                // Toggle the 'active' class to show/hide the paragraph content
+                parentCard.classList.toggle('active');
+            }
+        });
+    });
+});
