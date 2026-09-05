@@ -87,6 +87,26 @@ h2 {
     background: var(--charcoal);
 }
 
+.btn-secondary {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--charcoal);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--charcoal) !important;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    border-color: var(--brand-green);
+    background: var(--brand-green);
+    color: var(--bg-white) !important;
+}
+
 .hero-buttons {
     display: flex;
     align-items: center;
